@@ -1,3 +1,24 @@
+# === Research-specific ===
+# Dataset files (too large for Git)
+*.zip
+*.tar.gz
+*.tar.bz2
+data/
+raw_data/
+
+# Model checkpoints (use external storage)
+checkpoints/
+wandb/
+mlruns/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Large outputs
+*.h5
+*.hdf5
+# ===
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
