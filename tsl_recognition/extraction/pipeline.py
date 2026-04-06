@@ -220,7 +220,7 @@ def run_extraction(
     for sample_id, class_name, video_path in ds_info.iter_raw_videos(classes_list):
         output_path = ds_info.output_npy_path(class_name, sample_id)
         video_key = f"{class_name}/{sample_id}"
-        if video_key in processed_videos or output_path.exists():
+        if video_key in processed_videos and output_path.exists():
             continue
         tasks.append((class_name, video_path, output_path, video_key))
 
