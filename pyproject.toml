@@ -1,6 +1,6 @@
 [build-system]
 requires = ["setuptools>=68", "wheel"]
-build-backend = "setuptools.backends.legacy:build"
+build-backend = "setuptools.build_meta"
 
 [project]
 name = "sozia-research"
@@ -38,7 +38,7 @@ dev = [
 ]
 
 [project.scripts]
-tsl-recognition = "tsl_recognition.__main__:main"
+tsl-recognition = "tsl_recognition.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["."]
