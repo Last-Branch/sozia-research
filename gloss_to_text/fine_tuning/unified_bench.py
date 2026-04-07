@@ -27,6 +27,7 @@ import argparse
 import json
 import os
 import time
+from pathlib import Path
 
 import torch
 from datasets import load_dataset
@@ -46,8 +47,7 @@ for _bit in range(1, 17):
         setattr(torch, f"int{_bit}", torch.int8)
 os.environ["UNSLOTH_ENABLE_PATCHES"] = "0"
 
-_SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-PROJECT_ROOT = os.path.abspath(os.path.join(_SCRIPT_DIR, "../.."))
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
 
 def _train(
@@ -55,8 +55,8 @@ def _train(
     tokenizer,
     model_id: str,
     strategy: str,
-    output_dir: str,
-    adapter_path: str,
+    output_dir: Path,
+    adapter_path: Path,
     use_optim: bool,
     use_grad_checkpointing: bool,
 ) -> PeftModel:
@@ -72,8 +72,8 @@ def _train(
     )
 
     data_files = {
-        "train": os.path.join(PROJECT_ROOT, "data", "processed", "train.jsonl"),
-        "test": os.path.join(PROJECT_ROOT, "data", "processed", "valid.jsonl"),
+        "train": str(PROJECT_ROOT / "data" / "processed" / "train.jsonl"),
+        "test": str(PROJECT_ROOT / "data" / "processed" / "valid.jsonl"),
     }
     dataset = load_dataset("json", data_files=data_files)
 
@@ -123,7 +123,7 @@ def _evaluate(
     tokenizer,
     model_id: str,
     strategy: str,
-    result_path: str,
+    result_path: Path,
     use_autocast: bool,
 ) -> None:
     import evaluate as eval_lib
@@ -134,7 +134,7 @@ def _evaluate(
     instruction = PROMPT_STRATEGIES[strategy]
     chrf = eval_lib.load("chrf")
 
-    valid_path = os.path.join(PROJECT_ROOT, "data", "processed", "valid.jsonl")
+    valid_path = str(PROJECT_ROOT / "data" / "processed" / "valid.jsonl")
     dataset = load_dataset("json", data_files={"test": valid_path})["test"]
 
     model.eval()
@@ -184,7 +184,7 @@ def _evaluate(
     with open(result_path, "w", encoding="utf-8") as f:
         json.dump(results, f, ensure_ascii=False, indent=4)
 
-    model_slug = result_path.split(os.sep)[-3]
+    model_slug = result_path.parts[-3]
     print(f"[SUCCESS] {model_slug} avg latency: {total_latency / len(dataset):.4f}s")
 
 
@@ -202,17 +202,15 @@ def main() -> None:
     args = parser.parse_args()
 
     model_slug = args.model_id.split("/")[-1].lower().replace("-", "_")
-    output_dir = os.path.join(
-        PROJECT_ROOT, "experiments", "benchmarks", model_slug, args.strategy.lower()
-    )
-    adapter_path = os.path.join(output_dir, "final_adapter")
-    result_path = os.path.join(output_dir, "result.json")
+    output_dir = PROJECT_ROOT / "experiments" / "benchmarks" / model_slug / args.strategy.lower()
+    adapter_path = output_dir / "final_adapter"
+    result_path = output_dir / "result.json"
 
-    if os.path.exists(result_path):
+    if result_path.exists():
         print(f"[SKIP] {result_path} already exists.")
         return
 
-    os.makedirs(output_dir, exist_ok=True)
+    output_dir.mkdir(parents=True, exist_ok=True)
 
     is_trendyol = "trendyol" in args.model_id.lower()
     if is_trendyol:
@@ -230,7 +228,7 @@ def main() -> None:
     if is_trendyol:
         base_model.resize_token_embeddings(len(tokenizer))
 
-    if os.path.exists(adapter_path):
+    if adapter_path.exists():
         print(f"[INFO] Adapter found at {adapter_path}. Skipping training.")
         model = PeftModel.from_pretrained(base_model, adapter_path)
     else:

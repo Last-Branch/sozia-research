@@ -23,17 +23,16 @@ from pathlib import Path
 import google.generativeai as genai
 from tqdm import tqdm
 
-_SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-PROJECT_ROOT = os.path.abspath(os.path.join(_SCRIPT_DIR, "../.."))
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
 _MODEL_NAME = "gemini-2.5-flash"
 _SUCCESS_THRESHOLD = 5
 _CHECKPOINT_INTERVAL = 10
 
 
-def _load_env(project_root: str) -> None:
-    env_path = os.path.join(project_root, ".env")
-    if not os.path.exists(env_path):
+def _load_env(project_root: Path) -> None:
+    env_path = project_root / ".env"
+    if not env_path.exists():
         return
     with open(env_path) as f:
         for line in f:
@@ -43,14 +42,11 @@ def _load_env(project_root: str) -> None:
                 os.environ.setdefault(key.strip(), val.strip())
 
 
-def _discover_result_files(experiments_dir: str) -> list[str]:
+def _discover_result_files(experiments_dir: Path) -> list[Path]:
     """Walk the experiments tree and collect all result JSON files."""
-    result_files: list[str] = []
-    for root, _dirs, files in os.walk(experiments_dir):
-        for fname in files:
-            if fname.endswith(".json") and fname != "REPORT.json":
-                result_files.append(os.path.join(root, fname))
-    return sorted(result_files)
+    return sorted(
+        p for p in experiments_dir.rglob("*.json") if p.name != "REPORT.json"
+    )
 
 
 def _score_entry(judge_model, gloss: str, expected: str, predicted: str) -> int | None:
@@ -81,16 +77,16 @@ def _score_entry(judge_model, gloss: str, expected: str, predicted: str) -> int 
         return None
 
 
-def _process_file(judge_model, file_path: str) -> None:
+def _process_file(judge_model, file_path: Path) -> None:
     with open(file_path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
-    path_parts = Path(file_path).parts
+    path_parts = file_path.parts
     if "benchmarks" in path_parts:
         idx = list(path_parts).index("benchmarks")
         label = " | ".join(path_parts[idx + 1 : idx + 3]).replace("_", " ").upper()
     else:
-        label = Path(file_path).parent.name
+        label = file_path.parent.name
 
     print(f"\n[JUDGE] Assessing: {label}")
 
@@ -121,7 +117,7 @@ def _process_file(judge_model, file_path: str) -> None:
         print(f"[INFO] Done — avg score: {sum(scores) / len(scores):.2f}")
 
 
-def _generate_report(experiments_dir: str) -> None:
+def _generate_report(experiments_dir: Path) -> None:
     result_files = _discover_result_files(experiments_dir)
     final_report: dict[str, dict] = {}
 
@@ -136,11 +132,7 @@ def _generate_report(experiments_dir: str) -> None:
         success_rate = len([s for s in scores if s >= _SUCCESS_THRESHOLD]) / len(data) * 100
         avg_chrf = sum(e.get("chrf", 0) for e in data) / len(data)
 
-        key = (
-            file_path.replace(experiments_dir + os.sep, "")
-            .replace(os.sep, "_")
-            .removesuffix(".json")
-        )
+        key = "_".join(file_path.relative_to(experiments_dir).with_suffix("").parts)
         final_report[key] = {
             "Avg Score": round(sum(scores) / len(scores), 2),
             "Success Rate (%)": round(success_rate, 2),
@@ -148,7 +140,7 @@ def _generate_report(experiments_dir: str) -> None:
             "Samples": len(data),
         }
 
-    report_path = os.path.join(experiments_dir, "REPORT.json")
+    report_path = experiments_dir / "REPORT.json"
     with open(report_path, "w", encoding="utf-8") as f:
         json.dump(final_report, f, ensure_ascii=False, indent=4)
 
@@ -161,7 +153,8 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--experiments_dir",
-        default=os.path.join(PROJECT_ROOT, "experiments"),
+        type=Path,
+        default=PROJECT_ROOT / "experiments",
         help="Root experiments directory to scan for result files.",
     )
     args = parser.parse_args()

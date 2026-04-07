@@ -15,20 +15,19 @@ Usage:
 
 import argparse
 import json
-import os
 import random
+from pathlib import Path
 
 from gloss_to_text.utils import turkish_lower
 
 # ---------------------------------------------------------------------------
 # Paths — relative to the project root (one level above this script)
 # ---------------------------------------------------------------------------
-_SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-PROJECT_ROOT = os.path.abspath(os.path.join(_SCRIPT_DIR, ".."))
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
-RAW_PATH = os.path.join(PROJECT_ROOT, "data", "raw", "slr_gloss_tr_cleaned.jsonl")
-TRAIN_PATH = os.path.join(PROJECT_ROOT, "data", "processed", "train.jsonl")
-VALID_PATH = os.path.join(PROJECT_ROOT, "data", "processed", "valid.jsonl")
+RAW_PATH = PROJECT_ROOT / "data" / "raw" / "slr_gloss_tr_cleaned.jsonl"
+TRAIN_PATH = PROJECT_ROOT / "data" / "processed" / "train.jsonl"
+VALID_PATH = PROJECT_ROOT / "data" / "processed" / "valid.jsonl"
 
 VALID_RATIO = 0.1
 SEED = 42
@@ -39,7 +38,7 @@ def _process_entry(entry: dict) -> dict:
     return {"input": f"<gloss> {gloss} </gloss>", "output": entry["output"]}
 
 
-def _write_jsonl(path: str, data: list[dict]) -> None:
+def _write_jsonl(path: Path, data: list[dict]) -> None:
     with open(path, "w", encoding="utf-8") as f:
         for entry in data:
             f.write(json.dumps(entry, ensure_ascii=False) + "\n")
@@ -50,7 +49,7 @@ def main() -> None:
     parser.add_argument("--force", action="store_true", help="Overwrite existing processed files.")
     args = parser.parse_args()
 
-    if os.path.exists(TRAIN_PATH) and os.path.exists(VALID_PATH) and not args.force:
+    if TRAIN_PATH.exists() and VALID_PATH.exists() and not args.force:
         print("[SKIP] Processed files already exist. Use --force to regenerate.")
         print(f"       {TRAIN_PATH}")
         print(f"       {VALID_PATH}")
@@ -70,7 +69,7 @@ def main() -> None:
     train_data = processed[:split_idx]
     valid_data = processed[split_idx:]
 
-    os.makedirs(os.path.dirname(TRAIN_PATH), exist_ok=True)
+    TRAIN_PATH.parent.mkdir(parents=True, exist_ok=True)
     _write_jsonl(TRAIN_PATH, train_data)
     _write_jsonl(VALID_PATH, valid_data)
 
