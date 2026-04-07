@@ -21,7 +21,6 @@ from multiprocessing import Pool
 from pathlib import Path
 
 import cv2
-import mediapipe as mp
 import numpy as np
 from tqdm.auto import tqdm
 
@@ -226,7 +225,7 @@ def run_extraction(
 
     print(f"Processing {len(actions)} sign classes from {ds_info.display_name}...")
     print(f"Videos to process: {len(tasks)} (skipping already done)")
-    print(f"Using VIDEO mode for better temporal landmark tracking")
+    print("Using VIDEO mode for better temporal landmark tracking")
     if num_workers > 1:
         print(f"Workers: {num_workers} (parallel multiprocessing)")
     print(f"Output directory: {processed_dir}\n")
@@ -320,7 +319,7 @@ def run_extraction(
     with open(processed_log_path, "w") as f:
         json.dump(list(processed_videos), f)
 
-    print(f"\nProcessing complete!")
+    print("\nProcessing complete!")
     print(f"  Processed: {stats['processed']} videos")
     print(f"  Failed: {stats['failed']} videos")
     print(f"  Total frames extracted: {stats['total_frames']}")

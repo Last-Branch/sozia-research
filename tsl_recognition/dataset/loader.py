@@ -348,7 +348,7 @@ def build_loaders(
 
     train_labels = [f[1] for f in train_files]
     class_counts = Counter(train_labels)
-    print(f"\nTraining class distribution:")
+    print("\nTraining class distribution:")
     print(f"  Min samples: {min(class_counts.values())}, Max: {max(class_counts.values())}")
     print(
         f"  Imbalance ratio: "

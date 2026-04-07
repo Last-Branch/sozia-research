@@ -10,7 +10,7 @@ from __future__ import annotations
 
 import torch.nn as nn
 
-from .base import SignClassifier
+from .base import SignClassifier as SignClassifier
 from .gru import ActionGRU
 
 # ---------------------------------------------------------------------------

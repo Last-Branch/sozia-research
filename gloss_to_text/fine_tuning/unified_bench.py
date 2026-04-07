@@ -234,7 +234,7 @@ def main() -> None:
         print(f"[INFO] Adapter found at {adapter_path}. Skipping training.")
         model = PeftModel.from_pretrained(base_model, adapter_path)
     else:
-        print(f"[INFO] No adapter found. Starting training.")
+        print("[INFO] No adapter found. Starting training.")
         model = _train(
             base_model, tokenizer, args.model_id, args.strategy,
             output_dir, adapter_path,

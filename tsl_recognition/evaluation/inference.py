@@ -23,7 +23,6 @@ from collections import deque
 from dataclasses import dataclass, field
 from enum import Enum, auto
 from pathlib import Path
-from typing import Optional
 
 import cv2
 import numpy as np
@@ -79,9 +78,9 @@ class SignRecorder:
     is_recording: bool = False
     motion_history: deque = field(default_factory=lambda: deque(maxlen=15))
     low_motion_count: int = 0
-    last_hand_positions: Optional[np.ndarray] = None
+    last_hand_positions: np.ndarray | None = None
 
-    def reset(self):
+    def reset(self) -> None:
         """Reset the recorder state for a new sign."""
         self.frames = []
         self.is_recording = False

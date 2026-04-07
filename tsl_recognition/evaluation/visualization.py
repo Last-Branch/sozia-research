@@ -10,8 +10,6 @@ import time
 
 import cv2
 import mediapipe as mp
-import numpy as np
-
 try:
     _hands = mp.tasks.vision.HandLandmarksConnections
     _face = mp.tasks.vision.FaceLandmarksConnections
@@ -76,8 +74,8 @@ def draw_hand_landmarks(f, hr):
         if hr.handedness and i < len(hr.handedness):
             lb = hr.handedness[i][0].category_name
             h, w, _ = rgb.shape
-            tx = int(min(l.x for l in hlm) * w)
-            ty = int(min(l.y for l in hlm) * h) - 10
+            tx = int(min(lm.x for lm in hlm) * w)
+            ty = int(min(lm.y for lm in hlm) * h) - 10
             cv2.putText(rgb, lb, (tx, max(0, ty)), cv2.FONT_HERSHEY_DUPLEX, 0.6, (88, 205, 54), 1, cv2.LINE_AA)
     return cv2.cvtColor(rgb, cv2.COLOR_RGB2BGR)
 

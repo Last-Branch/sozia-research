@@ -31,7 +31,7 @@ from __future__ import annotations
 
 import datetime
 import json
-from collections import Counter, defaultdict
+from collections import defaultdict
 from pathlib import Path
 
 import numpy as np
@@ -382,7 +382,7 @@ def generate_split(
 
     if mode == "predefined":
         splits, feature_dim = _split_predefined(cfg)
-        all_cls = set()
+        all_cls: set[str] = set()
         for part_entries in splits.values():
             all_cls.update(e["class_name"] for e in part_entries)
     else:

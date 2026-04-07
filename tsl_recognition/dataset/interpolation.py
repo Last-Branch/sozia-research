@@ -18,12 +18,9 @@ from __future__ import annotations
 import numpy as np
 
 from ..config import (
-    FACE_LANDMARKS,
     FACE_SLICE,
     FEATURE_DIM,
-    HAND_LANDMARKS,
     LEFT_HAND_SLICE,
-    POSE_LANDMARKS,
     POSE_SLICE,
     RIGHT_HAND_SLICE,
 )
