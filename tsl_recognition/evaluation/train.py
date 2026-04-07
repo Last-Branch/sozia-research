@@ -28,6 +28,8 @@ import json
 from dataclasses import asdict
 from pathlib import Path
 
+from torch.utils.data import DataLoader
+
 import matplotlib
 matplotlib.use("Agg")  # headless backend — no display required
 import matplotlib.pyplot as plt
@@ -96,7 +98,7 @@ def batch_top_k_accuracy(
     return correct.float().mean().item()
 
 
-def evaluate(model: nn.Module, loader, criterion) -> tuple[float, float, float]:
+def evaluate(model: nn.Module, loader: DataLoader, criterion: nn.Module) -> tuple[float, float, float]:
     """Evaluate model on a dataset (validation or test set).
 
     Parameters
@@ -129,7 +131,7 @@ def evaluate(model: nn.Module, loader, criterion) -> tuple[float, float, float]:
     return total_loss / n_batches, total_acc / n_batches, total_acc5 / n_batches
 
 
-def _build_scheduler(cfg: TrainConfig, optimizer: torch.optim.Optimizer, train_loader):
+def _build_scheduler(cfg: TrainConfig, optimizer: torch.optim.Optimizer, train_loader: DataLoader) -> lrs.LRScheduler | None:
     """Create the configured LR scheduler (or None).
 
     Notes

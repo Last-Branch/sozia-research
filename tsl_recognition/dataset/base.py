@@ -9,7 +9,6 @@ is just a matter of creating a subclass and registering it in registry.py.
 
 from __future__ import annotations
 
-import re
 from abc import ABC, abstractmethod
 from collections.abc import Iterator
 from pathlib import Path

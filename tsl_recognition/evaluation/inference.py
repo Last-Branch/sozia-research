@@ -23,11 +23,12 @@ from collections import deque
 from dataclasses import dataclass, field
 from enum import Enum, auto
 from pathlib import Path
-from typing import Optional
 
 import cv2
 import numpy as np
 import torch
+import torch.nn as nn
+from sklearn.preprocessing import StandardScaler
 
 from ..config import (
     DEVICE,
@@ -79,9 +80,9 @@ class SignRecorder:
     is_recording: bool = False
     motion_history: deque = field(default_factory=lambda: deque(maxlen=15))
     low_motion_count: int = 0
-    last_hand_positions: Optional[np.ndarray] = None
+    last_hand_positions: np.ndarray | None = None
 
-    def reset(self):
+    def reset(self) -> None:
         """Reset the recorder state for a new sign."""
         self.frames = []
         self.is_recording = False
@@ -140,13 +141,13 @@ class SignRecorder:
 
 
 def preprocess_sequence(
-    frames,
-    scaler,
-    max_len,
-    normalize=True,
-    apply_interpolation=True,
-    sequence_handling="truncate",
-):
+    frames: list[np.ndarray],
+    scaler: StandardScaler | None,
+    max_len: int,
+    normalize: bool = True,
+    apply_interpolation: bool = True,
+    sequence_handling: str = "truncate",
+) -> tuple[np.ndarray, int]:
     """Preprocess collected keypoints identically to training pipeline.
 
     Parameters
@@ -201,7 +202,14 @@ def preprocess_sequence(
     return kp, actual_length
 
 
-def predict_sign(model, kp_array, actual_length, device, actions, top_k=5):
+def predict_sign(
+    model: nn.Module,
+    kp_array: np.ndarray,
+    actual_length: int,
+    device: torch.device,
+    actions: np.ndarray,
+    top_k: int = 5,
+) -> tuple[list[tuple[str, float]], np.ndarray]:
     """Predict sign class from preprocessed keypoint sequence.
 
     Parameters

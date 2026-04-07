@@ -13,6 +13,8 @@ import argparse
 import json
 import os
 import time
+from pathlib import Path
+from typing import Any
 
 import torch
 from tqdm import tqdm
@@ -29,8 +31,7 @@ for _bit in range(1, 17):
         setattr(torch, f"int{_bit}", torch.int8)
 os.environ["UNSLOTH_ENABLE_PATCHES"] = "0"
 
-_SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-PROJECT_ROOT = os.path.abspath(os.path.join(_SCRIPT_DIR, "../.."))
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
 # Strategy mapping: model family → (EN strategy, TR strategy)
 _MODEL_STRATEGY_MAP = {
@@ -40,16 +41,24 @@ _MODEL_STRATEGY_MAP = {
 }
 
 
-def _run_inference(model, tokenizer, model_id, strategy_key, output_dir, valid_samples, chrf):
-    from gloss_to_text.prompts.strategies import PROMPT_STRATEGIES
-    from gloss_to_text.utils import get_chat_template, polish_turkish, turkish_lower
+def _run_inference(
+    model: Any,
+    tokenizer: Any,
+    model_id: str,
+    strategy_key: str,
+    output_dir: Path,
+    valid_samples: list[dict],
+    chrf: Any,
+) -> None:
+    from ..prompts.strategies import PROMPT_STRATEGIES
+    from ..utils import get_chat_template, polish_turkish, turkish_lower
 
     instruction = PROMPT_STRATEGIES[strategy_key]
-    res_path = os.path.join(output_dir, f"result_{strategy_key.lower()}.json")
+    res_path = output_dir / f"result_{strategy_key.lower()}.json"
 
     results: list[dict] = []
     processed_glosses: set[str] = set()
-    if os.path.exists(res_path):
+    if res_path.exists():
         try:
             with open(res_path, "r", encoding="utf-8") as f:
                 results = json.load(f)
@@ -109,8 +118,8 @@ def main() -> None:
     args = parser.parse_args()
 
     model_slug = args.model_id.split("/")[-1].lower().replace("-", "_")
-    output_dir = os.path.join(PROJECT_ROOT, "experiments", "baselines", model_slug)
-    os.makedirs(output_dir, exist_ok=True)
+    output_dir = PROJECT_ROOT / "experiments" / "baselines" / model_slug
+    output_dir.mkdir(parents=True, exist_ok=True)
 
     is_trendyol = "trendyol" in args.model_id.lower()
     if is_trendyol:
@@ -127,7 +136,7 @@ def main() -> None:
     model.eval()
 
     chrf = eval_lib.load("chrf")
-    valid_path = os.path.join(PROJECT_ROOT, "data", "processed", "valid.jsonl")
+    valid_path = PROJECT_ROOT / "data" / "processed" / "valid.jsonl"
     with open(valid_path, "r", encoding="utf-8") as f:
         valid_samples = [json.loads(line) for line in f]
 

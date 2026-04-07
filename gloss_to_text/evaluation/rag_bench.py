@@ -10,8 +10,8 @@ Usage:
 """
 
 import json
-import os
 import time
+from pathlib import Path
 
 import torch
 from peft import PeftModel
@@ -26,15 +26,14 @@ for _bit in range(1, 17):
     if not hasattr(torch, f"int{_bit}"):
         setattr(torch, f"int{_bit}", torch.int8)
 
-_SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-PROJECT_ROOT = os.path.abspath(os.path.join(_SCRIPT_DIR, "../.."))
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
 _MODEL_ID = "google/gemma-2-9b-it"
-_ADAPTER_PATH = os.path.join(
-    PROJECT_ROOT, "experiments", "benchmarks", "gemma_2_9b_it", "p3_en", "final_adapter"
+_ADAPTER_PATH = (
+    PROJECT_ROOT / "experiments" / "benchmarks" / "gemma_2_9b_it" / "p3_en" / "final_adapter"
 )
-_OUTPUT_DIR = os.path.join(
-    PROJECT_ROOT, "experiments", "benchmarks", "gemma_2_9b_it", "p3_en_rag"
+_OUTPUT_DIR = (
+    PROJECT_ROOT / "experiments" / "benchmarks" / "gemma_2_9b_it" / "p3_en_rag"
 )
 
 
@@ -49,10 +48,10 @@ def _build_rag_prompt(instruction: str, gloss: str, context: str) -> str:
 def main() -> None:
     import evaluate as eval_lib
 
-    from gloss_to_text.prompts.strategies import PROMPT_STRATEGIES
-    from gloss_to_text.utils import polish_turkish, turkish_lower
+    from ..prompts.strategies import PROMPT_STRATEGIES
+    from ..utils import polish_turkish, turkish_lower
 
-    os.makedirs(_OUTPUT_DIR, exist_ok=True)
+    _OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
     tokenizer = AutoTokenizer.from_pretrained(_MODEL_ID)
     bnb_config = BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_compute_dtype=torch.bfloat16)
@@ -64,7 +63,7 @@ def main() -> None:
     model.eval()
 
     embedder = SentenceTransformer("paraphrase-multilingual-MiniLM-L12-v2")
-    train_path = os.path.join(PROJECT_ROOT, "data", "processed", "train.jsonl")
+    train_path = PROJECT_ROOT / "data" / "processed" / "train.jsonl"
     with open(train_path, "r", encoding="utf-8") as f:
         train_data = [json.loads(line) for line in f]
 
@@ -74,7 +73,7 @@ def main() -> None:
     base_instruction = PROMPT_STRATEGIES["P3_EN"]
 
     chrf = eval_lib.load("chrf")
-    valid_path = os.path.join(PROJECT_ROOT, "data", "processed", "valid.jsonl")
+    valid_path = PROJECT_ROOT / "data" / "processed" / "valid.jsonl"
     with open(valid_path, "r", encoding="utf-8") as f:
         valid_samples = [json.loads(line) for line in f]
 
@@ -89,8 +88,8 @@ def main() -> None:
         hits = util.semantic_search(query_emb, train_embeddings, top_k=2)[0]
 
         context = "Reference Examples for Morphology:\n" + "".join(
-            f"- Gloss: {train_data[h['corpus_id']]['input']} "
-            f"-> Turkish: {train_data[h['corpus_id']]['output']}\n"
+            f"- Gloss: {train_data[int(h['corpus_id'])]['input']} "
+            f"-> Turkish: {train_data[int(h['corpus_id'])]['output']}\n"
             for h in hits
         )
 
@@ -114,7 +113,7 @@ def main() -> None:
 
         score = chrf.compute(
             predictions=[prediction],
-            references=[[sample["output"]]],
+            references=[[sample["output"] if isinstance(sample["output"], str) else sample["output"][0]]],
             word_order=2,
         )["score"]
 
@@ -127,7 +126,7 @@ def main() -> None:
             "rag_context": context,
         })
 
-    out_path = os.path.join(_OUTPUT_DIR, "result.json")
+    out_path = _OUTPUT_DIR / "result.json"
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(results, f, ensure_ascii=False, indent=4)
 
