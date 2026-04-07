@@ -14,6 +14,7 @@ import json
 import os
 import time
 from pathlib import Path
+from typing import Any
 
 import torch
 from tqdm import tqdm
@@ -40,7 +41,15 @@ _MODEL_STRATEGY_MAP = {
 }
 
 
-def _run_inference(model, tokenizer, model_id, strategy_key, output_dir: Path, valid_samples, chrf):
+def _run_inference(
+    model: Any,
+    tokenizer: Any,
+    model_id: str,
+    strategy_key: str,
+    output_dir: Path,
+    valid_samples: list[dict],
+    chrf: Any,
+) -> None:
     from gloss_to_text.prompts.strategies import PROMPT_STRATEGIES
     from gloss_to_text.utils import get_chat_template, polish_turkish, turkish_lower
 

@@ -40,6 +40,7 @@ In ``LazySignDataset.__getitem__``::
 from __future__ import annotations
 
 from dataclasses import dataclass
+from typing import Any
 
 import numpy as np
 
@@ -117,7 +118,7 @@ class AugmentConfig:
 # ---------------------------------------------------------------------------
 
 
-def _build_landmark_masks() -> dict:
+def _build_landmark_masks() -> dict[str, np.ndarray]:
     """Build per-axis and per-group index masks into the 507-dim vector."""
     pose_dim = POSE_LANDMARKS * 4  # 132
     face_dim = FACE_LANDMARKS * 3  # 249

@@ -27,6 +27,8 @@ from pathlib import Path
 import cv2
 import numpy as np
 import torch
+import torch.nn as nn
+from sklearn.preprocessing import StandardScaler
 
 from ..config import (
     DEVICE,
@@ -139,13 +141,13 @@ class SignRecorder:
 
 
 def preprocess_sequence(
-    frames,
-    scaler,
-    max_len,
-    normalize=True,
-    apply_interpolation=True,
-    sequence_handling="truncate",
-):
+    frames: list[np.ndarray],
+    scaler: StandardScaler | None,
+    max_len: int,
+    normalize: bool = True,
+    apply_interpolation: bool = True,
+    sequence_handling: str = "truncate",
+) -> tuple[np.ndarray, int]:
     """Preprocess collected keypoints identically to training pipeline.
 
     Parameters
@@ -200,7 +202,14 @@ def preprocess_sequence(
     return kp, actual_length
 
 
-def predict_sign(model, kp_array, actual_length, device, actions, top_k=5):
+def predict_sign(
+    model: nn.Module,
+    kp_array: np.ndarray,
+    actual_length: int,
+    device: torch.device,
+    actions: np.ndarray,
+    top_k: int = 5,
+) -> tuple[list[tuple[str, float]], np.ndarray]:
     """Predict sign class from preprocessed keypoint sequence.
 
     Parameters

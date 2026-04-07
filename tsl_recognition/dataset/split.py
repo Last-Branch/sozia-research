@@ -33,6 +33,7 @@ import datetime
 import json
 from collections import defaultdict
 from pathlib import Path
+from typing import Any
 
 import numpy as np
 from tqdm.auto import tqdm
@@ -305,7 +306,7 @@ def _write_manifests(
     return split_dir
 
 
-def load_split(split_dir: Path) -> dict:
+def load_split(split_dir: Path) -> dict[str, Any]:
     """Load persisted split manifests.
 
     Returns
@@ -355,7 +356,7 @@ def generate_split(
     cfg: TrainConfig,
     data_path: Path | None = None,
     split_dir: Path | None = None,
-) -> dict:
+) -> dict[str, Any]:
     """Generate and persist a train/val/test split.
 
     Parameters

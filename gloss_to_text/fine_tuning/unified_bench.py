@@ -28,6 +28,7 @@ import json
 import os
 import time
 from pathlib import Path
+from typing import Any
 
 import torch
 from datasets import load_dataset
@@ -51,8 +52,8 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
 
 def _train(
-    base_model,
-    tokenizer,
+    base_model: Any,
+    tokenizer: Any,
     model_id: str,
     strategy: str,
     output_dir: Path,
@@ -119,8 +120,8 @@ def _train(
 
 
 def _evaluate(
-    model,
-    tokenizer,
+    model: Any,
+    tokenizer: Any,
     model_id: str,
     strategy: str,
     result_path: Path,

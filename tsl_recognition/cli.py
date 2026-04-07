@@ -29,7 +29,7 @@ from .config import TrainConfig
 from .dataset.registry import DATASET_CHOICES
 
 
-def _make_config(args) -> TrainConfig:
+def _make_config(args: argparse.Namespace) -> TrainConfig:
     """Build a TrainConfig from parsed CLI arguments."""
     dataset = getattr(args, "dataset", "bosphorus") or "bosphorus"
     if getattr(args, "test", False):
@@ -39,7 +39,7 @@ def _make_config(args) -> TrainConfig:
     return cfg
 
 
-def cmd_split(args):
+def cmd_split(args: argparse.Namespace) -> None:
     """Execute the split generation command."""
     from .dataset.split import generate_split
     cfg = _make_config(args)
@@ -50,14 +50,14 @@ def cmd_split(args):
     generate_split(cfg)
 
 
-def cmd_extract(args):
+def cmd_extract(args: argparse.Namespace) -> None:
     """Execute the keypoint extraction command."""
     from .extraction import run_extraction
     cfg = _make_config(args)
     run_extraction(cfg, num_workers=args.num_workers)
 
 
-def cmd_train(args):
+def cmd_train(args: argparse.Namespace) -> None:
     """Execute the model training command."""
     from .evaluation.train import train
     cfg = _make_config(args)
@@ -72,7 +72,7 @@ def cmd_train(args):
     train(cfg)
 
 
-def cmd_infer(args):
+def cmd_infer(args: argparse.Namespace) -> None:
     """Execute the inference command."""
     from .evaluation.inference import InferenceMode, run_inference
     mode_map = {
@@ -92,7 +92,7 @@ def cmd_infer(args):
     )
 
 
-def cmd_evaluate(args):
+def cmd_evaluate(args: argparse.Namespace) -> None:
     """Re-evaluate a saved model on the test set (top-1 & top-5 accuracy)."""
     from .evaluation.evaluate import evaluate_all, evaluate_run
     dataset = getattr(args, "dataset", "bosphorus") or "bosphorus"
@@ -102,14 +102,14 @@ def cmd_evaluate(args):
         evaluate_run(run_dir=getattr(args, "run_dir", None), dataset=dataset)
 
 
-def cmd_validate(args):
+def cmd_validate(args: argparse.Namespace) -> None:
     """Execute the validation command."""
     from .evaluation.validate import run_validation
     dataset = getattr(args, "dataset", "bosphorus") or "bosphorus"
     run_validation(run_dir=getattr(args, "run_dir", None), n_samples=args.samples, dataset=dataset)
 
 
-def main():
+def main() -> None:
     """Main CLI entry point for the Sign Language Recognition pipeline."""
     parser = argparse.ArgumentParser(
         prog="tsl_recognition",

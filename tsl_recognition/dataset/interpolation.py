@@ -43,7 +43,7 @@ def _slice_part(seq: np.ndarray, start: int, length: int) -> np.ndarray:
     return seq[:, start : start + length].copy()
 
 
-def _is_missing(part: np.ndarray, tol: float = 1e-6) -> np.ndarray:
+def _is_missing(part: np.ndarray, tol: float = 1e-6) -> np.ndarray | np.bool_:
     """(T, ...) -> (T,) bool True where that part is missing (all near-zero)."""
     if part.ndim == 2:
         return np.all(np.abs(part) <= tol, axis=1)

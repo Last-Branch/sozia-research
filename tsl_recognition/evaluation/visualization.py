@@ -7,6 +7,11 @@ This module provides functions to visualize:
 from __future__ import annotations
 
 import time
+from typing import TYPE_CHECKING, Any
+
+if TYPE_CHECKING:
+    import numpy as np
+    from .inference import InferenceMode, SignRecorder
 
 import cv2
 import mediapipe as mp
@@ -28,7 +33,7 @@ if HAS_DRAW:
         pass
 
 
-def _pts(frame, lms, color, r=2):
+def _pts(frame: np.ndarray, lms: list[Any], color: tuple[int, int, int], r: int = 2) -> None:
     """Draw simple circles for landmarks (fallback when MediaPipe drawing not available).
 
     Parameters
@@ -47,7 +52,7 @@ def _pts(frame, lms, color, r=2):
         cv2.circle(frame, (int(lm.x * w), int(lm.y * h)), r, color, -1)
 
 
-def draw_hand_landmarks(f, hr):
+def draw_hand_landmarks(f: np.ndarray, hr: Any) -> np.ndarray:
     """Draw hand landmarks with connections and handedness labels.
 
     Parameters
@@ -80,7 +85,7 @@ def draw_hand_landmarks(f, hr):
     return cv2.cvtColor(rgb, cv2.COLOR_RGB2BGR)
 
 
-def draw_face_landmarks(f, fr):
+def draw_face_landmarks(f: np.ndarray, fr: Any) -> np.ndarray:
     """Draw face mesh landmarks with tessellation and contours.
 
     Parameters
@@ -112,7 +117,7 @@ def draw_face_landmarks(f, fr):
     return cv2.cvtColor(rgb, cv2.COLOR_RGB2BGR)
 
 
-def draw_pose_landmarks(f, pr):
+def draw_pose_landmarks(f: np.ndarray, pr: Any) -> np.ndarray:
     """Draw pose (body) landmarks with skeletal connections.
 
     Parameters
@@ -137,7 +142,7 @@ def draw_pose_landmarks(f, pr):
     return cv2.cvtColor(rgb, cv2.COLOR_RGB2BGR)
 
 
-def draw_results(frame, face_r, hand_r, pose_r):
+def draw_results(frame: np.ndarray, face_r: Any, hand_r: Any, pose_r: Any) -> np.ndarray:
     """Draw all detected landmarks on a BGR frame.
 
     Parameters
@@ -166,7 +171,13 @@ def draw_results(frame, face_r, hand_r, pose_r):
     return frame
 
 
-def draw_status_bar(frame, recorder, mode, predictions=None, debug_info=None):
+def draw_status_bar(
+    frame: np.ndarray,
+    recorder: SignRecorder,
+    mode: InferenceMode,
+    predictions: list[tuple[str, float]] | None = None,
+    debug_info: dict[str, Any] | None = None,
+) -> np.ndarray:
     """Draw the HUD status bar at the top of the frame.
 
     Parameters
