@@ -27,7 +27,7 @@ for _bit in range(1, 17):
         setattr(torch, f"int{_bit}", torch.int8)
 
 _SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-PROJECT_ROOT = os.path.abspath(os.path.join(_SCRIPT_DIR, "../../.."))
+PROJECT_ROOT = os.path.abspath(os.path.join(_SCRIPT_DIR, "../.."))
 
 _MODEL_ID = "google/gemma-2-9b-it"
 _ADAPTER_PATH = os.path.join(

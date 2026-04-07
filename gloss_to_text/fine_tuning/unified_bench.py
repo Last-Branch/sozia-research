@@ -47,7 +47,7 @@ for _bit in range(1, 17):
 os.environ["UNSLOTH_ENABLE_PATCHES"] = "0"
 
 _SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-PROJECT_ROOT = os.path.abspath(os.path.join(_SCRIPT_DIR, "../../.."))
+PROJECT_ROOT = os.path.abspath(os.path.join(_SCRIPT_DIR, "../.."))
 
 
 def _train(
