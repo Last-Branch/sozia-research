@@ -35,6 +35,10 @@ translation = [
 dev = [
     "jupyter>=1.0",
     "ipykernel",
+    "pytest>=8.0",
+    "pytest-cov>=5.0",
+    "ruff>=0.4",
+    "mypy>=1.10",
 ]
 
 [project.scripts]
@@ -43,3 +47,9 @@ tsl-recognition = "tsl_recognition.cli:main"
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["tsl_recognition*", "gloss_to_text*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"
