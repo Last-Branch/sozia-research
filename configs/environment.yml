@@ -1,0 +1,33 @@
+name: sozia-research
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - ipykernel
+  - jupyterlab
+  - matplotlib
+  - numpy
+  - opencv
+  - scikit-learn
+  - tqdm
+  - pip
+  - pip:
+      # Core
+      - torch
+      - torchvision
+      - torchaudio
+      # Recognition pipeline
+      - mediapipe>=0.10
+      - seaborn>=0.12
+      # Translation pipeline
+      - transformers>=4.40
+      - peft>=0.10
+      - trl>=0.8
+      - datasets>=2.18
+      - evaluate>=0.4
+      - bitsandbytes>=0.43
+      - accelerate>=0.24
+      - sentence-transformers>=2.6
+      - google-generativeai>=0.5
