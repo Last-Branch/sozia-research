@@ -48,8 +48,8 @@ def _build_rag_prompt(instruction: str, gloss: str, context: str) -> str:
 def main() -> None:
     import evaluate as eval_lib
 
-    from gloss_to_text.prompts.strategies import PROMPT_STRATEGIES
-    from gloss_to_text.utils import polish_turkish, turkish_lower
+    from ..prompts.strategies import PROMPT_STRATEGIES
+    from ..utils import polish_turkish, turkish_lower
 
     _OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 

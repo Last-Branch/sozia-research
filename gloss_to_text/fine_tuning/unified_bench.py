@@ -61,8 +61,8 @@ def _train(
     use_optim: bool,
     use_grad_checkpointing: bool,
 ) -> PeftModel:
-    from gloss_to_text.prompts.strategies import PROMPT_STRATEGIES
-    from gloss_to_text.utils import get_chat_template, turkish_lower
+    from ..prompts.strategies import PROMPT_STRATEGIES
+    from ..utils import get_chat_template, turkish_lower
 
     instruction = PROMPT_STRATEGIES[strategy]
 
@@ -129,8 +129,8 @@ def _evaluate(
 ) -> None:
     import evaluate as eval_lib
 
-    from gloss_to_text.prompts.strategies import PROMPT_STRATEGIES
-    from gloss_to_text.utils import get_chat_template, polish_turkish, turkish_lower
+    from ..prompts.strategies import PROMPT_STRATEGIES
+    from ..utils import get_chat_template, polish_turkish, turkish_lower
 
     instruction = PROMPT_STRATEGIES[strategy]
     chrf = eval_lib.load("chrf")
