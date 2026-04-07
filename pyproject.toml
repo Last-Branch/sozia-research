@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "sozia-research"
+version = "0.1.0"
+description = "TSL recognition and gloss-to-text translation research pipelines"
+requires-python = ">=3.11"
+dependencies = [
+    # --- Core ---
+    "torch>=2.0",
+    "numpy>=1.24",
+    "tqdm>=4.65",
+
+    # --- Recognition pipeline ---
+    "mediapipe>=0.10",
+    "opencv-python>=4.8",
+    "scikit-learn>=1.3",
+    "matplotlib>=3.7",
+    "seaborn>=0.12",
+
+    # --- Translation pipeline ---
+    "transformers>=4.40",
+    "peft>=0.10",
+    "trl>=0.8",
+    "datasets>=2.18",
+    "evaluate>=0.4",
+    "bitsandbytes>=0.43",
+    "accelerate>=0.24",
+    "sentence-transformers>=2.6",
+    "google-generativeai>=0.5",
+]
+
+[project.optional-dependencies]
+dev = [
+    "jupyter>=1.0",
+    "ipykernel",
+]
+
+[project.scripts]
+tsl-recognition = "tsl_recognition.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["tsl_recognition*", "gloss_to_text*"]
