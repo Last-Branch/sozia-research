@@ -1,0 +1,19 @@
+# Example training config for the TSL recognition pipeline.
+# Override any value from tsl_recognition/config.py here.
+# Usage: python -m tsl_recognition train --config configs/recognition_train.yml
+
+dataset: autsl          # autsl | bosphorus
+split_mode: signer      # signer | random
+
+train:
+  epochs: 300
+  batch_size: 64
+  learning_rate: 5.0e-4
+  lr_scheduler: onecycle
+  grad_clip_norm: 1.0
+  label_smoothing: 0.1
+  dropout: 0.4
+  sequence_handling: truncate
+  max_sequence_length: 150
+  early_stopping_patience: 35
+  min_epochs: 250

@@ -1,0 +1,24 @@
+# Example benchmark config for the gloss-to-text translation pipeline.
+# Values here document the settings used in the SoziaSign (MLMI 2026) experiments.
+
+model_id: google/gemma-2-9b-it
+strategy: P3_EN            # P1_EN | P2_EN | P3_EN | P1_TR | P2_TR | P3_TR
+use_autocast: false        # set true for TR-prompt runs (dtype compat)
+
+lora:
+  r: 16
+  lora_alpha: 32
+  target_modules: all-linear
+
+training:
+  batch_size: 8
+  gradient_accumulation_steps: 2
+  learning_rate: 1.0e-4
+  epochs: 5
+  early_stopping_patience: 3
+  max_seq_length: 1024
+
+inference:
+  max_new_tokens: 128
+  num_beams: 5
+  repetition_penalty: 1.15
