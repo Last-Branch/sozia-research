@@ -42,6 +42,9 @@ sozia-research/
 │   ├── prompts/                # Prompt strategies (P1–P3 × EN/TR)
 │   ├── fine_tuning/            # LoRA fine-tuning
 │   └── evaluation/             # Baseline, RAG, and Gemini judge
+├── tests/                      # Smoke tests (no data required)
+│   ├── test_recognition_smoke.py
+│   └── test_translation_smoke.py
 ├── scripts/                    # Data preparation utilities
 │   └── prepare_data.py
 └── notebooks/                  # Exploratory notebooks
@@ -85,6 +88,19 @@ python -m gloss_to_text.fine_tuning.unified_bench \
 
 # Score predictions with Gemini judge
 python -m gloss_to_text.evaluation.gemini_judge
+```
+
+## Development
+
+```bash
+# Install dev dependencies (pytest, ruff, mypy, etc.)
+pip install -e ".[dev]"
+
+# Run smoke tests (no data or GPU required)
+pytest
+
+# Run with coverage
+pytest --cov=tsl_recognition --cov=gloss_to_text --cov-report=term-missing
 ```
 
 ## Environment variables
