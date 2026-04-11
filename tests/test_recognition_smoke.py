@@ -171,6 +171,68 @@ def test_get_dataset_info_bosphorus_returns_instance(tmp_path: Path) -> None:
     assert info.name == "bosphorus"
 
 
+def _write_bosphorus_classes_csv(base_dir: Path) -> Path:
+    """Write a minimal BosphorusSign22k_classes.csv for testing."""
+    import csv as _csv
+    csv_path = base_dir / "data" / "BosphorusSign22k" / "BosphorusSign22k_classes.csv"
+    csv_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(csv_path, "w", newline="", encoding="utf-8") as f:
+        writer = _csv.DictWriter(f, fieldnames=["SubsetID", "ClassID", "ClassName_tr", "ClassName_eng"])
+        writer.writeheader()
+        writer.writerow({"SubsetID": "Health", "ClassID": "0001", "ClassName_tr": "Aci", "ClassName_eng": "Pain"})
+        writer.writerow({"SubsetID": "Finance", "ClassID": "0002", "ClassName_tr": "Acik", "ClassName_eng": "Open"})
+        writer.writerow({"SubsetID": "General", "ClassID": "0003", "ClassName_tr": "Bal", "ClassName_eng": "Honey"})
+    return csv_path
+
+
+def test_bosphorus_class_names_returns_turkish_names(tmp_path: Path) -> None:
+    """class_names() must return Turkish names from the classes CSV, sorted by ClassID."""
+    from tsl_recognition.dataset.registry import get_dataset_info
+
+    _write_bosphorus_classes_csv(tmp_path)
+    info = get_dataset_info("bosphorus", tmp_path)
+
+    names = info.class_names()
+    assert names == ["Aci", "Acik", "Bal"]
+
+
+def test_bosphorus_iter_raw_videos_yields_turkish_names(tmp_path: Path) -> None:
+    """iter_raw_videos() must yield Turkish class names, not numeric ClassIDs."""
+    _write_bosphorus_classes_csv(tmp_path)
+
+    raw_dir = tmp_path / "data" / "BosphorusSign22k" / "raw"
+    class_dir = raw_dir / "0001"
+    class_dir.mkdir(parents=True)
+    (class_dir / "User_2_001.mp4").touch()
+
+    from tsl_recognition.dataset.registry import get_dataset_info
+    info = get_dataset_info("bosphorus", tmp_path)
+
+    results = list(info.iter_raw_videos())
+    assert len(results) == 1
+    sample_id, class_name, video_path = results[0]
+    assert class_name == "Aci"
+    assert sample_id == "User_2_001"
+
+
+def test_bosphorus_iter_raw_videos_filters_by_class(tmp_path: Path) -> None:
+    """iter_raw_videos(classes=['Acik']) must skip classes not in the filter."""
+    _write_bosphorus_classes_csv(tmp_path)
+
+    raw_dir = tmp_path / "data" / "BosphorusSign22k" / "raw"
+    for class_id, name in [("0001", "Aci"), ("0002", "Acik")]:
+        d = raw_dir / class_id
+        d.mkdir(parents=True)
+        (d / f"User_2_001.mp4").touch()
+
+    from tsl_recognition.dataset.registry import get_dataset_info
+    info = get_dataset_info("bosphorus", tmp_path)
+
+    results = list(info.iter_raw_videos(classes=["Acik"]))
+    assert len(results) == 1
+    assert results[0][1] == "Acik"
+
+
 def test_get_dataset_info_autsl_returns_instance(tmp_path: Path) -> None:
     """get_dataset_info('autsl', ...) must return a DatasetInfo without data on disk."""
     from tsl_recognition.dataset.base import DatasetInfo

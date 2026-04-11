@@ -12,6 +12,7 @@ signer ID (``User_2`` through ``User_7``).
 
 from __future__ import annotations
 
+import csv
 import re
 from collections.abc import Iterator
 from pathlib import Path
@@ -23,12 +24,15 @@ _SIGNER_RE = re.compile(r"^(User_\d+)_")
 
 VIDEO_EXTENSIONS = {".mp4", ".avi", ".mov", ".mkv"}
 
+_CLASS_CSV = "BosphorusSign22k_classes.csv"
+
 
 class BosphorusSign22kInfo(DatasetInfo):
     """Dataset info for the BosphorusSign22k corpus."""
 
     def __init__(self, base_dir: Path) -> None:
         self._base = base_dir / "data" / "BosphorusSign22k"
+        self._class_map: dict[str, str] | None = None  # ClassID → ClassName_tr
 
     # -- identity ----------------------------------------------------------
     @property
@@ -52,14 +56,24 @@ class BosphorusSign22kInfo(DatasetInfo):
     def split_dir(self) -> Path:
         return self._base / "split"
 
+    # -- CSV helpers -------------------------------------------------------
+    def _load_class_map(self) -> dict[str, str]:
+        """Load ClassID → ClassName_tr from BosphorusSign22k_classes.csv."""
+        if self._class_map is not None:
+            return self._class_map
+        csv_path = self._base / _CLASS_CSV
+        self._class_map = {}
+        with open(csv_path, newline="", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                self._class_map[row["ClassID"]] = row["ClassName_tr"]
+        return self._class_map
+
     # -- classes -----------------------------------------------------------
     def class_names(self) -> list[str]:
-        for d in (self.raw_dir, self.processed_dir):
-            if d.exists():
-                names = sorted(p.name for p in d.iterdir() if p.is_dir())
-                if names:
-                    return names
-        return []
+        """Return Turkish class names sorted by ClassID."""
+        class_map = self._load_class_map()
+        return [class_map[cid] for cid in sorted(class_map.keys())]
 
     # -- splitting ---------------------------------------------------------
     @property
@@ -79,9 +93,18 @@ class BosphorusSign22kInfo(DatasetInfo):
 
     # -- extraction --------------------------------------------------------
     def iter_raw_videos(self, classes: list[str] | None = None) -> Iterator[tuple[str, str, Path]]:
-        target_classes = classes if classes is not None else self.class_names()
-        for class_name in sorted(target_classes):
-            class_dir = self.raw_dir / class_name
+        """Yield (sample_id, ClassName_tr, video_path) for all raw videos.
+
+        Raw directories use numeric ClassIDs (``0001/``, ``0002/``, …);
+        this method maps them to Turkish class names via the classes CSV.
+        """
+        class_map = self._load_class_map()  # ClassID → ClassName_tr
+        allowed = set(classes) if classes is not None else None
+
+        for class_id, class_name in sorted(class_map.items()):
+            if allowed is not None and class_name not in allowed:
+                continue
+            class_dir = self.raw_dir / class_id
             if not class_dir.exists():
                 continue
             for video_path in sorted(class_dir.iterdir()):
