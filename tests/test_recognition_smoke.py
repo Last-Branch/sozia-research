@@ -19,6 +19,7 @@ import torch
 # 1. Import smoke
 # ---------------------------------------------------------------------------
 
+
 def test_tsl_recognition_imports() -> None:
     """tsl_recognition package-level import must succeed."""
     import tsl_recognition  # noqa: F401
@@ -34,6 +35,7 @@ def test_tsl_recognition_submodules_import() -> None:
 # ---------------------------------------------------------------------------
 # 2. TrainConfig defaults
 # ---------------------------------------------------------------------------
+
 
 def test_train_config_default_construction() -> None:
     """TrainConfig() with no arguments must use documented defaults."""
@@ -92,6 +94,7 @@ def test_train_config_feature_dim_constant() -> None:
 # ---------------------------------------------------------------------------
 # 3. Model registry + GRU forward pass
 # ---------------------------------------------------------------------------
+
 
 def test_model_registry_contains_gru() -> None:
     """MODEL_REGISTRY must expose a 'gru' key."""
@@ -152,6 +155,7 @@ def test_gru_forward_pass_is_finite() -> None:
 # 4. Dataset registry
 # ---------------------------------------------------------------------------
 
+
 def test_dataset_registry_contains_known_datasets() -> None:
     """DATASET_REGISTRY must include 'bosphorus' and 'autsl'."""
     from tsl_recognition.dataset.registry import DATASET_REGISTRY
@@ -174,14 +178,38 @@ def test_get_dataset_info_bosphorus_returns_instance(tmp_path: Path) -> None:
 def _write_bosphorus_classes_csv(base_dir: Path) -> Path:
     """Write a minimal BosphorusSign22k_classes.csv for testing."""
     import csv as _csv
+
     csv_path = base_dir / "data" / "BosphorusSign22k" / "BosphorusSign22k_classes.csv"
     csv_path.parent.mkdir(parents=True, exist_ok=True)
     with open(csv_path, "w", newline="", encoding="utf-8") as f:
-        writer = _csv.DictWriter(f, fieldnames=["SubsetID", "ClassID", "ClassName_tr", "ClassName_eng"])
+        writer = _csv.DictWriter(
+            f, fieldnames=["SubsetID", "ClassID", "ClassName_tr", "ClassName_eng"]
+        )
         writer.writeheader()
-        writer.writerow({"SubsetID": "Health", "ClassID": "0001", "ClassName_tr": "Aci", "ClassName_eng": "Pain"})
-        writer.writerow({"SubsetID": "Finance", "ClassID": "0002", "ClassName_tr": "Acik", "ClassName_eng": "Open"})
-        writer.writerow({"SubsetID": "General", "ClassID": "0003", "ClassName_tr": "Bal", "ClassName_eng": "Honey"})
+        writer.writerow(
+            {
+                "SubsetID": "Health",
+                "ClassID": "0001",
+                "ClassName_tr": "Aci",
+                "ClassName_eng": "Pain",
+            }
+        )
+        writer.writerow(
+            {
+                "SubsetID": "Finance",
+                "ClassID": "0002",
+                "ClassName_tr": "Acik",
+                "ClassName_eng": "Open",
+            }
+        )
+        writer.writerow(
+            {
+                "SubsetID": "General",
+                "ClassID": "0003",
+                "ClassName_tr": "Bal",
+                "ClassName_eng": "Honey",
+            }
+        )
     return csv_path
 
 
@@ -206,6 +234,7 @@ def test_bosphorus_iter_raw_videos_yields_turkish_names(tmp_path: Path) -> None:
     (class_dir / "User_2_001.mp4").touch()
 
     from tsl_recognition.dataset.registry import get_dataset_info
+
     info = get_dataset_info("bosphorus", tmp_path)
 
     results = list(info.iter_raw_videos())
@@ -223,9 +252,10 @@ def test_bosphorus_iter_raw_videos_filters_by_class(tmp_path: Path) -> None:
     for class_id, name in [("0001", "Aci"), ("0002", "Acik")]:
         d = raw_dir / class_id
         d.mkdir(parents=True)
-        (d / f"User_2_001.mp4").touch()
+        (d / "User_2_001.mp4").touch()
 
     from tsl_recognition.dataset.registry import get_dataset_info
+
     info = get_dataset_info("bosphorus", tmp_path)
 
     results = list(info.iter_raw_videos(classes=["Acik"]))
@@ -255,6 +285,7 @@ def test_get_dataset_info_unknown_raises(tmp_path: Path) -> None:
 # ---------------------------------------------------------------------------
 # 5. CLI --help exits 0
 # ---------------------------------------------------------------------------
+
 
 def test_cli_help_exits_zero() -> None:
     """``python -m tsl_recognition --help`` must exit with code 0."""

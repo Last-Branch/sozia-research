@@ -92,7 +92,9 @@ class BosphorusSign22kInfo(DatasetInfo):
         return m.group(1) if m else None
 
     # -- extraction --------------------------------------------------------
-    def iter_raw_videos(self, classes: list[str] | None = None) -> Iterator[tuple[str, str, Path]]:
+    def iter_raw_videos(
+        self, classes: list[str] | None = None
+    ) -> Iterator[tuple[str, str, Path]]:
         """Yield (sample_id, ClassName_tr, video_path) for all raw videos.
 
         Raw directories use numeric ClassIDs (``0001/``, ``0002/``, …);
@@ -108,5 +110,8 @@ class BosphorusSign22kInfo(DatasetInfo):
             if not class_dir.exists():
                 continue
             for video_path in sorted(class_dir.iterdir()):
-                if video_path.is_file() and video_path.suffix.lower() in VIDEO_EXTENSIONS:
+                if (
+                    video_path.is_file()
+                    and video_path.suffix.lower() in VIDEO_EXTENSIONS
+                ):
                     yield video_path.stem, class_name, video_path
