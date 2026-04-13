@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [main, dev, "feat/**"]
+    branches: [main, dev]
   pull_request:
     branches: [main, dev]
 
@@ -10,9 +10,13 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+permissions:
+  contents: read
+
 jobs:
   test:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     steps:
       - uses: actions/checkout@v4
