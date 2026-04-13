@@ -50,6 +50,46 @@ sozia-research/
 └── notebooks/                  # Exploratory notebooks
 ```
 
+## Data setup
+
+### BosphorusSign22k
+
+```
+data/BosphorusSign22k/
+├── BosphorusSign22k_classes.csv   # ClassID → Turkish/English name mapping
+├── BosphorusSign22k.csv           # full sample manifest
+└── raw/
+    ├── 0001/                      # one folder per ClassID
+    │   ├── User_2_001.mp4
+    │   ├── User_2_002.mp4
+    │   └── ...
+    ├── 0002/
+    └── ...
+```
+
+Classes come from the CSV (`ClassName_tr`); folder names are numeric IDs.
+The signer-based split (User\_3–6 train, User\_2 val, User\_7 test) is computed at runtime.
+
+### AUTSL
+
+```
+data/AUTSL/
+├── SignList_ClassId_TR_EN.csv     # ClassID → Turkish/English name mapping
+├── train_labels.csv
+├── validation_labels.csv
+├── test_labels.csv
+├── train/                         # raw videos — split-first layout (as distributed)
+│   └── signer1_sample1_color.mp4
+├── val/
+└── test/
+```
+
+AUTSL ships with a predefined signer-disjoint split. Class identity comes from
+the label CSVs, not directory names. Use `--split-mode predefined` (the default for AUTSL).
+
+Both datasets produce the same unified output after extraction:
+`data/{Dataset}/processed/{ClassName_tr}/{sample}.npy`
+
 ## Usage
 
 ### TSL Recognition
