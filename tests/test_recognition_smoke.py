@@ -11,6 +11,8 @@ import subprocess
 import sys
 from pathlib import Path
 
+import csv
+
 import pytest
 import torch
 
@@ -177,12 +179,10 @@ def test_get_dataset_info_bosphorus_returns_instance(tmp_path: Path) -> None:
 
 def _write_bosphorus_classes_csv(base_dir: Path) -> Path:
     """Write a minimal BosphorusSign22k_classes.csv for testing."""
-    import csv as _csv
-
     csv_path = base_dir / "data" / "BosphorusSign22k" / "BosphorusSign22k_classes.csv"
     csv_path.parent.mkdir(parents=True, exist_ok=True)
     with open(csv_path, "w", newline="", encoding="utf-8") as f:
-        writer = _csv.DictWriter(
+        writer = csv.DictWriter(
             f, fieldnames=["SubsetID", "ClassID", "ClassName_tr", "ClassName_eng"]
         )
         writer.writeheader()

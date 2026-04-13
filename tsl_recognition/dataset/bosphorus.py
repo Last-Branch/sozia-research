@@ -3,11 +3,13 @@ BosphorusSign22k dataset configuration.
 
 Raw layout::
 
-    data/BosphorusSign22k/raw/{class_name}/{User_X_NNN}.mp4
-    data/BosphorusSign22k/processed/{class_name}/{User_X_NNN}.npy
+    data/BosphorusSign22k/raw/{ClassID}/{User_X_NNN}.mp4
+    data/BosphorusSign22k/processed/{ClassName_tr}/{User_X_NNN}.npy
 
-Classes are derived from subdirectory names. Splits are computed by
-signer ID (``User_2`` through ``User_7``).
+Raw directories use numeric ClassIDs (e.g., ``0001/``).  Turkish class
+names are resolved from ``BosphorusSign22k_classes.csv`` (ClassID →
+ClassName_tr).  Splits are computed by signer ID (``User_2`` through
+``User_7``).
 """
 
 from __future__ import annotations
@@ -62,11 +64,22 @@ class BosphorusSign22kInfo(DatasetInfo):
         if self._class_map is not None:
             return self._class_map
         csv_path = self._base / _CLASS_CSV
+        if not csv_path.exists():
+            raise FileNotFoundError(
+                f"{_CLASS_CSV} not found at {csv_path}. "
+                f"See the 'Data setup' section of the README."
+            )
         self._class_map = {}
         with open(csv_path, newline="", encoding="utf-8") as f:
             reader = csv.DictReader(f)
             for row in reader:
-                self._class_map[row["ClassID"]] = row["ClassName_tr"]
+                name = row["ClassName_tr"]
+                if name in self._class_map.values():
+                    raise ValueError(
+                        f"Duplicate ClassName_tr {name!r} in {csv_path} "
+                        f"(ClassIDs collide on the same processed/ directory)"
+                    )
+                self._class_map[row["ClassID"]] = name
         return self._class_map
 
     # -- classes -----------------------------------------------------------

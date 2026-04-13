@@ -82,11 +82,22 @@ class AUTSLInfo(DatasetInfo):
         if self._class_map is not None:
             return self._class_map
         csv_path = self._base / "SignList_ClassId_TR_EN.csv"
+        if not csv_path.exists():
+            raise FileNotFoundError(
+                f"SignList_ClassId_TR_EN.csv not found at {csv_path}. "
+                f"See the 'Data setup' section of the README."
+            )
         self._class_map = {}
-        with open(csv_path, newline="") as f:
+        with open(csv_path, newline="", encoding="utf-8") as f:
             reader = csv.DictReader(f)
             for row in reader:
-                self._class_map[int(row["ClassId"])] = row["TR"]
+                name = row["TR"]
+                if name in self._class_map.values():
+                    raise ValueError(
+                        f"Duplicate TR name {name!r} in {csv_path} "
+                        f"(ClassIds collide on the same processed/ directory)"
+                    )
+                self._class_map[int(row["ClassId"])] = name
         return self._class_map
 
     def _load_split_labels(self, split: str) -> dict[str, int]:
@@ -95,7 +106,7 @@ class AUTSLInfo(DatasetInfo):
             return self._label_cache[split]
         csv_path = self._base / _LABEL_CSV[split]
         labels: dict[str, int] = {}
-        with open(csv_path, newline="") as f:
+        with open(csv_path, newline="", encoding="utf-8") as f:
             for line in f:
                 line = line.strip()
                 if not line:
@@ -131,19 +142,23 @@ class AUTSLInfo(DatasetInfo):
             for sample_name, class_id in labels.items():
                 class_name = class_map[class_id]
                 signer = self.extract_signer(sample_name)
-                entries.append({
-                    "sample_id": sample_name,
-                    "class_name": class_name,
-                    "class_id": class_id,
-                    "signer": signer or "unknown",
-                    "split_origin": split,
-                })
+                entries.append(
+                    {
+                        "sample_id": sample_name,
+                        "class_name": class_name,
+                        "class_id": class_id,
+                        "signer": signer or "unknown",
+                        "split_origin": split,
+                    }
+                )
             splits[split] = entries
 
         return splits
 
     # -- extraction --------------------------------------------------------
-    def iter_raw_videos(self, classes: list[str] | None = None) -> Iterator[tuple[str, str, Path]]:
+    def iter_raw_videos(
+        self, classes: list[str] | None = None
+    ) -> Iterator[tuple[str, str, Path]]:
         class_map = self._load_class_map()
         allowed_classes = set(classes) if classes is not None else None
 
