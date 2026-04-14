@@ -37,6 +37,7 @@ from ..config import (
     MODELS_DIR,
     MP_MODEL_DIR,
     POSE_LANDMARKS,
+    SCALERS_DIR,
     TrainConfig,
 )
 from ..dataset.interpolation import EXPECTED_DIM, interpolate_missing_keypoints
@@ -304,8 +305,8 @@ def _load_run(run_dir: Path) -> dict:
 
     scaler = None
     if normalize:
-        processed_dir = TrainConfig(dataset=dataset_name).dataset_info.processed_dir
-        scaler_path = processed_dir / f"scaler_{split_mode}.pkl"
+        dataset_folder = TrainConfig(dataset=dataset_name).dataset_info.processed_dir.parent.name
+        scaler_path = SCALERS_DIR / dataset_folder / f"scaler_{split_mode}.pkl"
         if scaler_path.exists():
             with open(scaler_path, "rb") as f:
                 scaler = pickle.load(f)

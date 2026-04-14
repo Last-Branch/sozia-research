@@ -9,7 +9,7 @@ directory.
 Usage::
 
     python -m tsl_recognition evaluate                                # latest run
-    python -m tsl_recognition evaluate --run-dir trained-models/run_* # specific run
+    python -m tsl_recognition evaluate --run-dir models/recognition/AUTSL_run_* # specific run
     python -m tsl_recognition evaluate --all                          # all runs
 """
 

@@ -30,7 +30,7 @@ from .augmentation import (
     augment_spatial,
     augment_temporal,
 )
-from ..config import DEVICE, TrainConfig
+from ..config import DEVICE, SCALERS_DIR, TrainConfig
 
 
 # ---------------------------------------------------------------------------
@@ -231,7 +231,6 @@ def get_or_compute_scaler(
     train_files: list[tuple[str, int, int]],
     expected_dim: int,
     cfg: TrainConfig,
-    data_path: Path | None = None,
 ) -> StandardScaler | None:
     """Load or incrementally compute a ``StandardScaler`` for normalisation.
 
@@ -239,13 +238,18 @@ def get_or_compute_scaler(
     leakage. A separate file is saved per split mode (``scaler_signer.pkl``
     / ``scaler_random.pkl``) so experiments with different splits don't
     overwrite each other.
+
+    Scalers are stored under ``scalers/<dataset>/`` at the project root,
+    not inside the processed data directory.
     """
     if not cfg.normalize_features:
         print("Feature normalization: OFF")
         return None
 
-    data_path = data_path or cfg.dataset_info.processed_dir
-    scaler_path = data_path / f"scaler_{cfg.split_mode}.pkl"
+    dataset_folder = cfg.dataset_info.processed_dir.parent.name
+    scaler_dir = SCALERS_DIR / dataset_folder
+    scaler_dir.mkdir(parents=True, exist_ok=True)
+    scaler_path = scaler_dir / f"scaler_{cfg.split_mode}.pkl"
 
     if scaler_path.exists():
         print(f"\nLoading pre-computed scaler from {scaler_path}...")
@@ -345,7 +349,7 @@ def build_loaders(
     print(f"\nLoaded {split_mode} split: "
           f"{len(train_files)} train / {len(val_files)} val / {len(test_files)} test")
 
-    scaler = get_or_compute_scaler(train_files, feature_dim, cfg, data_path)
+    scaler = get_or_compute_scaler(train_files, feature_dim, cfg)
 
     train_labels = [f[1] for f in train_files]
     class_counts = Counter(train_labels)
