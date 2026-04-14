@@ -29,10 +29,6 @@ pip install -e ".[recognition,translation]"
 
 ```
 sozia-research/
-├── configs/                    # Config templates and conda environment
-│   ├── environment.yml
-│   ├── recognition_train.yml
-│   └── translation_bench.yml
 ├── tsl_recognition/            # TSL recognition pipeline
 │   ├── models/                 # GRU model
 │   ├── dataset/                # Dataset loading, augmentation, splitting
@@ -42,6 +38,18 @@ sozia-research/
 │   ├── prompts/                # Prompt strategies (P1–P3 × EN/TR)
 │   ├── fine_tuning/            # LoRA fine-tuning
 │   └── evaluation/             # Baseline, RAG, and Gemini judge
+├── lip_reading/                # Lip-reading pipeline (placeholder)
+├── models/                     # Trained model artifacts, organized by task
+│   ├── recognition/            # GRU recognition runs (AUTSL_run_*, BosphorusSign22k_run_*)
+│   ├── gloss_to_text/          # Fine-tuned translation models
+│   └── lip_reading/            # Lip-reading models
+├── scalers/                    # Fitted StandardScalers, one per dataset
+│   ├── AUTSL/
+│   └── BosphorusSign22k/
+├── configs/                    # Config templates and conda environment
+│   ├── environment.yml
+│   ├── recognition_train.yml
+│   └── translation_bench.yml
 ├── tests/                      # Smoke tests (no data required)
 │   ├── test_recognition_smoke.py
 │   └── test_translation_smoke.py
