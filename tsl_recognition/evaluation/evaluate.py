@@ -95,7 +95,9 @@ def evaluate_run(
     ds_info = TrainConfig(dataset=dataset).dataset_info
     test_files = _load_test_files(ds_info.split_dir, actions)
     if not test_files:
-        raise RuntimeError("No test files found in split manifest matching run classes.")
+        raise RuntimeError(
+            "No test files found in split manifest matching run classes."
+        )
 
     test_ds = LazySignDataset(
         file_info_list=test_files,
@@ -114,7 +116,7 @@ def evaluate_run(
     )
 
     print(f"\nEvaluating on {len(test_files)} test samples...")
-    print(f"{'='*60}")
+    print(f"{'=' * 60}")
 
     all_logits_list, all_true = [], []
     with torch.no_grad():
@@ -167,9 +169,9 @@ def evaluate_all(dataset: str = "bosphorus") -> list[dict]:
 
     results = []
     for rd in runs:
-        print(f"\n{'='*60}")
+        print(f"\n{'=' * 60}")
         print(f"RE-EVALUATING: {rd.name}")
-        print(f"{'='*60}")
+        print(f"{'=' * 60}")
         try:
             result = evaluate_run(rd, dataset=dataset)
             results.append(result)
@@ -178,11 +180,11 @@ def evaluate_all(dataset: str = "bosphorus") -> list[dict]:
             continue
 
     if results:
-        print(f"\n\n{'='*80}")
+        print(f"\n\n{'=' * 80}")
         print("RE-EVALUATION SUMMARY")
-        print(f"{'='*80}")
+        print(f"{'=' * 80}")
         print(f"{'Run':<45} {'Top-1':>8} {'Top-5':>8} {'Classes':>8}")
-        print(f"{'-'*45} {'-'*8} {'-'*8} {'-'*8}")
+        print(f"{'-' * 45} {'-' * 8} {'-' * 8} {'-' * 8}")
         for r in results:
             name = r["run_dir"].name
             print(

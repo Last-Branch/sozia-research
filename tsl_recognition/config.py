@@ -54,6 +54,7 @@ DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 # Path resolution
 # ---------------------------------------------------------------------------
 
+
 def _resolve_base_dir() -> Path:
     """Determine the project root directory.
 
@@ -75,8 +76,8 @@ def _resolve_base_dir() -> Path:
             return p
 
     # 2. Auto-detect from package location: tsl_recognition/ lives one level below root
-    pkg_dir = Path(__file__).resolve().parent   # .../sozia-research/tsl_recognition
-    candidate = pkg_dir.parent                  # .../sozia-research
+    pkg_dir = Path(__file__).resolve().parent  # .../sozia-research/tsl_recognition
+    candidate = pkg_dir.parent  # .../sozia-research
     if (candidate / "tsl_recognition").is_dir():
         return candidate
 
@@ -137,28 +138,104 @@ FACE_LANDMARKS_FULL = 478
 #   Chin         ( 4): jaw opening
 # Total: 83 landmarks x 3 (x, y, z) = 249 face features
 # ---------------------------------------------------------------------------
-FACE_LANDMARK_INDICES: tuple[int, ...] = tuple(sorted((
-    # Lips -- outer contour
-    61, 146, 91, 181, 84, 17, 314, 405, 321, 375,
-    291, 409, 270, 269, 267, 0, 37, 39, 40, 185,
-    # Lips -- inner contour
-    78, 95, 88, 178, 87, 14, 317, 402, 318, 324,
-    308, 415, 310, 311, 312, 13, 82, 81, 80, 191,
-    # Right eyebrow
-    46, 53, 52, 65, 55,
-    # Left eyebrow
-    276, 283, 282, 295, 285,
-    # Right eye contour
-    33, 133, 157, 158, 159, 160, 144, 145,
-    # Left eye contour
-    263, 362, 384, 385, 386, 387, 373, 374,
-    # Iris (right 468-472, left 473-477)
-    468, 469, 470, 471, 472, 473, 474, 475, 476, 477,
-    # Nose bridge + tip
-    1, 4, 5,
-    # Chin
-    152, 175, 199, 200,
-)))
+FACE_LANDMARK_INDICES: tuple[int, ...] = tuple(
+    sorted(
+        (
+            # Lips -- outer contour
+            61,
+            146,
+            91,
+            181,
+            84,
+            17,
+            314,
+            405,
+            321,
+            375,
+            291,
+            409,
+            270,
+            269,
+            267,
+            0,
+            37,
+            39,
+            40,
+            185,
+            # Lips -- inner contour
+            78,
+            95,
+            88,
+            178,
+            87,
+            14,
+            317,
+            402,
+            318,
+            324,
+            308,
+            415,
+            310,
+            311,
+            312,
+            13,
+            82,
+            81,
+            80,
+            191,
+            # Right eyebrow
+            46,
+            53,
+            52,
+            65,
+            55,
+            # Left eyebrow
+            276,
+            283,
+            282,
+            295,
+            285,
+            # Right eye contour
+            33,
+            133,
+            157,
+            158,
+            159,
+            160,
+            144,
+            145,
+            # Left eye contour
+            263,
+            362,
+            384,
+            385,
+            386,
+            387,
+            373,
+            374,
+            # Iris (right 468-472, left 473-477)
+            468,
+            469,
+            470,
+            471,
+            472,
+            473,
+            474,
+            475,
+            476,
+            477,
+            # Nose bridge + tip
+            1,
+            4,
+            5,
+            # Chin
+            152,
+            175,
+            199,
+            200,
+        )
+    )
+)
 
 FACE_LANDMARKS = len(FACE_LANDMARK_INDICES)  # 83
 
@@ -181,6 +258,7 @@ RIGHT_HAND_SLICE = slice(444, 507)
 # ---------------------------------------------------------------------------
 # Training / data configuration
 # ---------------------------------------------------------------------------
+
 
 @dataclass
 class TrainConfig:
@@ -249,9 +327,9 @@ class TrainConfig:
     augment_train: bool = True  # apply data augmentation to training set
 
     # Split configuration
-    split_mode: str = "signer"   # "signer" or "random"
-    val_split: float = 0.15     # used only in random mode
-    test_split: float = 0.15    # used only in random mode
+    split_mode: str = "signer"  # "signer" or "random"
+    val_split: float = 0.15  # used only in random mode
+    test_split: float = 0.15  # used only in random mode
 
     # Model architecture
     # One of the keys in models.MODEL_REGISTRY (e.g. "gru")
@@ -275,6 +353,7 @@ class TrainConfig:
     def dataset_info(self) -> "DatasetInfo":
         """Return the :class:`DatasetInfo` instance for the selected dataset."""
         from .dataset.registry import get_dataset_info
+
         return get_dataset_info(self.dataset, BASE_DIR)
 
     @staticmethod
@@ -284,6 +363,7 @@ class TrainConfig:
         Returns an empty list if the dataset directory / label file doesn't exist.
         """
         from .dataset.registry import get_dataset_info
+
         try:
             info = get_dataset_info(dataset, BASE_DIR)
             return info.class_names()

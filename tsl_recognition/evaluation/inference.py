@@ -312,7 +312,11 @@ def _load_run(run_dir: Path) -> dict:
 
     scaler = None
     if normalize:
-        scaler_path = SCALERS_DIR / TrainConfig(dataset=dataset_name).dataset_info.display_name / f"scaler_{split_mode}.pkl"
+        scaler_path = (
+            SCALERS_DIR
+            / TrainConfig(dataset=dataset_name).dataset_info.display_name
+            / f"scaler_{split_mode}.pkl"
+        )
         if scaler_path.exists():
             with open(scaler_path, "rb") as f:
                 scaler = pickle.load(f)

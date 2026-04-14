@@ -108,7 +108,9 @@ def run_validation(
     split_dir = TrainConfig(dataset=dataset).dataset_info.split_dir
     test_files = _load_test_files(split_dir, actions)
     if not test_files:
-        raise RuntimeError("No test files found in split manifest matching run classes.")
+        raise RuntimeError(
+            "No test files found in split manifest matching run classes."
+        )
 
     train_baseline_ds = LazySignDataset(
         file_info_list=test_files,
@@ -125,7 +127,9 @@ def run_validation(
     print(f"\nValidating inference pipeline on {len(sampled)} test-split samples...")
     print(f"Run directory: {rd.name}\n")
 
-    results = dict(training_correct=0, inference_correct=0, both_match=0, both_correct=0)
+    results = dict(
+        training_correct=0, inference_correct=0, both_match=0, both_correct=0
+    )
     mismatches: list[dict] = []
 
     for idx in tqdm(sampled, desc="Validating"):
@@ -143,7 +147,9 @@ def run_validation(
         raw = np.load(path).astype(np.float32)
         frames = [raw[i] for i in range(len(raw))]
         ikp, actual_len = preprocess_sequence(
-            frames, scaler, max_len,
+            frames,
+            scaler,
+            max_len,
             normalize=normalize,
             apply_interpolation=True,
             sequence_handling=seq_handling,
@@ -164,15 +170,25 @@ def run_validation(
         if train_cls == true_cls and inf_cls == true_cls:
             results["both_correct"] += 1
         if train_cls != inf_cls:
-            mismatches.append(dict(file=path, true=true_cls, train=train_cls, inf=inf_cls))
+            mismatches.append(
+                dict(file=path, true=true_cls, train=train_cls, inf=inf_cls)
+            )
 
     n = len(sampled)
-    print(f"\n{'='*60}\nVALIDATION RESULTS\n{'='*60}")
+    print(f"\n{'=' * 60}\nVALIDATION RESULTS\n{'=' * 60}")
     print(f"Samples tested: {n}\n")
-    print(f"Training pipeline accuracy:  {results['training_correct']/n*100:.1f}% ({results['training_correct']}/{n})")
-    print(f"Inference pipeline accuracy: {results['inference_correct']/n*100:.1f}% ({results['inference_correct']}/{n})\n")
-    print(f"Predictions match:           {results['both_match']/n*100:.1f}% ({results['both_match']}/{n})")
-    print(f"Both correct:                {results['both_correct']/n*100:.1f}% ({results['both_correct']}/{n})")
+    print(
+        f"Training pipeline accuracy:  {results['training_correct'] / n * 100:.1f}% ({results['training_correct']}/{n})"
+    )
+    print(
+        f"Inference pipeline accuracy: {results['inference_correct'] / n * 100:.1f}% ({results['inference_correct']}/{n})\n"
+    )
+    print(
+        f"Predictions match:           {results['both_match'] / n * 100:.1f}% ({results['both_match']}/{n})"
+    )
+    print(
+        f"Both correct:                {results['both_correct'] / n * 100:.1f}% ({results['both_correct']}/{n})"
+    )
 
     if mismatches:
         print(f"\nMismatches ({len(mismatches)} samples):")
@@ -181,9 +197,11 @@ def run_validation(
         if len(mismatches) > 10:
             print(f"  ... and {len(mismatches) - 10} more")
     else:
-        print("\nAll predictions match! Inference pipeline is correctly aligned with training.")
+        print(
+            "\nAll predictions match! Inference pipeline is correctly aligned with training."
+        )
 
-    print(f"\n{'-'*60}")
+    print(f"\n{'-' * 60}")
     if results["both_match"] == n:
         print("PASS: Inference preprocessing produces identical results to training.")
     elif results["both_match"] / n > 0.95:
