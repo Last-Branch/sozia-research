@@ -15,7 +15,7 @@ Usage::
     python -m tsl_recognition evaluate --all                           # re-evaluate ALL past runs
     python -m tsl_recognition infer --mode motion                      # real-time inference
     python -m tsl_recognition validate                                 # validate inference pipeline
-    python -m tsl_recognition validate --run-dir trained-models/run_*  # validate specific run
+    python -m tsl_recognition validate --run-dir models/recognition/AUTSL_run_*  # validate specific run
     python -m tsl_recognition infer --mode video --video path/to/video.mp4
 
 Add ``--test`` to any subcommand for a quick 10-class smoke test.

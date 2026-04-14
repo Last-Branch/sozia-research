@@ -30,7 +30,7 @@ from .augmentation import (
     augment_spatial,
     augment_temporal,
 )
-from ..config import DEVICE, TrainConfig
+from ..config import DEVICE, SCALERS_DIR, TrainConfig
 
 
 # ---------------------------------------------------------------------------
@@ -113,9 +113,7 @@ class LazySignDataset(Dataset):
         keypoints = np.load(path).astype(np.float32)
 
         rng = (
-            np.random.default_rng(np.random.randint(0, 2**31))
-            if self.augment
-            else None
+            np.random.default_rng(np.random.randint(0, 2**31)) if self.augment else None
         )
 
         # 2. Temporal augmentation (raw space, before truncation)
@@ -127,9 +125,9 @@ class LazySignDataset(Dataset):
         # 3. Uniform temporal sampling (or truncation)
         if num_frames > self.max_seq_len:
             if self.sequence_handling == "uniform_sample":
-                indices = np.linspace(
-                    0, num_frames - 1, self.max_seq_len
-                ).round().astype(int)
+                indices = (
+                    np.linspace(0, num_frames - 1, self.max_seq_len).round().astype(int)
+                )
                 keypoints = keypoints[indices]
             else:
                 keypoints = keypoints[: self.max_seq_len]
@@ -179,7 +177,9 @@ def scan_dataset(
     label_map = {label: num for num, label in enumerate(actions)}
 
     print(f"Scanning dataset at {data_path}...")
-    print(f"Max sequence length: {cfg.max_sequence_length}, Min: {cfg.min_sequence_length}")
+    print(
+        f"Max sequence length: {cfg.max_sequence_length}, Min: {cfg.min_sequence_length}"
+    )
 
     file_paths: list[tuple[str, int, int]] = []
     expected_dim: int | None = None
@@ -231,7 +231,6 @@ def get_or_compute_scaler(
     train_files: list[tuple[str, int, int]],
     expected_dim: int,
     cfg: TrainConfig,
-    data_path: Path | None = None,
 ) -> StandardScaler | None:
     """Load or incrementally compute a ``StandardScaler`` for normalisation.
 
@@ -239,13 +238,17 @@ def get_or_compute_scaler(
     leakage. A separate file is saved per split mode (``scaler_signer.pkl``
     / ``scaler_random.pkl``) so experiments with different splits don't
     overwrite each other.
+
+    Scalers are stored under ``scalers/<dataset>/`` at the project root,
+    not inside the processed data directory.
     """
     if not cfg.normalize_features:
         print("Feature normalization: OFF")
         return None
 
-    data_path = data_path or cfg.dataset_info.processed_dir
-    scaler_path = data_path / f"scaler_{cfg.split_mode}.pkl"
+    scaler_dir = SCALERS_DIR / cfg.dataset_info.display_name
+    scaler_dir.mkdir(parents=True, exist_ok=True)
+    scaler_path = scaler_dir / f"scaler_{cfg.split_mode}.pkl"
 
     if scaler_path.exists():
         print(f"\nLoading pre-computed scaler from {scaler_path}...")
@@ -254,7 +257,9 @@ def get_or_compute_scaler(
         print(f"Scaler loaded: mean shape={scaler.mean_.shape}")
         return scaler
 
-    print(f"\nComputing normalization statistics from {len(train_files)} training files...")
+    print(
+        f"\nComputing normalization statistics from {len(train_files)} training files..."
+    )
     n_total = 0
     mean = np.zeros(expected_dim, dtype=np.float64)
     M2 = np.zeros(expected_dim, dtype=np.float64)
@@ -335,22 +340,28 @@ def build_loaders(
                 continue
             kept.append((e["path"], label_map[cls], int(e["num_frames"])))
         if dropped:
-            print(f"Filtered {partition} split: dropped {dropped} samples outside cfg.classes_to_process")
+            print(
+                f"Filtered {partition} split: dropped {dropped} samples outside cfg.classes_to_process"
+            )
         return kept
 
     train_files = _load_partition("train")
     val_files = _load_partition("val")
     test_files = _load_partition("test")
 
-    print(f"\nLoaded {split_mode} split: "
-          f"{len(train_files)} train / {len(val_files)} val / {len(test_files)} test")
+    print(
+        f"\nLoaded {split_mode} split: "
+        f"{len(train_files)} train / {len(val_files)} val / {len(test_files)} test"
+    )
 
-    scaler = get_or_compute_scaler(train_files, feature_dim, cfg, data_path)
+    scaler = get_or_compute_scaler(train_files, feature_dim, cfg)
 
     train_labels = [f[1] for f in train_files]
     class_counts = Counter(train_labels)
     print("\nTraining class distribution:")
-    print(f"  Min samples: {min(class_counts.values())}, Max: {max(class_counts.values())}")
+    print(
+        f"  Min samples: {min(class_counts.values())}, Max: {max(class_counts.values())}"
+    )
     print(
         f"  Imbalance ratio: "
         f"{max(class_counts.values()) / max(min(class_counts.values()), 1):.1f}x"
@@ -365,7 +376,9 @@ def build_loaders(
         dtype=torch.float32,
     ).to(DEVICE)
     class_weights = class_weights / class_weights.mean()
-    print(f"  Class weights range: [{class_weights.min():.2f}, {class_weights.max():.2f}]")
+    print(
+        f"  Class weights range: [{class_weights.min():.2f}, {class_weights.max():.2f}]"
+    )
 
     y_train = np.array([f[1] for f in train_files])
     y_val = np.array([f[1] for f in val_files])
@@ -373,16 +386,25 @@ def build_loaders(
 
     seq_handling = cfg.sequence_handling
     train_ds = LazySignDataset(
-        train_files, cfg.max_sequence_length, feature_dim, scaler,
+        train_files,
+        cfg.max_sequence_length,
+        feature_dim,
+        scaler,
         augment=cfg.augment_train,
         sequence_handling=seq_handling,
     )
     val_ds = LazySignDataset(
-        val_files, cfg.max_sequence_length, feature_dim, scaler,
+        val_files,
+        cfg.max_sequence_length,
+        feature_dim,
+        scaler,
         sequence_handling=seq_handling,
     )
     test_ds = LazySignDataset(
-        test_files, cfg.max_sequence_length, feature_dim, scaler,
+        test_files,
+        cfg.max_sequence_length,
+        feature_dim,
+        scaler,
         sequence_handling=seq_handling,
     )
 

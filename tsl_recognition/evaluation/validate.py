@@ -12,7 +12,7 @@ Usage::
 
     python -m tsl_recognition validate
     python -m tsl_recognition validate --samples 200
-    python -m tsl_recognition validate --run-dir trained-models/run_20260216_011133_gru
+    python -m tsl_recognition validate --run-dir models/recognition/AUTSL_run_20260413_224156_gru
 """
 
 from __future__ import annotations

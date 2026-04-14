@@ -96,8 +96,11 @@ DATA_ROOT = Path(os.environ.get("DATA_ROOT", BASE_DIR / "data"))
 # MediaPipe model directory (downloaded automatically on first use)
 MP_MODEL_DIR = BASE_DIR / "mp-models"
 
-# Trained-model output directory
-MODELS_DIR = BASE_DIR / "trained-models"
+# Trained-model output directory (recognition models)
+MODELS_DIR = BASE_DIR / "models" / "recognition"
+
+# Fitted scalers per dataset
+SCALERS_DIR = BASE_DIR / "scalers"
 
 # ---------------------------------------------------------------------------
 # MediaPipe model URLs
