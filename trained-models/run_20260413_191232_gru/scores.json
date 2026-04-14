@@ -1,0 +1,7452 @@
+{
+  "test_accuracy": 0.795768169273229,
+  "test_top5_accuracy": 0.9586016535758972,
+  "best_val_accuracy": 0.8397538037970662,
+  "best_val_top5_accuracy": 0.9794921875,
+  "num_classes": 744,
+  "macro_precision": 0.8159,
+  "macro_recall": 0.7992,
+  "macro_f1": 0.782,
+  "per_class": {
+    "Aci": {
+      "tp": 2,
+      "fp": 4,
+      "fn": 1,
+      "tn": 3254,
+      "precision": 0.3333,
+      "recall": 0.6667,
+      "f1": 0.4444,
+      "support": 3
+    },
+    "Acik": {
+      "tp": 11,
+      "fp": 3,
+      "fn": 0,
+      "tn": 3247,
+      "precision": 0.7857,
+      "recall": 1.0,
+      "f1": 0.88,
+      "support": 11
+    },
+    "Acik Arttirma": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Aciklamak": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Acil": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Acil Servis": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Ad": {
+      "tp": 3,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 0.75,
+      "recall": 1.0,
+      "f1": 0.8571,
+      "support": 3
+    },
+    "Adet": {
+      "tp": 4,
+      "fp": 4,
+      "fn": 0,
+      "tn": 3253,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Adres": {
+      "tp": 5,
+      "fp": 2,
+      "fn": 0,
+      "tn": 3254,
+      "precision": 0.7143,
+      "recall": 1.0,
+      "f1": 0.8333,
+      "support": 5
+    },
+    "Agiz": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Agri": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Agrikesici": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Aile": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Akciger": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Akil": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3258,
+      "precision": 1.0,
+      "recall": 0.3333,
+      "f1": 0.5,
+      "support": 3
+    },
+    "Akraba": {
+      "tp": 2,
+      "fp": 1,
+      "fn": 3,
+      "tn": 3255,
+      "precision": 0.6667,
+      "recall": 0.4,
+      "f1": 0.5,
+      "support": 5
+    },
+    "Aksam": {
+      "tp": 5,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 5
+    },
+    "Aksam Yemegi": {
+      "tp": 5,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3255,
+      "precision": 0.8333,
+      "recall": 1.0,
+      "f1": 0.9091,
+      "support": 5
+    },
+    "Alci": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 4,
+      "tn": 3257,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 4
+    },
+    "Alerji": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 3,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.25,
+      "f1": 0.4,
+      "support": 4
+    },
+    "Alim": {
+      "tp": 3,
+      "fp": 2,
+      "fn": 1,
+      "tn": 3255,
+      "precision": 0.6,
+      "recall": 0.75,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Alin": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3258,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 3
+    },
+    "Alisveris": {
+      "tp": 0,
+      "fp": 2,
+      "fn": 4,
+      "tn": 3255,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 4
+    },
+    "Alkol": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Alkolik": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Almak": {
+      "tp": 4,
+      "fp": 2,
+      "fn": 0,
+      "tn": 3255,
+      "precision": 0.6667,
+      "recall": 1.0,
+      "f1": 0.8,
+      "support": 4
+    },
+    "Altin": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 4,
+      "tn": 3257,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 4
+    },
+    "Ambulans": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Ameliyat": {
+      "tp": 1,
+      "fp": 1,
+      "fn": 3,
+      "tn": 3256,
+      "precision": 0.5,
+      "recall": 0.25,
+      "f1": 0.3333,
+      "support": 4
+    },
+    "Anestezi": {
+      "tp": 4,
+      "fp": 2,
+      "fn": 0,
+      "tn": 3255,
+      "precision": 0.6667,
+      "recall": 1.0,
+      "f1": 0.8,
+      "support": 4
+    },
+    "Anne": {
+      "tp": 5,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3255,
+      "precision": 0.8333,
+      "recall": 1.0,
+      "f1": 0.9091,
+      "support": 5
+    },
+    "Antibiyotik": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Araba": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 3,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.25,
+      "f1": 0.4,
+      "support": 4
+    },
+    "Aramak": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Aramak (Telefon)": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Arkadas": {
+      "tp": 9,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3251,
+      "precision": 0.9,
+      "recall": 1.0,
+      "f1": 0.9474,
+      "support": 9
+    },
+    "Arsa": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3258,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 3
+    },
+    "Asi_Igne": {
+      "tp": 12,
+      "fp": 2,
+      "fn": 0,
+      "tn": 3247,
+      "precision": 0.8571,
+      "recall": 1.0,
+      "f1": 0.9231,
+      "support": 12
+    },
+    "Aspirin": {
+      "tp": 4,
+      "fp": 4,
+      "fn": 0,
+      "tn": 3253,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Astim": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 3,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.25,
+      "f1": 0.4,
+      "support": 4
+    },
+    "Ates": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Ates Dusurucu": {
+      "tp": 1,
+      "fp": 1,
+      "fn": 3,
+      "tn": 3256,
+      "precision": 0.5,
+      "recall": 0.25,
+      "f1": 0.3333,
+      "support": 4
+    },
+    "Atlamak": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Ay": {
+      "tp": 4,
+      "fp": 3,
+      "fn": 1,
+      "tn": 3253,
+      "precision": 0.5714,
+      "recall": 0.8,
+      "f1": 0.6667,
+      "support": 5
+    },
+    "Ayaga Kalkmak": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 5,
+      "tn": 3253,
+      "precision": 1.0,
+      "recall": 0.375,
+      "f1": 0.5455,
+      "support": 8
+    },
+    "Ayak": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Aylik": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3256,
+      "precision": 1.0,
+      "recall": 0.6,
+      "f1": 0.75,
+      "support": 5
+    },
+    "Ayni": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 4,
+      "tn": 3257,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 4
+    },
+    "Az": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 4,
+      "tn": 3256,
+      "precision": 1.0,
+      "recall": 0.2,
+      "f1": 0.3333,
+      "support": 5
+    },
+    "Baba_Erkek": {
+      "tp": 6,
+      "fp": 0,
+      "fn": 4,
+      "tn": 3251,
+      "precision": 1.0,
+      "recall": 0.6,
+      "f1": 0.75,
+      "support": 10
+    },
+    "Bacak": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Bagimli": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Bagirmak": {
+      "tp": 3,
+      "fp": 1,
+      "fn": 1,
+      "tn": 3256,
+      "precision": 0.75,
+      "recall": 0.75,
+      "f1": 0.75,
+      "support": 4
+    },
+    "Bagirsak": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Bakim": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Bakmak": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Balgam": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Bandaj": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Banka": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Bankamatik": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Bas": {
+      "tp": 2,
+      "fp": 1,
+      "fn": 2,
+      "tn": 3256,
+      "precision": 0.6667,
+      "recall": 0.5,
+      "f1": 0.5714,
+      "support": 4
+    },
+    "Bas Agrisi": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Bas Donmesi": {
+      "tp": 5,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 5
+    },
+    "Baski": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3261,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 0
+    },
+    "Basvuru": {
+      "tp": 4,
+      "fp": 2,
+      "fn": 0,
+      "tn": 3255,
+      "precision": 0.6667,
+      "recall": 1.0,
+      "f1": 0.8,
+      "support": 4
+    },
+    "Bayilmak": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Bebek": {
+      "tp": 0,
+      "fp": 4,
+      "fn": 4,
+      "tn": 3253,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 4
+    },
+    "Bedava": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3258,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 3
+    },
+    "Bedel": {
+      "tp": 1,
+      "fp": 5,
+      "fn": 2,
+      "tn": 3253,
+      "precision": 0.1667,
+      "recall": 0.3333,
+      "f1": 0.2222,
+      "support": 3
+    },
+    "Begenmek": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Bekar": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Bekleme Salonu": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3258,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 3
+    },
+    "Beklemek": {
+      "tp": 4,
+      "fp": 5,
+      "fn": 0,
+      "tn": 3252,
+      "precision": 0.4444,
+      "recall": 1.0,
+      "f1": 0.6154,
+      "support": 4
+    },
+    "Bel": {
+      "tp": 4,
+      "fp": 6,
+      "fn": 0,
+      "tn": 3251,
+      "precision": 0.4,
+      "recall": 1.0,
+      "f1": 0.5714,
+      "support": 4
+    },
+    "Benzemek": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Beyin": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Beze": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Bikmak": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Bilek": {
+      "tp": 3,
+      "fp": 3,
+      "fn": 1,
+      "tn": 3254,
+      "precision": 0.5,
+      "recall": 0.75,
+      "f1": 0.6,
+      "support": 4
+    },
+    "Bilgi": {
+      "tp": 4,
+      "fp": 2,
+      "fn": 0,
+      "tn": 3255,
+      "precision": 0.6667,
+      "recall": 1.0,
+      "f1": 0.8,
+      "support": 4
+    },
+    "Bilinci Yerinde": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Bilincini Kaybetmis": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Bilmek": {
+      "tp": 1,
+      "fp": 3,
+      "fn": 3,
+      "tn": 3254,
+      "precision": 0.25,
+      "recall": 0.25,
+      "f1": 0.25,
+      "support": 4
+    },
+    "Bir Hafta Once": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 3,
+      "tn": 3256,
+      "precision": 1.0,
+      "recall": 0.4,
+      "f1": 0.5714,
+      "support": 5
+    },
+    "Bir Sey Degil": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 3,
+      "tn": 3256,
+      "precision": 1.0,
+      "recall": 0.4,
+      "f1": 0.5714,
+      "support": 5
+    },
+    "Biraz": {
+      "tp": 8,
+      "fp": 6,
+      "fn": 6,
+      "tn": 3241,
+      "precision": 0.5714,
+      "recall": 0.5714,
+      "f1": 0.5714,
+      "support": 14
+    },
+    "Birikim": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Bitmek": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Bobrek": {
+      "tp": 3,
+      "fp": 1,
+      "fn": 1,
+      "tn": 3256,
+      "precision": 0.75,
+      "recall": 0.75,
+      "f1": 0.75,
+      "support": 4
+    },
+    "Bogaz": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Bogaz Sismesi": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Bogulmak": {
+      "tp": 4,
+      "fp": 4,
+      "fn": 0,
+      "tn": 3253,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Borc": {
+      "tp": 0,
+      "fp": 4,
+      "fn": 3,
+      "tn": 3254,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 3
+    },
+    "Bordro": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Borsa": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Bosanmak": {
+      "tp": 3,
+      "fp": 1,
+      "fn": 1,
+      "tn": 3256,
+      "precision": 0.75,
+      "recall": 0.75,
+      "f1": 0.75,
+      "support": 4
+    },
+    "Boy": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Boyun": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Bozdurmak": {
+      "tp": 3,
+      "fp": 5,
+      "fn": 1,
+      "tn": 3252,
+      "precision": 0.375,
+      "recall": 0.75,
+      "f1": 0.5,
+      "support": 4
+    },
+    "Brut": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Bulanti": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Bulmak": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 3,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.25,
+      "f1": 0.4,
+      "support": 4
+    },
+    "Burkma": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Burun": {
+      "tp": 0,
+      "fp": 1,
+      "fn": 4,
+      "tn": 3256,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 4
+    },
+    "Burun Kanamasi": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Butce": {
+      "tp": 5,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 5
+    },
+    "Buyuk Abdest": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 4,
+      "tn": 3257,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 4
+    },
+    "Cagirmak": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Calismak": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Calmak(Hirsizlik)": {
+      "tp": 4,
+      "fp": 2,
+      "fn": 0,
+      "tn": 3255,
+      "precision": 0.6667,
+      "recall": 1.0,
+      "f1": 0.8,
+      "support": 4
+    },
+    "Calmak(Muzik)": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 3,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.25,
+      "f1": 0.4,
+      "support": 4
+    },
+    "Carpismak": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Catlak": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Cek": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Cekmek": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Cep": {
+      "tp": 4,
+      "fp": 2,
+      "fn": 1,
+      "tn": 3254,
+      "precision": 0.6667,
+      "recall": 0.8,
+      "f1": 0.7273,
+      "support": 5
+    },
+    "Cep Telefonu": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3256,
+      "precision": 1.0,
+      "recall": 0.8,
+      "f1": 0.8889,
+      "support": 5
+    },
+    "Cerrah": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Cevirmek": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Ceyrek_Yarim": {
+      "tp": 5,
+      "fp": 2,
+      "fn": 2,
+      "tn": 3252,
+      "precision": 0.7143,
+      "recall": 0.7143,
+      "f1": 0.7143,
+      "support": 7
+    },
+    "Cikik": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Cocuk": {
+      "tp": 7,
+      "fp": 0,
+      "fn": 3,
+      "tn": 3251,
+      "precision": 1.0,
+      "recall": 0.7,
+      "f1": 0.8235,
+      "support": 10
+    },
+    "Cocuklar": {
+      "tp": 3,
+      "fp": 1,
+      "fn": 1,
+      "tn": 3256,
+      "precision": 0.75,
+      "recall": 0.75,
+      "f1": 0.75,
+      "support": 4
+    },
+    "Cok": {
+      "tp": 5,
+      "fp": 4,
+      "fn": 0,
+      "tn": 3252,
+      "precision": 0.5556,
+      "recall": 1.0,
+      "f1": 0.7143,
+      "support": 5
+    },
+    "Cokmek": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Damar": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 3,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.25,
+      "f1": 0.4,
+      "support": 4
+    },
+    "Damga Vergisi": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Danisma": {
+      "tp": 5,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3255,
+      "precision": 0.8333,
+      "recall": 1.0,
+      "f1": 0.9091,
+      "support": 5
+    },
+    "Danismak": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 3,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.25,
+      "f1": 0.4,
+      "support": 4
+    },
+    "Deger": {
+      "tp": 3,
+      "fp": 1,
+      "fn": 1,
+      "tn": 3256,
+      "precision": 0.75,
+      "recall": 0.75,
+      "f1": 0.75,
+      "support": 4
+    },
+    "Dekont": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3258,
+      "precision": 1.0,
+      "recall": 0.6667,
+      "f1": 0.8,
+      "support": 3
+    },
+    "Depresyon": {
+      "tp": 4,
+      "fp": 4,
+      "fn": 0,
+      "tn": 3253,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Derece": {
+      "tp": 4,
+      "fp": 3,
+      "fn": 0,
+      "tn": 3254,
+      "precision": 0.5714,
+      "recall": 1.0,
+      "f1": 0.7273,
+      "support": 4
+    },
+    "Deri": {
+      "tp": 2,
+      "fp": 1,
+      "fn": 2,
+      "tn": 3256,
+      "precision": 0.6667,
+      "recall": 0.5,
+      "f1": 0.5714,
+      "support": 4
+    },
+    "Dermatolog": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Deste": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3258,
+      "precision": 1.0,
+      "recall": 0.3333,
+      "f1": 0.5,
+      "support": 3
+    },
+    "Devir": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Devlet": {
+      "tp": 0,
+      "fp": 1,
+      "fn": 5,
+      "tn": 3255,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 5
+    },
+    "Dikis": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 4,
+      "tn": 3257,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 4
+    },
+    "Dinlemek": {
+      "tp": 2,
+      "fp": 1,
+      "fn": 2,
+      "tn": 3256,
+      "precision": 0.6667,
+      "recall": 0.5,
+      "f1": 0.5714,
+      "support": 4
+    },
+    "Dis": {
+      "tp": 0,
+      "fp": 2,
+      "fn": 4,
+      "tn": 3255,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 4
+    },
+    "Dis Agrisi": {
+      "tp": 3,
+      "fp": 2,
+      "fn": 1,
+      "tn": 3255,
+      "precision": 0.6,
+      "recall": 0.75,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Dis Cektirmek": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Dis Teli": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Disarida": {
+      "tp": 5,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 5
+    },
+    "Disci": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Diz": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Dogum": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Dogum Sancisi": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Dokmek": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Doktor": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Dokunma": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 4,
+      "tn": 3256,
+      "precision": 1.0,
+      "recall": 0.2,
+      "f1": 0.3333,
+      "support": 5
+    },
+    "Dokunmak": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Dolar": {
+      "tp": 4,
+      "fp": 3,
+      "fn": 0,
+      "tn": 3254,
+      "precision": 0.5714,
+      "recall": 1.0,
+      "f1": 0.7273,
+      "support": 4
+    },
+    "Dolasim": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Donmak": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Dosya Masrafi": {
+      "tp": 6,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3255,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 6
+    },
+    "Doviz": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Dovmek": {
+      "tp": 2,
+      "fp": 3,
+      "fn": 2,
+      "tn": 3254,
+      "precision": 0.4,
+      "recall": 0.5,
+      "f1": 0.4444,
+      "support": 4
+    },
+    "Dovusmek": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Durmak": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Durust": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Dusmek": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Dusuk Ates": {
+      "tp": 2,
+      "fp": 2,
+      "fn": 2,
+      "tn": 3255,
+      "precision": 0.5,
+      "recall": 0.5,
+      "f1": 0.5,
+      "support": 4
+    },
+    "Dusuk Cocuk": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Duygusal": {
+      "tp": 4,
+      "fp": 2,
+      "fn": 0,
+      "tn": 3255,
+      "precision": 0.6667,
+      "recall": 1.0,
+      "f1": 0.8,
+      "support": 4
+    },
+    "Duyma": {
+      "tp": 1,
+      "fp": 2,
+      "fn": 3,
+      "tn": 3255,
+      "precision": 0.3333,
+      "recall": 0.25,
+      "f1": 0.2857,
+      "support": 4
+    },
+    "Duzenli": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "E-posta": {
+      "tp": 5,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 5
+    },
+    "Eczane": {
+      "tp": 5,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 5
+    },
+    "Eklem": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "El": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 3,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.25,
+      "f1": 0.4,
+      "support": 4
+    },
+    "Elektronik": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Emar": {
+      "tp": 5,
+      "fp": 2,
+      "fn": 0,
+      "tn": 3254,
+      "precision": 0.7143,
+      "recall": 1.0,
+      "f1": 0.8333,
+      "support": 5
+    },
+    "Emeklemek": {
+      "tp": 3,
+      "fp": 3,
+      "fn": 1,
+      "tn": 3254,
+      "precision": 0.5,
+      "recall": 0.75,
+      "f1": 0.6,
+      "support": 4
+    },
+    "Emekli": {
+      "tp": 3,
+      "fp": 2,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.6,
+      "recall": 1.0,
+      "f1": 0.75,
+      "support": 3
+    },
+    "Emekli Olmak": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Emir": {
+      "tp": 2,
+      "fp": 1,
+      "fn": 2,
+      "tn": 3256,
+      "precision": 0.6667,
+      "recall": 0.5,
+      "f1": 0.5714,
+      "support": 4
+    },
+    "Emzik": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 4,
+      "tn": 3257,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 4
+    },
+    "Emzirmek": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Enfeksiyon": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3258,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 3
+    },
+    "Enflasyon": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Engel": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Engelli": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Enjeksiyon": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Erken": {
+      "tp": 8,
+      "fp": 2,
+      "fn": 1,
+      "tn": 3250,
+      "precision": 0.8,
+      "recall": 0.8889,
+      "f1": 0.8421,
+      "support": 9
+    },
+    "Erken Dogum": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Euro": {
+      "tp": 3,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 0.75,
+      "recall": 1.0,
+      "f1": 0.8571,
+      "support": 3
+    },
+    "Ev": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Ev Adresi": {
+      "tp": 5,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 5
+    },
+    "Evli": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Faiz": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Farkli": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Fatura": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Fatura Odeme": {
+      "tp": 3,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 0.75,
+      "recall": 1.0,
+      "f1": 0.8571,
+      "support": 3
+    },
+    "Felc": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 4,
+      "tn": 3257,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 4
+    },
+    "Fitil": {
+      "tp": 2,
+      "fp": 2,
+      "fn": 2,
+      "tn": 3255,
+      "precision": 0.5,
+      "recall": 0.5,
+      "f1": 0.5,
+      "support": 4
+    },
+    "Fiyat_Para": {
+      "tp": 3,
+      "fp": 13,
+      "fn": 5,
+      "tn": 3240,
+      "precision": 0.1875,
+      "recall": 0.375,
+      "f1": 0.25,
+      "support": 8
+    },
+    "Fiziksel": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Fon": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Fotokopi": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Gecikmek_Gec": {
+      "tp": 9,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3252,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 9
+    },
+    "Gelir": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3258,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 3
+    },
+    "Gelmek": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Getiri": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Getirmek": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Gider": {
+      "tp": 4,
+      "fp": 6,
+      "fn": 0,
+      "tn": 3251,
+      "precision": 0.4,
+      "recall": 1.0,
+      "f1": 0.5714,
+      "support": 4
+    },
+    "Gitmek": {
+      "tp": 3,
+      "fp": 5,
+      "fn": 1,
+      "tn": 3252,
+      "precision": 0.375,
+      "recall": 0.75,
+      "f1": 0.5,
+      "support": 4
+    },
+    "Giyinmek": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Giysi": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Gizlemek": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Gogus": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 4,
+      "tn": 3257,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 4
+    },
+    "Gondermek": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Gormek": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3258,
+      "precision": 1.0,
+      "recall": 0.6667,
+      "f1": 0.8,
+      "support": 3
+    },
+    "Gostermek": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Govde": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Goz": {
+      "tp": 0,
+      "fp": 2,
+      "fn": 4,
+      "tn": 3255,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 4
+    },
+    "Gozluk": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Grip": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Gunluk": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Guvenlik Gorevlisi": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Haciz": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3253,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 8
+    },
+    "Hafiza": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Hafiza Kaybi": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Hafta": {
+      "tp": 5,
+      "fp": 0,
+      "fn": 5,
+      "tn": 3251,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6667,
+      "support": 10
+    },
+    "Haftalik": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Halsizlik": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Hamile": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Hap": {
+      "tp": 0,
+      "fp": 2,
+      "fn": 4,
+      "tn": 3255,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 4
+    },
+    "Hareket": {
+      "tp": 2,
+      "fp": 1,
+      "fn": 2,
+      "tn": 3256,
+      "precision": 0.6667,
+      "recall": 0.5,
+      "f1": 0.5714,
+      "support": 4
+    },
+    "Hasta": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Hasta Bakici": {
+      "tp": 4,
+      "fp": 2,
+      "fn": 0,
+      "tn": 3255,
+      "precision": 0.6667,
+      "recall": 1.0,
+      "f1": 0.8,
+      "support": 4
+    },
+    "Hastalik": {
+      "tp": 6,
+      "fp": 3,
+      "fn": 2,
+      "tn": 3250,
+      "precision": 0.6667,
+      "recall": 0.75,
+      "f1": 0.7059,
+      "support": 8
+    },
+    "Hastane": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Hatirlamak": {
+      "tp": 3,
+      "fp": 2,
+      "fn": 1,
+      "tn": 3255,
+      "precision": 0.6,
+      "recall": 0.75,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Hatirlatma": {
+      "tp": 2,
+      "fp": 1,
+      "fn": 2,
+      "tn": 3256,
+      "precision": 0.6667,
+      "recall": 0.5,
+      "f1": 0.5714,
+      "support": 4
+    },
+    "Havale": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3258,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 3
+    },
+    "Hemen": {
+      "tp": 4,
+      "fp": 3,
+      "fn": 1,
+      "tn": 3253,
+      "precision": 0.5714,
+      "recall": 0.8,
+      "f1": 0.6667,
+      "support": 5
+    },
+    "Hemsire": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Hesap": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Hesap No": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Hisse": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Hissetmek": {
+      "tp": 4,
+      "fp": 3,
+      "fn": 0,
+      "tn": 3254,
+      "precision": 0.5714,
+      "recall": 1.0,
+      "f1": 0.7273,
+      "support": 4
+    },
+    "Hizmet": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3258,
+      "precision": 1.0,
+      "recall": 0.6667,
+      "f1": 0.8,
+      "support": 3
+    },
+    "Icerde": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3256,
+      "precision": 1.0,
+      "recall": 0.8,
+      "f1": 0.8889,
+      "support": 5
+    },
+    "Icmek": {
+      "tp": 3,
+      "fp": 2,
+      "fn": 1,
+      "tn": 3255,
+      "precision": 0.6,
+      "recall": 0.75,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Icra": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Iflas": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Igne": {
+      "tp": 3,
+      "fp": 1,
+      "fn": 1,
+      "tn": 3256,
+      "precision": 0.75,
+      "recall": 0.75,
+      "f1": 0.75,
+      "support": 4
+    },
+    "Ihtiyac": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3258,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 3
+    },
+    "Ikametgah": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3258,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 3
+    },
+    "Ilac": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 4,
+      "tn": 3257,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 4
+    },
+    "Ilave": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Ilik": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Ilkyardim": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Iltihap": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 3,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.25,
+      "f1": 0.4,
+      "support": 4
+    },
+    "Imza": {
+      "tp": 12,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3249,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 12
+    },
+    "Indirim": {
+      "tp": 3,
+      "fp": 3,
+      "fn": 0,
+      "tn": 3255,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6667,
+      "support": 3
+    },
+    "Insallah": {
+      "tp": 5,
+      "fp": 2,
+      "fn": 0,
+      "tn": 3254,
+      "precision": 0.7143,
+      "recall": 1.0,
+      "f1": 0.8333,
+      "support": 5
+    },
+    "Internet": {
+      "tp": 4,
+      "fp": 3,
+      "fn": 0,
+      "tn": 3254,
+      "precision": 0.5714,
+      "recall": 1.0,
+      "f1": 0.7273,
+      "support": 4
+    },
+    "Is": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Is Adresi": {
+      "tp": 5,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 5
+    },
+    "Isaret": {
+      "tp": 4,
+      "fp": 2,
+      "fn": 1,
+      "tn": 3254,
+      "precision": 0.6667,
+      "recall": 0.8,
+      "f1": 0.7273,
+      "support": 5
+    },
+    "Ishal": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Isirmak": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3253,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 8
+    },
+    "Isitmak": {
+      "tp": 5,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 5
+    },
+    "Isitmek": {
+      "tp": 2,
+      "fp": 2,
+      "fn": 3,
+      "tn": 3254,
+      "precision": 0.5,
+      "recall": 0.4,
+      "f1": 0.4444,
+      "support": 5
+    },
+    "Isletme": {
+      "tp": 4,
+      "fp": 2,
+      "fn": 0,
+      "tn": 3255,
+      "precision": 0.6667,
+      "recall": 1.0,
+      "f1": 0.8,
+      "support": 4
+    },
+    "Isteksiz": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Istemek": {
+      "tp": 5,
+      "fp": 1,
+      "fn": 3,
+      "tn": 3252,
+      "precision": 0.8333,
+      "recall": 0.625,
+      "f1": 0.7143,
+      "support": 8
+    },
+    "Istemsiz": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Istirahat": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Iyi": {
+      "tp": 4,
+      "fp": 17,
+      "fn": 1,
+      "tn": 3239,
+      "precision": 0.1905,
+      "recall": 0.8,
+      "f1": 0.3077,
+      "support": 5
+    },
+    "Iyilesme": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 3,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.25,
+      "f1": 0.4,
+      "support": 4
+    },
+    "Jel": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Jelatin": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Kabakulak": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Kabiz": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Kacmak": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Kadin_Kiz": {
+      "tp": 10,
+      "fp": 4,
+      "fn": 0,
+      "tn": 3247,
+      "precision": 0.7143,
+      "recall": 1.0,
+      "f1": 0.8333,
+      "support": 10
+    },
+    "Kahvalti": {
+      "tp": 5,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 5
+    },
+    "Kafa": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Kafeterya": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Kagit": {
+      "tp": 4,
+      "fp": 6,
+      "fn": 0,
+      "tn": 3251,
+      "precision": 0.4,
+      "recall": 1.0,
+      "f1": 0.5714,
+      "support": 4
+    },
+    "Kalem": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Kamu": {
+      "tp": 4,
+      "fp": 2,
+      "fn": 0,
+      "tn": 3255,
+      "precision": 0.6667,
+      "recall": 1.0,
+      "f1": 0.8,
+      "support": 4
+    },
+    "Kalp": {
+      "tp": 3,
+      "fp": 11,
+      "fn": 1,
+      "tn": 3246,
+      "precision": 0.2143,
+      "recall": 0.75,
+      "f1": 0.3333,
+      "support": 4
+    },
+    "Kalp Krizi": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Kanuni": {
+      "tp": 1,
+      "fp": 2,
+      "fn": 3,
+      "tn": 3255,
+      "precision": 0.3333,
+      "recall": 0.25,
+      "f1": 0.2857,
+      "support": 4
+    },
+    "Kan": {
+      "tp": 3,
+      "fp": 6,
+      "fn": 1,
+      "tn": 3251,
+      "precision": 0.3333,
+      "recall": 0.75,
+      "f1": 0.4615,
+      "support": 4
+    },
+    "Kan Almak": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Kan Gurubu": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Kan Kaybi": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Kan Tahlili": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Kanama": {
+      "tp": 1,
+      "fp": 1,
+      "fn": 3,
+      "tn": 3256,
+      "precision": 0.5,
+      "recall": 0.25,
+      "f1": 0.3333,
+      "support": 4
+    },
+    "Kanser_Mikrop": {
+      "tp": 1,
+      "fp": 3,
+      "fn": 7,
+      "tn": 3250,
+      "precision": 0.25,
+      "recall": 0.125,
+      "f1": 0.1667,
+      "support": 8
+    },
+    "Kapatmak": {
+      "tp": 7,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3253,
+      "precision": 1.0,
+      "recall": 0.875,
+      "f1": 0.9333,
+      "support": 8
+    },
+    "Kasinmak": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Kapora": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Kar": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Karaciger": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Karin": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Kart": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3258,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 3
+    },
+    "Kasa": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Kase": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Katlamak": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Kasko": {
+      "tp": 3,
+      "fp": 2,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.6,
+      "recall": 1.0,
+      "f1": 0.75,
+      "support": 3
+    },
+    "Katilim": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3258,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 3
+    },
+    "Kazanmak": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Kayit": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Kesmek": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Kefil": {
+      "tp": 2,
+      "fp": 7,
+      "fn": 2,
+      "tn": 3250,
+      "precision": 0.2222,
+      "recall": 0.5,
+      "f1": 0.3077,
+      "support": 4
+    },
+    "Kemik": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Kesik": {
+      "tp": 3,
+      "fp": 1,
+      "fn": 1,
+      "tn": 3256,
+      "precision": 0.75,
+      "recall": 0.75,
+      "f1": 0.75,
+      "support": 4
+    },
+    "Kilo Almak": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Kilo": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 4,
+      "tn": 3257,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 4
+    },
+    "Kilo Vermek": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 3,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.25,
+      "f1": 0.4,
+      "support": 4
+    },
+    "Kimlik": {
+      "tp": 5,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 5
+    },
+    "Konsantre Olmak": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Kimlik No": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Kirik": {
+      "tp": 3,
+      "fp": 3,
+      "fn": 1,
+      "tn": 3254,
+      "precision": 0.5,
+      "recall": 0.75,
+      "f1": 0.6,
+      "support": 4
+    },
+    "Kizamik": {
+      "tp": 3,
+      "fp": 2,
+      "fn": 10,
+      "tn": 3246,
+      "precision": 0.6,
+      "recall": 0.2308,
+      "f1": 0.3333,
+      "support": 13
+    },
+    "Kizariklik": {
+      "tp": 3,
+      "fp": 10,
+      "fn": 0,
+      "tn": 3248,
+      "precision": 0.2308,
+      "recall": 1.0,
+      "f1": 0.375,
+      "support": 3
+    },
+    "Koklama": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Kol": {
+      "tp": 3,
+      "fp": 3,
+      "fn": 1,
+      "tn": 3254,
+      "precision": 0.5,
+      "recall": 0.75,
+      "f1": 0.6,
+      "support": 4
+    },
+    "Koltuk Degnegi": {
+      "tp": 5,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 5
+    },
+    "Kosmak": {
+      "tp": 2,
+      "fp": 6,
+      "fn": 2,
+      "tn": 3251,
+      "precision": 0.25,
+      "recall": 0.5,
+      "f1": 0.3333,
+      "support": 4
+    },
+    "Kontrol": {
+      "tp": 5,
+      "fp": 0,
+      "fn": 3,
+      "tn": 3253,
+      "precision": 1.0,
+      "recall": 0.625,
+      "f1": 0.7692,
+      "support": 8
+    },
+    "Korku": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Kotu": {
+      "tp": 2,
+      "fp": 2,
+      "fn": 3,
+      "tn": 3254,
+      "precision": 0.5,
+      "recall": 0.4,
+      "f1": 0.4444,
+      "support": 5
+    },
+    "Kramp": {
+      "tp": 3,
+      "fp": 1,
+      "fn": 1,
+      "tn": 3256,
+      "precision": 0.75,
+      "recall": 0.75,
+      "f1": 0.75,
+      "support": 4
+    },
+    "Krem": {
+      "tp": 4,
+      "fp": 2,
+      "fn": 0,
+      "tn": 3255,
+      "precision": 0.6667,
+      "recall": 1.0,
+      "f1": 0.8,
+      "support": 4
+    },
+    "Kredi": {
+      "tp": 3,
+      "fp": 1,
+      "fn": 1,
+      "tn": 3256,
+      "precision": 0.75,
+      "recall": 0.75,
+      "f1": 0.75,
+      "support": 4
+    },
+    "Kredi Karti": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3258,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 3
+    },
+    "Kriz": {
+      "tp": 3,
+      "fp": 5,
+      "fn": 1,
+      "tn": 3252,
+      "precision": 0.375,
+      "recall": 0.75,
+      "f1": 0.5,
+      "support": 4
+    },
+    "Kucuk Abdest": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Kulak Agrisi": {
+      "tp": 2,
+      "fp": 1,
+      "fn": 2,
+      "tn": 3256,
+      "precision": 0.6667,
+      "recall": 0.5,
+      "f1": 0.5714,
+      "support": 4
+    },
+    "Kusmak": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3253,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 8
+    },
+    "Kur": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Masallah": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3256,
+      "precision": 1.0,
+      "recall": 0.6,
+      "f1": 0.75,
+      "support": 5
+    },
+    "Kuvoz": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Laboratuvar": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Lavabo": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3258,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 3
+    },
+    "Lens": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 3,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.25,
+      "f1": 0.4,
+      "support": 4
+    },
+    "Limit": {
+      "tp": 4,
+      "fp": 4,
+      "fn": 0,
+      "tn": 3253,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Lira": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Maas": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Maas Bordrosu": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3253,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 8
+    },
+    "Nasilsin": {
+      "tp": 5,
+      "fp": 5,
+      "fn": 0,
+      "tn": 3251,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6667,
+      "support": 5
+    },
+    "Masraf": {
+      "tp": 4,
+      "fp": 2,
+      "fn": 0,
+      "tn": 3255,
+      "precision": 0.6667,
+      "recall": 1.0,
+      "f1": 0.8,
+      "support": 4
+    },
+    "Meme": {
+      "tp": 4,
+      "fp": 5,
+      "fn": 0,
+      "tn": 3252,
+      "precision": 0.4444,
+      "recall": 1.0,
+      "f1": 0.6154,
+      "support": 4
+    },
+    "Merhem": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Mide": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Migren": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Miras": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Morluk": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Muayene": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Musteri": {
+      "tp": 2,
+      "fp": 11,
+      "fn": 2,
+      "tn": 3246,
+      "precision": 0.1538,
+      "recall": 0.5,
+      "f1": 0.2353,
+      "support": 4
+    },
+    "Mutsuz": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Nabiz": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Nakit": {
+      "tp": 2,
+      "fp": 7,
+      "fn": 2,
+      "tn": 3250,
+      "precision": 0.2222,
+      "recall": 0.5,
+      "f1": 0.3077,
+      "support": 4
+    },
+    "Numara": {
+      "tp": 7,
+      "fp": 1,
+      "fn": 2,
+      "tn": 3251,
+      "precision": 0.875,
+      "recall": 0.7778,
+      "f1": 0.8235,
+      "support": 9
+    },
+    "Nefes": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Nefes Alma": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Nefes Tutma": {
+      "tp": 5,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 5
+    },
+    "Nefes Verme": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Nezle": {
+      "tp": 8,
+      "fp": 4,
+      "fn": 0,
+      "tn": 3249,
+      "precision": 0.6667,
+      "recall": 1.0,
+      "f1": 0.8,
+      "support": 8
+    },
+    "Nobetci": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 3,
+      "tn": 3258,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 3
+    },
+    "Nufus": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Nufus Cuzdani": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Odemek": {
+      "tp": 0,
+      "fp": 1,
+      "fn": 4,
+      "tn": 3256,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 4
+    },
+    "Obezite": {
+      "tp": 5,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3255,
+      "precision": 0.8333,
+      "recall": 1.0,
+      "f1": 0.9091,
+      "support": 5
+    },
+    "Obur": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Oda": {
+      "tp": 2,
+      "fp": 6,
+      "fn": 2,
+      "tn": 3251,
+      "precision": 0.25,
+      "recall": 0.5,
+      "f1": 0.3333,
+      "support": 4
+    },
+    "Odeme": {
+      "tp": 1,
+      "fp": 6,
+      "fn": 3,
+      "tn": 3251,
+      "precision": 0.1429,
+      "recall": 0.25,
+      "f1": 0.1818,
+      "support": 4
+    },
+    "Oglan_Erkek": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 10,
+      "tn": 3251,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 10
+    },
+    "Oglen": {
+      "tp": 3,
+      "fp": 7,
+      "fn": 2,
+      "tn": 3249,
+      "precision": 0.3,
+      "recall": 0.6,
+      "f1": 0.4,
+      "support": 5
+    },
+    "Oglen Yemegi": {
+      "tp": 5,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 5
+    },
+    "Ogrenmek": {
+      "tp": 4,
+      "fp": 3,
+      "fn": 0,
+      "tn": 3254,
+      "precision": 0.5714,
+      "recall": 1.0,
+      "f1": 0.7273,
+      "support": 4
+    },
+    "Ogretmek": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Ogun": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Oksuruk": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 3,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.25,
+      "f1": 0.4,
+      "support": 4
+    },
+    "Okul Adresi": {
+      "tp": 5,
+      "fp": 2,
+      "fn": 0,
+      "tn": 3254,
+      "precision": 0.7143,
+      "recall": 1.0,
+      "f1": 0.8333,
+      "support": 5
+    },
+    "Olmak": {
+      "tp": 4,
+      "fp": 6,
+      "fn": 0,
+      "tn": 3251,
+      "precision": 0.4,
+      "recall": 1.0,
+      "f1": 0.5714,
+      "support": 4
+    },
+    "Olmek": {
+      "tp": 3,
+      "fp": 3,
+      "fn": 1,
+      "tn": 3254,
+      "precision": 0.5,
+      "recall": 0.75,
+      "f1": 0.6,
+      "support": 4
+    },
+    "Olum": {
+      "tp": 1,
+      "fp": 1,
+      "fn": 3,
+      "tn": 3256,
+      "precision": 0.5,
+      "recall": 0.25,
+      "f1": 0.3333,
+      "support": 4
+    },
+    "Omuz": {
+      "tp": 1,
+      "fp": 1,
+      "fn": 3,
+      "tn": 3256,
+      "precision": 0.5,
+      "recall": 0.25,
+      "f1": 0.3333,
+      "support": 4
+    },
+    "Onay": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Once": {
+      "tp": 5,
+      "fp": 4,
+      "fn": 0,
+      "tn": 3252,
+      "precision": 0.5556,
+      "recall": 1.0,
+      "f1": 0.7143,
+      "support": 5
+    },
+    "Oneri": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Oran": {
+      "tp": 7,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3253,
+      "precision": 0.875,
+      "recall": 1.0,
+      "f1": 0.9333,
+      "support": 7
+    },
+    "Ordek": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Ortak": {
+      "tp": 7,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3254,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 7
+    },
+    "Ortmek": {
+      "tp": 4,
+      "fp": 4,
+      "fn": 0,
+      "tn": 3253,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Otomatik": {
+      "tp": 5,
+      "fp": 5,
+      "fn": 3,
+      "tn": 3248,
+      "precision": 0.5,
+      "recall": 0.625,
+      "f1": 0.5556,
+      "support": 8
+    },
+    "Oturak": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 4,
+      "tn": 3257,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 4
+    },
+    "Oturmak": {
+      "tp": 4,
+      "fp": 4,
+      "fn": 0,
+      "tn": 3253,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Ozel": {
+      "tp": 7,
+      "fp": 2,
+      "fn": 2,
+      "tn": 3250,
+      "precision": 0.7778,
+      "recall": 0.7778,
+      "f1": 0.7778,
+      "support": 9
+    },
+    "Ozel Hastane": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Ozel Saglik Sigortasi": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Ozel Sigorta": {
+      "tp": 4,
+      "fp": 2,
+      "fn": 0,
+      "tn": 3255,
+      "precision": 0.6667,
+      "recall": 1.0,
+      "f1": 0.8,
+      "support": 4
+    },
+    "Ozur": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Pansuman": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Para Cekme": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Para Yatirma": {
+      "tp": 4,
+      "fp": 3,
+      "fn": 0,
+      "tn": 3254,
+      "precision": 0.5714,
+      "recall": 1.0,
+      "f1": 0.7273,
+      "support": 4
+    },
+    "Parmak": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Piyasa": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3258,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 3
+    },
+    "Problem": {
+      "tp": 3,
+      "fp": 1,
+      "fn": 1,
+      "tn": 3256,
+      "precision": 0.75,
+      "recall": 0.75,
+      "f1": 0.75,
+      "support": 4
+    },
+    "Profesor": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Protein": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Psikoloji": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Radyoloji": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3258,
+      "precision": 1.0,
+      "recall": 0.6667,
+      "f1": 0.8,
+      "support": 3
+    },
+    "Rahat": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Randevu": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 4,
+      "tn": 3257,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 4
+    },
+    "Rapor": {
+      "tp": 4,
+      "fp": 2,
+      "fn": 0,
+      "tn": 3255,
+      "precision": 0.6667,
+      "recall": 1.0,
+      "f1": 0.8,
+      "support": 4
+    },
+    "Recete": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Reflu": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Regl": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 4,
+      "tn": 3257,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 4
+    },
+    "Risk": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Rontgen": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Ruh Hastaligi": {
+      "tp": 5,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 5
+    },
+    "Ruh Sagligi": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Saat": {
+      "tp": 5,
+      "fp": 2,
+      "fn": 0,
+      "tn": 3254,
+      "precision": 0.7143,
+      "recall": 1.0,
+      "f1": 0.8333,
+      "support": 5
+    },
+    "Sabah": {
+      "tp": 5,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 5
+    },
+    "Sagir": {
+      "tp": 5,
+      "fp": 3,
+      "fn": 3,
+      "tn": 3250,
+      "precision": 0.625,
+      "recall": 0.625,
+      "f1": 0.625,
+      "support": 8
+    },
+    "Saglik": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Sakinlesme": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Saklamak": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Sanci": {
+      "tp": 3,
+      "fp": 3,
+      "fn": 1,
+      "tn": 3254,
+      "precision": 0.5,
+      "recall": 0.75,
+      "f1": 0.6,
+      "support": 4
+    },
+    "Sara": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Sargi": {
+      "tp": 4,
+      "fp": 4,
+      "fn": 0,
+      "tn": 3253,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Satim": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Satmak": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Sedye": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Seker": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 6,
+      "tn": 3253,
+      "precision": 1.0,
+      "recall": 0.25,
+      "f1": 0.4,
+      "support": 8
+    },
+    "Seker Hastasi": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Senet": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Senelik (Yillik)": {
+      "tp": 3,
+      "fp": 4,
+      "fn": 0,
+      "tn": 3254,
+      "precision": 0.4286,
+      "recall": 1.0,
+      "f1": 0.6,
+      "support": 3
+    },
+    "Sert": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Seyahat": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3258,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 3
+    },
+    "Sezaryen": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Sicak": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Sigara": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Sigara Icmek": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Sigorta": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Sikayet": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Sikinti": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Simdi": {
+      "tp": 4,
+      "fp": 3,
+      "fn": 1,
+      "tn": 3253,
+      "precision": 0.5714,
+      "recall": 0.8,
+      "f1": 0.6667,
+      "support": 5
+    },
+    "Sinirlilik": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Sira": {
+      "tp": 4,
+      "fp": 4,
+      "fn": 0,
+      "tn": 3253,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Sira Numarasi": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3258,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 3
+    },
+    "Siramatik": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3258,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 3
+    },
+    "Siringa": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Sirket": {
+      "tp": 3,
+      "fp": 3,
+      "fn": 1,
+      "tn": 3254,
+      "precision": 0.5,
+      "recall": 0.75,
+      "f1": 0.6,
+      "support": 4
+    },
+    "Sirt": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Sis": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Sizlama": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Soguk Alginligi": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Solunum": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Sonra": {
+      "tp": 6,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3255,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 6
+    },
+    "Sonuc": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 4,
+      "tn": 3257,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 4
+    },
+    "Sormak": {
+      "tp": 13,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3247,
+      "precision": 1.0,
+      "recall": 0.9286,
+      "f1": 0.963,
+      "support": 14
+    },
+    "Soru": {
+      "tp": 9,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3252,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 9
+    },
+    "Soyad": {
+      "tp": 3,
+      "fp": 1,
+      "fn": 2,
+      "tn": 3255,
+      "precision": 0.75,
+      "recall": 0.6,
+      "f1": 0.6667,
+      "support": 5
+    },
+    "Soylemek": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3253,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 8
+    },
+    "Soyunmak": {
+      "tp": 12,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3249,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 12
+    },
+    "Sukretmek": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Spor": {
+      "tp": 4,
+      "fp": 3,
+      "fn": 0,
+      "tn": 3254,
+      "precision": 0.5714,
+      "recall": 1.0,
+      "f1": 0.7273,
+      "support": 4
+    },
+    "Stres": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Su Toplamis": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Surat": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3253,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 8
+    },
+    "Surup": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Susamak": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3253,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 8
+    },
+    "Susmak": {
+      "tp": 1,
+      "fp": 1,
+      "fn": 3,
+      "tn": 3256,
+      "precision": 0.5,
+      "recall": 0.25,
+      "f1": 0.3333,
+      "support": 4
+    },
+    "Tan\u008dmak": {
+      "tp": 2,
+      "fp": 3,
+      "fn": 2,
+      "tn": 3254,
+      "precision": 0.4,
+      "recall": 0.5,
+      "f1": 0.4444,
+      "support": 4
+    },
+    "Taban": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Taburcu": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Tatma": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Tahlil": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Taksit": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Tam": {
+      "tp": 5,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 5
+    },
+    "Tekrar": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 3,
+      "tn": 3256,
+      "precision": 1.0,
+      "recall": 0.4,
+      "f1": 0.5714,
+      "support": 5
+    },
+    "Tansiyon": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Tapu": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Tarih": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 4,
+      "tn": 3253,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6667,
+      "support": 8
+    },
+    "Tasarruf": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Tavan": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Tavsiye": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Tecavuz": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Tekerlekli Sandalye": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Telefon": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 5,
+      "tn": 3251,
+      "precision": 0.8,
+      "recall": 0.4444,
+      "f1": 0.5714,
+      "support": 9
+    },
+    "Tesekkur": {
+      "tp": 9,
+      "fp": 2,
+      "fn": 0,
+      "tn": 3250,
+      "precision": 0.8182,
+      "recall": 1.0,
+      "f1": 0.9,
+      "support": 9
+    },
+    "Temizlik": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Terapi": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Termometre": {
+      "tp": 3,
+      "fp": 1,
+      "fn": 1,
+      "tn": 3256,
+      "precision": 0.75,
+      "recall": 0.75,
+      "f1": 0.75,
+      "support": 4
+    },
+    "Unutmak": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Test": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Transfer": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Tuvalet": {
+      "tp": 1,
+      "fp": 2,
+      "fn": 3,
+      "tn": 3255,
+      "precision": 0.3333,
+      "recall": 0.25,
+      "f1": 0.2857,
+      "support": 4
+    },
+    "Uc Aylik": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Ucret": {
+      "tp": 3,
+      "fp": 3,
+      "fn": 1,
+      "tn": 3254,
+      "precision": 0.5,
+      "recall": 0.75,
+      "f1": 0.6,
+      "support": 4
+    },
+    "Ucuk": {
+      "tp": 1,
+      "fp": 1,
+      "fn": 3,
+      "tn": 3256,
+      "precision": 0.5,
+      "recall": 0.25,
+      "f1": 0.3333,
+      "support": 4
+    },
+    "Ultrason": {
+      "tp": 2,
+      "fp": 1,
+      "fn": 2,
+      "tn": 3256,
+      "precision": 0.6667,
+      "recall": 0.5,
+      "f1": 0.5714,
+      "support": 4
+    },
+    "Usumek": {
+      "tp": 12,
+      "fp": 2,
+      "fn": 0,
+      "tn": 3247,
+      "precision": 0.8571,
+      "recall": 1.0,
+      "f1": 0.9231,
+      "support": 12
+    },
+    "Var": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 4,
+      "tn": 3256,
+      "precision": 1.0,
+      "recall": 0.2,
+      "f1": 0.3333,
+      "support": 5
+    },
+    "Uykulu": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Uykusuz": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Uyumak": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 3,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.25,
+      "f1": 0.4,
+      "support": 4
+    },
+    "Uyusturucu": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Uyuyamamak": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Uzgun": {
+      "tp": 0,
+      "fp": 1,
+      "fn": 4,
+      "tn": 3256,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 4
+    },
+    "Uzman": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Uzulmek": {
+      "tp": 2,
+      "fp": 2,
+      "fn": 2,
+      "tn": 3255,
+      "precision": 0.5,
+      "recall": 0.5,
+      "f1": 0.5,
+      "support": 4
+    },
+    "Vade": {
+      "tp": 6,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3254,
+      "precision": 0.8571,
+      "recall": 1.0,
+      "f1": 0.9231,
+      "support": 6
+    },
+    "Vadeli": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Vadesiz": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3258,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 3
+    },
+    "Vermek": {
+      "tp": 3,
+      "fp": 4,
+      "fn": 1,
+      "tn": 3253,
+      "precision": 0.4286,
+      "recall": 0.75,
+      "f1": 0.5455,
+      "support": 4
+    },
+    "Vasi Tayini(Vesayet)": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Vergi": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Yakalamak": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Vezne": {
+      "tp": 5,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 5
+    },
+    "Viral": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Virus": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Vitamin": {
+      "tp": 4,
+      "fp": 3,
+      "fn": 0,
+      "tn": 3254,
+      "precision": 0.5714,
+      "recall": 1.0,
+      "f1": 0.7273,
+      "support": 4
+    },
+    "Vucut": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Yag": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Yakmak": {
+      "tp": 4,
+      "fp": 2,
+      "fn": 1,
+      "tn": 3254,
+      "precision": 0.6667,
+      "recall": 0.8,
+      "f1": 0.7273,
+      "support": 5
+    },
+    "Yakin": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3258,
+      "precision": 1.0,
+      "recall": 0.3333,
+      "f1": 0.5,
+      "support": 3
+    },
+    "Yakin(Akraba)": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 4,
+      "tn": 3257,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 4
+    },
+    "Yanit": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3256,
+      "precision": 1.0,
+      "recall": 0.8,
+      "f1": 0.8889,
+      "support": 5
+    },
+    "Yapmak": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 4,
+      "tn": 3257,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 4
+    },
+    "Yara": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Yarabandi": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Yaralamak": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Yardim": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Yil_Yas": {
+      "tp": 8,
+      "fp": 7,
+      "fn": 6,
+      "tn": 3240,
+      "precision": 0.5333,
+      "recall": 0.5714,
+      "f1": 0.5517,
+      "support": 14
+    },
+    "Yarim": {
+      "tp": 1,
+      "fp": 1,
+      "fn": 3,
+      "tn": 3256,
+      "precision": 0.5,
+      "recall": 0.25,
+      "f1": 0.3333,
+      "support": 4
+    },
+    "Yazmak": {
+      "tp": 4,
+      "fp": 2,
+      "fn": 0,
+      "tn": 3255,
+      "precision": 0.6667,
+      "recall": 1.0,
+      "f1": 0.8,
+      "support": 4
+    },
+    "Yasam": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Yasam Kalitesi": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Yatak": {
+      "tp": 4,
+      "fp": 2,
+      "fn": 0,
+      "tn": 3255,
+      "precision": 0.6667,
+      "recall": 1.0,
+      "f1": 0.8,
+      "support": 4
+    },
+    "Yatak Istirahati": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Yatirim Fonu": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Yatirmak": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 3,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.25,
+      "f1": 0.4,
+      "support": 4
+    },
+    "Yatmak": {
+      "tp": 1,
+      "fp": 1,
+      "fn": 3,
+      "tn": 3256,
+      "precision": 0.5,
+      "recall": 0.25,
+      "f1": 0.3333,
+      "support": 4
+    },
+    "Yemek": {
+      "tp": 7,
+      "fp": 14,
+      "fn": 2,
+      "tn": 3238,
+      "precision": 0.3333,
+      "recall": 0.7778,
+      "f1": 0.4667,
+      "support": 9
+    },
+    "Yok": {
+      "tp": 5,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 5
+    },
+    "Yetersiz": {
+      "tp": 3,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 0.75,
+      "recall": 1.0,
+      "f1": 0.8571,
+      "support": 3
+    },
+    "Yilan": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Yogun": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Yogun Bakim": {
+      "tp": 4,
+      "fp": 2,
+      "fn": 0,
+      "tn": 3255,
+      "precision": 0.6667,
+      "recall": 1.0,
+      "f1": 0.8,
+      "support": 4
+    },
+    "Yutmak": {
+      "tp": 4,
+      "fp": 2,
+      "fn": 0,
+      "tn": 3255,
+      "precision": 0.6667,
+      "recall": 1.0,
+      "f1": 0.8,
+      "support": 4
+    },
+    "Yol": {
+      "tp": 0,
+      "fp": 1,
+      "fn": 4,
+      "tn": 3256,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 4
+    },
+    "Yorgunluk": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Yuksek": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Yumusak": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Zannetmek": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Zaman": {
+      "tp": 3,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 0.75,
+      "recall": 1.0,
+      "f1": 0.8571,
+      "support": 3
+    },
+    "Bagirmak_2": {
+      "tp": 3,
+      "fp": 1,
+      "fn": 1,
+      "tn": 3256,
+      "precision": 0.75,
+      "recall": 0.75,
+      "f1": 0.75,
+      "support": 4
+    },
+    "Zaturree": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Zehir": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3253,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 8
+    },
+    "Bakmak_2": {
+      "tp": 4,
+      "fp": 3,
+      "fn": 0,
+      "tn": 3254,
+      "precision": 0.5714,
+      "recall": 1.0,
+      "f1": 0.7273,
+      "support": 4
+    },
+    "Benzemek_2": {
+      "tp": 5,
+      "fp": 0,
+      "fn": 3,
+      "tn": 3253,
+      "precision": 1.0,
+      "recall": 0.625,
+      "f1": 0.7692,
+      "support": 8
+    },
+    "Benzemek_3": {
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3260,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 0
+    },
+    "Bitmek_2": {
+      "tp": 3,
+      "fp": 2,
+      "fn": 1,
+      "tn": 3255,
+      "precision": 0.6,
+      "recall": 0.75,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Bogulmak_2": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Calismak_2": {
+      "tp": 4,
+      "fp": 2,
+      "fn": 0,
+      "tn": 3255,
+      "precision": 0.6667,
+      "recall": 1.0,
+      "f1": 0.8,
+      "support": 4
+    },
+    "Cekmek_2": {
+      "tp": 3,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 0.75,
+      "recall": 1.0,
+      "f1": 0.8571,
+      "support": 3
+    },
+    "Cevirmek_2": {
+      "tp": 3,
+      "fp": 3,
+      "fn": 1,
+      "tn": 3254,
+      "precision": 0.5,
+      "recall": 0.75,
+      "f1": 0.6,
+      "support": 4
+    },
+    "Cok_2": {
+      "tp": 2,
+      "fp": 3,
+      "fn": 3,
+      "tn": 3253,
+      "precision": 0.4,
+      "recall": 0.4,
+      "f1": 0.4,
+      "support": 5
+    },
+    "Dinlemek_2": {
+      "tp": 1,
+      "fp": 1,
+      "fn": 7,
+      "tn": 3252,
+      "precision": 0.5,
+      "recall": 0.125,
+      "f1": 0.2,
+      "support": 8
+    },
+    "Dokunmak_2": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Dokunmak_3": {
+      "tp": 4,
+      "fp": 5,
+      "fn": 0,
+      "tn": 3252,
+      "precision": 0.4444,
+      "recall": 1.0,
+      "f1": 0.6154,
+      "support": 4
+    },
+    "Dovmek_2": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "E-posta_2": {
+      "tp": 5,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3255,
+      "precision": 0.8333,
+      "recall": 1.0,
+      "f1": 0.9091,
+      "support": 5
+    },
+    "Emzirmek_2": {
+      "tp": 4,
+      "fp": 3,
+      "fn": 0,
+      "tn": 3254,
+      "precision": 0.5714,
+      "recall": 1.0,
+      "f1": 0.7273,
+      "support": 4
+    },
+    "Gondermek_2": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Insallah_2": {
+      "tp": 6,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3254,
+      "precision": 0.8571,
+      "recall": 1.0,
+      "f1": 0.9231,
+      "support": 6
+    },
+    "Isirmak_2": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Kahvalti_2": {
+      "tp": 5,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3255,
+      "precision": 0.8333,
+      "recall": 1.0,
+      "f1": 0.9091,
+      "support": 5
+    },
+    "Kahvalti_3": {
+      "tp": 5,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3255,
+      "precision": 0.8333,
+      "recall": 1.0,
+      "f1": 0.9091,
+      "support": 5
+    },
+    "Kahvalti_4": {
+      "tp": 5,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3255,
+      "precision": 0.8333,
+      "recall": 1.0,
+      "f1": 0.9091,
+      "support": 5
+    },
+    "Kilo Vermek_2": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Numara_2": {
+      "tp": 6,
+      "fp": 5,
+      "fn": 2,
+      "tn": 3248,
+      "precision": 0.5455,
+      "recall": 0.75,
+      "f1": 0.6316,
+      "support": 8
+    },
+    "Satmak_2": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Sonra_2": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3256,
+      "precision": 1.0,
+      "recall": 0.8,
+      "f1": 0.8889,
+      "support": 5
+    },
+    "Yapmak_2": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Alisveris_2": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Bankamatik_2": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Bekleme Salonu_2": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Bekleme Salonu_3": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Borc_2": {
+      "tp": 4,
+      "fp": 7,
+      "fn": 0,
+      "tn": 3250,
+      "precision": 0.3636,
+      "recall": 1.0,
+      "f1": 0.5333,
+      "support": 4
+    },
+    "Butce_2": {
+      "tp": 3,
+      "fp": 1,
+      "fn": 1,
+      "tn": 3256,
+      "precision": 0.75,
+      "recall": 0.75,
+      "f1": 0.75,
+      "support": 4
+    },
+    "Cekmek_3": {
+      "tp": 3,
+      "fp": 5,
+      "fn": 0,
+      "tn": 3253,
+      "precision": 0.375,
+      "recall": 1.0,
+      "f1": 0.5455,
+      "support": 3
+    },
+    "Cekmek_4": {
+      "tp": 2,
+      "fp": 3,
+      "fn": 2,
+      "tn": 3254,
+      "precision": 0.4,
+      "recall": 0.5,
+      "f1": 0.4444,
+      "support": 4
+    },
+    "Damga Vergisi_2": {
+      "tp": 2,
+      "fp": 1,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 0.6667,
+      "recall": 0.6667,
+      "f1": 0.6667,
+      "support": 3
+    },
+    "Danisma_2": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Doviz_2": {
+      "tp": 0,
+      "fp": 1,
+      "fn": 4,
+      "tn": 3256,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 4
+    },
+    "Fatura Odeme_2": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Iflas_2": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Internet_2": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Kapora_2": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Kart_2": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 3,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.25,
+      "f1": 0.4,
+      "support": 4
+    },
+    "Kefil_2": {
+      "tp": 4,
+      "fp": 2,
+      "fn": 0,
+      "tn": 3255,
+      "precision": 0.6667,
+      "recall": 1.0,
+      "f1": 0.8,
+      "support": 4
+    },
+    "Kimlik No_2": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Kredi_2": {
+      "tp": 4,
+      "fp": 4,
+      "fn": 0,
+      "tn": 3253,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Miras_2": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Miras_3": {
+      "tp": 3,
+      "fp": 1,
+      "fn": 1,
+      "tn": 3256,
+      "precision": 0.75,
+      "recall": 0.75,
+      "f1": 0.75,
+      "support": 4
+    },
+    "Odeme_2": {
+      "tp": 3,
+      "fp": 3,
+      "fn": 0,
+      "tn": 3255,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6667,
+      "support": 3
+    },
+    "Tam_2": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Tam_3": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Zaman_2": {
+      "tp": 3,
+      "fp": 2,
+      "fn": 1,
+      "tn": 3255,
+      "precision": 0.6,
+      "recall": 0.75,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Acil Servis_2": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Acil Servis_3": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Adet_2": {
+      "tp": 0,
+      "fp": 2,
+      "fn": 4,
+      "tn": 3255,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 4
+    },
+    "Adet_3": {
+      "tp": 1,
+      "fp": 1,
+      "fn": 3,
+      "tn": 3256,
+      "precision": 0.5,
+      "recall": 0.25,
+      "f1": 0.3333,
+      "support": 4
+    },
+    "Agri_2": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Agrikesici_2": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Alerji_2": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Alin_2": {
+      "tp": 3,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 0.75,
+      "recall": 1.0,
+      "f1": 0.8571,
+      "support": 3
+    },
+    "Alkol_2": {
+      "tp": 2,
+      "fp": 1,
+      "fn": 2,
+      "tn": 3256,
+      "precision": 0.6667,
+      "recall": 0.5,
+      "f1": 0.5714,
+      "support": 4
+    },
+    "Alkol_3": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Ambulans_2": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Ambulans_3": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Antibiyotik_2": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Antibiyotik_3": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 4,
+      "tn": 3257,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 4
+    },
+    "Ates Dusurucu_2": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 4,
+      "tn": 3257,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 4
+    },
+    "Ayak_2": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Bacak_2": {
+      "tp": 7,
+      "fp": 4,
+      "fn": 1,
+      "tn": 3249,
+      "precision": 0.6364,
+      "recall": 0.875,
+      "f1": 0.7368,
+      "support": 8
+    },
+    "Bagimli_2": {
+      "tp": 2,
+      "fp": 1,
+      "fn": 2,
+      "tn": 3256,
+      "precision": 0.6667,
+      "recall": 0.5,
+      "f1": 0.5714,
+      "support": 4
+    },
+    "Bagimli_3": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Bandaj_2": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Baski_2": {
+      "tp": 7,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3254,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 7
+    },
+    "Beze_2": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Bilek_2": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Bobrek_2": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Buyuk Abdest_2": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Catlak_2": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Catlak_3": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3258,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 3
+    },
+    "Dermatolog_2": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Dermatolog_3": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Dikis_2": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Dis Teli_2": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Dis Teli_3": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3256,
+      "precision": 1.0,
+      "recall": 0.8,
+      "f1": 0.8889,
+      "support": 5
+    },
+    "Dis Teli_4": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Dis Teli_5": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Dis Teli_6": {
+      "tp": 2,
+      "fp": 1,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 0.6667,
+      "recall": 0.6667,
+      "f1": 0.6667,
+      "support": 3
+    },
+    "Disci_2": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Disci_3": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Diz_2": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 4,
+      "tn": 3257,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 4
+    },
+    "Diz_3": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Dogum Sancisi_2": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Dokunma_2": {
+      "tp": 3,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 0.75,
+      "recall": 1.0,
+      "f1": 0.8571,
+      "support": 3
+    },
+    "Dusuk Ates_2": {
+      "tp": 3,
+      "fp": 4,
+      "fn": 1,
+      "tn": 3253,
+      "precision": 0.4286,
+      "recall": 0.75,
+      "f1": 0.5455,
+      "support": 4
+    },
+    "Dusuk Cocuk_2": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Duygusal_2": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Eczane_2": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3258,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 3
+    },
+    "Eklem_2": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Eklem_3": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "El_2": {
+      "tp": 0,
+      "fp": 2,
+      "fn": 4,
+      "tn": 3255,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 4
+    },
+    "El_3": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Emar_2": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 3,
+      "tn": 3258,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 3
+    },
+    "Emar_3": {
+      "tp": 3,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 0.75,
+      "recall": 1.0,
+      "f1": 0.8571,
+      "support": 3
+    },
+    "Emar_4": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Emzik_2": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Emzik_3": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Enfeksiyon_2": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3256,
+      "precision": 1.0,
+      "recall": 0.8,
+      "f1": 0.8889,
+      "support": 5
+    },
+    "Enfeksiyon_3": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3258,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 3
+    },
+    "Felc_2": {
+      "tp": 0,
+      "fp": 1,
+      "fn": 4,
+      "tn": 3256,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 4
+    },
+    "Fitil_2": {
+      "tp": 0,
+      "fp": 2,
+      "fn": 2,
+      "tn": 3257,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 2
+    },
+    "Fitil_3": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 4,
+      "tn": 3255,
+      "precision": 1.0,
+      "recall": 0.3333,
+      "f1": 0.5,
+      "support": 6
+    },
+    "Gogus_2": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Gormek_2": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Gormek_3": {
+      "tp": 5,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 5
+    },
+    "Govde_2": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Grip_2": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Hafiza_2": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Halsizlik_2": {
+      "tp": 4,
+      "fp": 3,
+      "fn": 0,
+      "tn": 3254,
+      "precision": 0.5714,
+      "recall": 1.0,
+      "f1": 0.7273,
+      "support": 4
+    },
+    "Halsizlik_3": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Hap_2": {
+      "tp": 4,
+      "fp": 4,
+      "fn": 0,
+      "tn": 3253,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Hareket_2": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 3,
+      "tn": 3256,
+      "precision": 1.0,
+      "recall": 0.4,
+      "f1": 0.5714,
+      "support": 5
+    },
+    "Ilik_2": {
+      "tp": 2,
+      "fp": 1,
+      "fn": 2,
+      "tn": 3256,
+      "precision": 0.6667,
+      "recall": 0.5,
+      "f1": 0.5714,
+      "support": 4
+    },
+    "Ilkyardim_2": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Ilkyardim_3": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Iltihap_2": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 3,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.25,
+      "f1": 0.4,
+      "support": 4
+    },
+    "Iltihap_3": {
+      "tp": 4,
+      "fp": 2,
+      "fn": 0,
+      "tn": 3255,
+      "precision": 0.6667,
+      "recall": 1.0,
+      "f1": 0.8,
+      "support": 4
+    },
+    "Is_2": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Istirahat_2": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Istirahat_3": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Kabiz_2": {
+      "tp": 3,
+      "fp": 1,
+      "fn": 1,
+      "tn": 3256,
+      "precision": 0.75,
+      "recall": 0.75,
+      "f1": 0.75,
+      "support": 4
+    },
+    "Kabiz_3": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Kafa_2": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Kafeterya_2": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Kalp_2": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Kan_2": {
+      "tp": 8,
+      "fp": 2,
+      "fn": 0,
+      "tn": 3251,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 8
+    },
+    "Kan Tahlili_2": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Kanser_2": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Kanser_3": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Karaciger_2": {
+      "tp": 5,
+      "fp": 3,
+      "fn": 0,
+      "tn": 3253,
+      "precision": 0.625,
+      "recall": 1.0,
+      "f1": 0.7692,
+      "support": 5
+    },
+    "Kemik_2": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Kizamik_2": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Kol_2": {
+      "tp": 1,
+      "fp": 1,
+      "fn": 3,
+      "tn": 3256,
+      "precision": 0.5,
+      "recall": 0.25,
+      "f1": 0.3333,
+      "support": 4
+    },
+    "Koltuk Degnegi_2": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Koltuk Degnegi_3": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Koltuk Degnegi_4": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Kramp_2": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Kramp_3": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Kramp_4": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Kucuk Abdest_2": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Kulak Agrisi_2": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Kuvoz_2": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Lavabo_2": {
+      "tp": 1,
+      "fp": 1,
+      "fn": 4,
+      "tn": 3255,
+      "precision": 0.5,
+      "recall": 0.2,
+      "f1": 0.2857,
+      "support": 5
+    },
+    "Merhem_2": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Migren_2": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Muayene_2": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Nabiz_2": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Nabiz_3": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Nefes_2": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Nefes Alma_2": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Nefes Tutma_2": {
+      "tp": 5,
+      "fp": 0,
+      "fn": 3,
+      "tn": 3253,
+      "precision": 1.0,
+      "recall": 0.625,
+      "f1": 0.7692,
+      "support": 8
+    },
+    "Nefes Verme_2": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Nobetci_2": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Obezite_2": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3258,
+      "precision": 1.0,
+      "recall": 0.6667,
+      "f1": 0.8,
+      "support": 3
+    },
+    "Ogun_2": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Oksuruk_2": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Omuz_2": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Ordek_2": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 3,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.25,
+      "f1": 0.4,
+      "support": 4
+    },
+    "Ordek_3": {
+      "tp": 2,
+      "fp": 2,
+      "fn": 2,
+      "tn": 3255,
+      "precision": 0.5,
+      "recall": 0.5,
+      "f1": 0.5,
+      "support": 4
+    },
+    "Radyoloji_2": {
+      "tp": 5,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3255,
+      "precision": 0.8333,
+      "recall": 1.0,
+      "f1": 0.9091,
+      "support": 5
+    },
+    "Regl_2": {
+      "tp": 0,
+      "fp": 1,
+      "fn": 4,
+      "tn": 3256,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 4
+    },
+    "Rontgen_2": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Sara_2": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Sedye_2": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Sizlama_2": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Soyunmak_2": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Temizlik_2": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "Temizlik_3": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Termometre_2": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 4
+    },
+    "Tuvalet_2": {
+      "tp": 0,
+      "fp": 1,
+      "fn": 4,
+      "tn": 3256,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 4
+    },
+    "Ucuk_2": {
+      "tp": 4,
+      "fp": 3,
+      "fn": 0,
+      "tn": 3254,
+      "precision": 0.5714,
+      "recall": 1.0,
+      "f1": 0.7273,
+      "support": 4
+    },
+    "Uykulu_2": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6667,
+      "support": 4
+    },
+    "Uyuyamamak_2": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Uyuyamamak_3": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3256,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 4
+    },
+    "Yumusak_2": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3257,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6667,
+      "support": 4
+    }
+  }
+}

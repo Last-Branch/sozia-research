@@ -1,0 +1,2272 @@
+{
+  "test_accuracy": 0.8850881881346874,
+  "test_top5_accuracy": 0.9871726632118225,
+  "best_val_accuracy": 0.8863839285714286,
+  "best_val_top5_accuracy": 0.9819196428571428,
+  "num_classes": 226,
+  "macro_precision": 0.8968,
+  "macro_recall": 0.8844,
+  "macro_f1": 0.8832,
+  "per_class": {
+    "abla": {
+      "tp": 12,
+      "fp": 3,
+      "fn": 4,
+      "tn": 3723,
+      "precision": 0.8,
+      "recall": 0.75,
+      "f1": 0.7742,
+      "support": 16
+    },
+    "acele": {
+      "tp": 12,
+      "fp": 0,
+      "fn": 4,
+      "tn": 3726,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571,
+      "support": 16
+    },
+    "acikmak": {
+      "tp": 17,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 17
+    },
+    "afiyet_olsun": {
+      "tp": 17,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 17
+    },
+    "agabey": {
+      "tp": 17,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3724,
+      "precision": 0.9444,
+      "recall": 1.0,
+      "f1": 0.9714,
+      "support": 17
+    },
+    "agac": {
+      "tp": 17,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 17
+    },
+    "agir": {
+      "tp": 10,
+      "fp": 2,
+      "fn": 7,
+      "tn": 3723,
+      "precision": 0.8333,
+      "recall": 0.5882,
+      "f1": 0.6897,
+      "support": 17
+    },
+    "aglamak": {
+      "tp": 10,
+      "fp": 0,
+      "fn": 7,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 0.5882,
+      "f1": 0.7407,
+      "support": 17
+    },
+    "aile": {
+      "tp": 10,
+      "fp": 7,
+      "fn": 7,
+      "tn": 3718,
+      "precision": 0.5882,
+      "recall": 0.5882,
+      "f1": 0.5882,
+      "support": 17
+    },
+    "akilli": {
+      "tp": 16,
+      "fp": 2,
+      "fn": 1,
+      "tn": 3723,
+      "precision": 0.8889,
+      "recall": 0.9412,
+      "f1": 0.9143,
+      "support": 17
+    },
+    "akilsiz": {
+      "tp": 17,
+      "fp": 2,
+      "fn": 0,
+      "tn": 3723,
+      "precision": 0.8947,
+      "recall": 1.0,
+      "f1": 0.9444,
+      "support": 17
+    },
+    "akraba": {
+      "tp": 14,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3726,
+      "precision": 1.0,
+      "recall": 0.875,
+      "f1": 0.9333,
+      "support": 16
+    },
+    "alisveris": {
+      "tp": 14,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3727,
+      "precision": 1.0,
+      "recall": 0.9333,
+      "f1": 0.9655,
+      "support": 15
+    },
+    "anahtar": {
+      "tp": 14,
+      "fp": 3,
+      "fn": 2,
+      "tn": 3723,
+      "precision": 0.8235,
+      "recall": 0.875,
+      "f1": 0.8485,
+      "support": 16
+    },
+    "anne": {
+      "tp": 17,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 17
+    },
+    "arkadas": {
+      "tp": 15,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3726,
+      "precision": 0.9375,
+      "recall": 1.0,
+      "f1": 0.9677,
+      "support": 15
+    },
+    "ataturk": {
+      "tp": 12,
+      "fp": 19,
+      "fn": 2,
+      "tn": 3709,
+      "precision": 0.3871,
+      "recall": 0.8571,
+      "f1": 0.5333,
+      "support": 14
+    },
+    "ayakkabi": {
+      "tp": 11,
+      "fp": 5,
+      "fn": 5,
+      "tn": 3721,
+      "precision": 0.6875,
+      "recall": 0.6875,
+      "f1": 0.6875,
+      "support": 16
+    },
+    "ayna": {
+      "tp": 17,
+      "fp": 4,
+      "fn": 0,
+      "tn": 3721,
+      "precision": 0.8095,
+      "recall": 1.0,
+      "f1": 0.8947,
+      "support": 17
+    },
+    "ayni": {
+      "tp": 17,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3724,
+      "precision": 0.9444,
+      "recall": 1.0,
+      "f1": 0.9714,
+      "support": 17
+    },
+    "baba": {
+      "tp": 16,
+      "fp": 3,
+      "fn": 0,
+      "tn": 3723,
+      "precision": 0.8421,
+      "recall": 1.0,
+      "f1": 0.9143,
+      "support": 16
+    },
+    "bahce": {
+      "tp": 15,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 0.8824,
+      "f1": 0.9375,
+      "support": 17
+    },
+    "bakmak": {
+      "tp": 16,
+      "fp": 1,
+      "fn": 1,
+      "tn": 3724,
+      "precision": 0.9412,
+      "recall": 0.9412,
+      "f1": 0.9412,
+      "support": 17
+    },
+    "bal": {
+      "tp": 13,
+      "fp": 2,
+      "fn": 3,
+      "tn": 3724,
+      "precision": 0.8667,
+      "recall": 0.8125,
+      "f1": 0.8387,
+      "support": 16
+    },
+    "bardak": {
+      "tp": 14,
+      "fp": 5,
+      "fn": 2,
+      "tn": 3721,
+      "precision": 0.7368,
+      "recall": 0.875,
+      "f1": 0.8,
+      "support": 16
+    },
+    "bayrak": {
+      "tp": 14,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3726,
+      "precision": 1.0,
+      "recall": 0.875,
+      "f1": 0.9333,
+      "support": 16
+    },
+    "bayram": {
+      "tp": 17,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 17
+    },
+    "bebek": {
+      "tp": 13,
+      "fp": 2,
+      "fn": 4,
+      "tn": 3723,
+      "precision": 0.8667,
+      "recall": 0.7647,
+      "f1": 0.8125,
+      "support": 17
+    },
+    "bekar": {
+      "tp": 17,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 17
+    },
+    "beklemek": {
+      "tp": 17,
+      "fp": 4,
+      "fn": 0,
+      "tn": 3721,
+      "precision": 0.8095,
+      "recall": 1.0,
+      "f1": 0.8947,
+      "support": 17
+    },
+    "ben": {
+      "tp": 14,
+      "fp": 1,
+      "fn": 3,
+      "tn": 3724,
+      "precision": 0.9333,
+      "recall": 0.8235,
+      "f1": 0.875,
+      "support": 17
+    },
+    "benzin": {
+      "tp": 17,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 17
+    },
+    "beraber": {
+      "tp": 17,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3724,
+      "precision": 0.9444,
+      "recall": 1.0,
+      "f1": 0.9714,
+      "support": 17
+    },
+    "bilgi_vermek": {
+      "tp": 14,
+      "fp": 0,
+      "fn": 3,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 0.8235,
+      "f1": 0.9032,
+      "support": 17
+    },
+    "biz": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 0.9412,
+      "f1": 0.9697,
+      "support": 17
+    },
+    "calismak": {
+      "tp": 13,
+      "fp": 1,
+      "fn": 3,
+      "tn": 3725,
+      "precision": 0.9286,
+      "recall": 0.8125,
+      "f1": 0.8667,
+      "support": 16
+    },
+    "carsamba": {
+      "tp": 16,
+      "fp": 3,
+      "fn": 1,
+      "tn": 3722,
+      "precision": 0.8421,
+      "recall": 0.9412,
+      "f1": 0.8889,
+      "support": 17
+    },
+    "catal": {
+      "tp": 14,
+      "fp": 0,
+      "fn": 3,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 0.8235,
+      "f1": 0.9032,
+      "support": 17
+    },
+    "cay": {
+      "tp": 14,
+      "fp": 4,
+      "fn": 3,
+      "tn": 3721,
+      "precision": 0.7778,
+      "recall": 0.8235,
+      "f1": 0.8,
+      "support": 17
+    },
+    "caydanlik": {
+      "tp": 12,
+      "fp": 4,
+      "fn": 4,
+      "tn": 3722,
+      "precision": 0.75,
+      "recall": 0.75,
+      "f1": 0.75,
+      "support": 16
+    },
+    "cekic": {
+      "tp": 14,
+      "fp": 1,
+      "fn": 3,
+      "tn": 3724,
+      "precision": 0.9333,
+      "recall": 0.8235,
+      "f1": 0.875,
+      "support": 17
+    },
+    "cirkin": {
+      "tp": 15,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 0.8824,
+      "f1": 0.9375,
+      "support": 17
+    },
+    "cocuk": {
+      "tp": 14,
+      "fp": 1,
+      "fn": 3,
+      "tn": 3724,
+      "precision": 0.9333,
+      "recall": 0.8235,
+      "f1": 0.875,
+      "support": 17
+    },
+    "corba": {
+      "tp": 15,
+      "fp": 13,
+      "fn": 2,
+      "tn": 3712,
+      "precision": 0.5357,
+      "recall": 0.8824,
+      "f1": 0.6667,
+      "support": 17
+    },
+    "cuma": {
+      "tp": 17,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3724,
+      "precision": 0.9444,
+      "recall": 1.0,
+      "f1": 0.9714,
+      "support": 17
+    },
+    "cumartesi": {
+      "tp": 16,
+      "fp": 2,
+      "fn": 1,
+      "tn": 3723,
+      "precision": 0.8889,
+      "recall": 0.9412,
+      "f1": 0.9143,
+      "support": 17
+    },
+    "cuzdan": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 0.9412,
+      "f1": 0.9697,
+      "support": 17
+    },
+    "dakika": {
+      "tp": 6,
+      "fp": 4,
+      "fn": 8,
+      "tn": 3724,
+      "precision": 0.6,
+      "recall": 0.4286,
+      "f1": 0.5,
+      "support": 14
+    },
+    "dede": {
+      "tp": 15,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 0.8824,
+      "f1": 0.9375,
+      "support": 17
+    },
+    "degistirmek": {
+      "tp": 15,
+      "fp": 3,
+      "fn": 2,
+      "tn": 3722,
+      "precision": 0.8333,
+      "recall": 0.8824,
+      "f1": 0.8571,
+      "support": 17
+    },
+    "devirmek": {
+      "tp": 16,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3725,
+      "precision": 0.9412,
+      "recall": 1.0,
+      "f1": 0.9697,
+      "support": 16
+    },
+    "devlet": {
+      "tp": 8,
+      "fp": 5,
+      "fn": 8,
+      "tn": 3721,
+      "precision": 0.6154,
+      "recall": 0.5,
+      "f1": 0.5517,
+      "support": 16
+    },
+    "doktor": {
+      "tp": 8,
+      "fp": 9,
+      "fn": 2,
+      "tn": 3723,
+      "precision": 0.4706,
+      "recall": 0.8,
+      "f1": 0.5926,
+      "support": 10
+    },
+    "dolu": {
+      "tp": 16,
+      "fp": 3,
+      "fn": 1,
+      "tn": 3722,
+      "precision": 0.8421,
+      "recall": 0.9412,
+      "f1": 0.8889,
+      "support": 17
+    },
+    "dugun": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3726,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 16
+    },
+    "dun": {
+      "tp": 15,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 0.8824,
+      "f1": 0.9375,
+      "support": 17
+    },
+    "dusman": {
+      "tp": 14,
+      "fp": 1,
+      "fn": 2,
+      "tn": 3725,
+      "precision": 0.9333,
+      "recall": 0.875,
+      "f1": 0.9032,
+      "support": 16
+    },
+    "duvar": {
+      "tp": 11,
+      "fp": 1,
+      "fn": 5,
+      "tn": 3725,
+      "precision": 0.9167,
+      "recall": 0.6875,
+      "f1": 0.7857,
+      "support": 16
+    },
+    "eczane": {
+      "tp": 17,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 17
+    },
+    "eldiven": {
+      "tp": 16,
+      "fp": 3,
+      "fn": 1,
+      "tn": 3722,
+      "precision": 0.8421,
+      "recall": 0.9412,
+      "f1": 0.8889,
+      "support": 17
+    },
+    "emek": {
+      "tp": 14,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3728,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 14
+    },
+    "emekli": {
+      "tp": 15,
+      "fp": 1,
+      "fn": 2,
+      "tn": 3724,
+      "precision": 0.9375,
+      "recall": 0.8824,
+      "f1": 0.9091,
+      "support": 17
+    },
+    "erkek": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 0.9412,
+      "f1": 0.9697,
+      "support": 17
+    },
+    "et": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 0.9412,
+      "f1": 0.9697,
+      "support": 17
+    },
+    "ev": {
+      "tp": 17,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 17
+    },
+    "evet": {
+      "tp": 11,
+      "fp": 0,
+      "fn": 4,
+      "tn": 3727,
+      "precision": 1.0,
+      "recall": 0.7333,
+      "f1": 0.8462,
+      "support": 15
+    },
+    "evli": {
+      "tp": 14,
+      "fp": 1,
+      "fn": 2,
+      "tn": 3725,
+      "precision": 0.9333,
+      "recall": 0.875,
+      "f1": 0.9032,
+      "support": 16
+    },
+    "ezberlemek": {
+      "tp": 13,
+      "fp": 1,
+      "fn": 2,
+      "tn": 3726,
+      "precision": 0.9286,
+      "recall": 0.8667,
+      "f1": 0.8966,
+      "support": 15
+    },
+    "fil": {
+      "tp": 13,
+      "fp": 0,
+      "fn": 3,
+      "tn": 3726,
+      "precision": 1.0,
+      "recall": 0.8125,
+      "f1": 0.8966,
+      "support": 16
+    },
+    "fotograf": {
+      "tp": 14,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3727,
+      "precision": 1.0,
+      "recall": 0.9333,
+      "f1": 0.9655,
+      "support": 15
+    },
+    "futbol": {
+      "tp": 17,
+      "fp": 2,
+      "fn": 0,
+      "tn": 3723,
+      "precision": 0.8947,
+      "recall": 1.0,
+      "f1": 0.9444,
+      "support": 17
+    },
+    "gecmis": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3726,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 16
+    },
+    "gecmis_olsun": {
+      "tp": 16,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3725,
+      "precision": 0.9412,
+      "recall": 1.0,
+      "f1": 0.9697,
+      "support": 16
+    },
+    "getirmek": {
+      "tp": 16,
+      "fp": 3,
+      "fn": 1,
+      "tn": 3722,
+      "precision": 0.8421,
+      "recall": 0.9412,
+      "f1": 0.8889,
+      "support": 17
+    },
+    "gol": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3726,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 16
+    },
+    "gomlek": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3726,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 16
+    },
+    "gormek": {
+      "tp": 13,
+      "fp": 0,
+      "fn": 4,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 0.7647,
+      "f1": 0.8667,
+      "support": 17
+    },
+    "gostermek": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3726,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 16
+    },
+    "gulmek": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 0.9412,
+      "f1": 0.9697,
+      "support": 17
+    },
+    "hafif": {
+      "tp": 11,
+      "fp": 7,
+      "fn": 0,
+      "tn": 3724,
+      "precision": 0.6111,
+      "recall": 1.0,
+      "f1": 0.7586,
+      "support": 11
+    },
+    "hakli": {
+      "tp": 17,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 17
+    },
+    "hali": {
+      "tp": 13,
+      "fp": 0,
+      "fn": 4,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 0.7647,
+      "f1": 0.8667,
+      "support": 17
+    },
+    "hasta": {
+      "tp": 17,
+      "fp": 2,
+      "fn": 0,
+      "tn": 3723,
+      "precision": 0.8947,
+      "recall": 1.0,
+      "f1": 0.9444,
+      "support": 17
+    },
+    "hastane": {
+      "tp": 17,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 17
+    },
+    "hata": {
+      "tp": 13,
+      "fp": 0,
+      "fn": 4,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 0.7647,
+      "f1": 0.8667,
+      "support": 17
+    },
+    "havlu": {
+      "tp": 17,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3724,
+      "precision": 0.9444,
+      "recall": 1.0,
+      "f1": 0.9714,
+      "support": 17
+    },
+    "hayir": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 0.9412,
+      "f1": 0.9697,
+      "support": 17
+    },
+    "hayirli_olsun": {
+      "tp": 14,
+      "fp": 2,
+      "fn": 0,
+      "tn": 3726,
+      "precision": 0.875,
+      "recall": 1.0,
+      "f1": 0.9333,
+      "support": 14
+    },
+    "hayvan": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3726,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 16
+    },
+    "hediye": {
+      "tp": 15,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 0.8824,
+      "f1": 0.9375,
+      "support": 17
+    },
+    "helal": {
+      "tp": 10,
+      "fp": 1,
+      "fn": 7,
+      "tn": 3724,
+      "precision": 0.9091,
+      "recall": 0.5882,
+      "f1": 0.7143,
+      "support": 17
+    },
+    "hep": {
+      "tp": 15,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 0.8824,
+      "f1": 0.9375,
+      "support": 17
+    },
+    "hic": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 0.9412,
+      "f1": 0.9697,
+      "support": 17
+    },
+    "hoscakal": {
+      "tp": 17,
+      "fp": 5,
+      "fn": 0,
+      "tn": 3720,
+      "precision": 0.7727,
+      "recall": 1.0,
+      "f1": 0.8718,
+      "support": 17
+    },
+    "icmek": {
+      "tp": 15,
+      "fp": 3,
+      "fn": 2,
+      "tn": 3722,
+      "precision": 0.8333,
+      "recall": 0.8824,
+      "f1": 0.8571,
+      "support": 17
+    },
+    "igne": {
+      "tp": 12,
+      "fp": 2,
+      "fn": 3,
+      "tn": 3725,
+      "precision": 0.8571,
+      "recall": 0.8,
+      "f1": 0.8276,
+      "support": 15
+    },
+    "ilac": {
+      "tp": 13,
+      "fp": 7,
+      "fn": 4,
+      "tn": 3718,
+      "precision": 0.65,
+      "recall": 0.7647,
+      "f1": 0.7027,
+      "support": 17
+    },
+    "ilgilenmemek": {
+      "tp": 10,
+      "fp": 1,
+      "fn": 7,
+      "tn": 3724,
+      "precision": 0.9091,
+      "recall": 0.5882,
+      "f1": 0.7143,
+      "support": 17
+    },
+    "isik": {
+      "tp": 14,
+      "fp": 2,
+      "fn": 2,
+      "tn": 3724,
+      "precision": 0.875,
+      "recall": 0.875,
+      "f1": 0.875,
+      "support": 16
+    },
+    "itmek": {
+      "tp": 15,
+      "fp": 1,
+      "fn": 2,
+      "tn": 3724,
+      "precision": 0.9375,
+      "recall": 0.8824,
+      "f1": 0.9091,
+      "support": 17
+    },
+    "iyi": {
+      "tp": 15,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 0.8824,
+      "f1": 0.9375,
+      "support": 17
+    },
+    "kacmak": {
+      "tp": 15,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 0.8824,
+      "f1": 0.9375,
+      "support": 17
+    },
+    "kahvalti": {
+      "tp": 17,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 17
+    },
+    "kalem": {
+      "tp": 11,
+      "fp": 6,
+      "fn": 5,
+      "tn": 3720,
+      "precision": 0.6471,
+      "recall": 0.6875,
+      "f1": 0.6667,
+      "support": 16
+    },
+    "kalorifer": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 0.9412,
+      "f1": 0.9697,
+      "support": 17
+    },
+    "kapi": {
+      "tp": 16,
+      "fp": 2,
+      "fn": 1,
+      "tn": 3723,
+      "precision": 0.8889,
+      "recall": 0.9412,
+      "f1": 0.9143,
+      "support": 17
+    },
+    "kardes": {
+      "tp": 17,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3724,
+      "precision": 0.9444,
+      "recall": 1.0,
+      "f1": 0.9714,
+      "support": 17
+    },
+    "kavsak": {
+      "tp": 16,
+      "fp": 5,
+      "fn": 1,
+      "tn": 3720,
+      "precision": 0.7619,
+      "recall": 0.9412,
+      "f1": 0.8421,
+      "support": 17
+    },
+    "kaza": {
+      "tp": 15,
+      "fp": 4,
+      "fn": 1,
+      "tn": 3722,
+      "precision": 0.7895,
+      "recall": 0.9375,
+      "f1": 0.8571,
+      "support": 16
+    },
+    "kemer": {
+      "tp": 15,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 0.8824,
+      "f1": 0.9375,
+      "support": 17
+    },
+    "keske": {
+      "tp": 16,
+      "fp": 4,
+      "fn": 1,
+      "tn": 3721,
+      "precision": 0.8,
+      "recall": 0.9412,
+      "f1": 0.8649,
+      "support": 17
+    },
+    "kim": {
+      "tp": 13,
+      "fp": 1,
+      "fn": 4,
+      "tn": 3724,
+      "precision": 0.9286,
+      "recall": 0.7647,
+      "f1": 0.8387,
+      "support": 17
+    },
+    "kimlik": {
+      "tp": 17,
+      "fp": 5,
+      "fn": 0,
+      "tn": 3720,
+      "precision": 0.7727,
+      "recall": 1.0,
+      "f1": 0.8718,
+      "support": 17
+    },
+    "kira": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 0.9412,
+      "f1": 0.9697,
+      "support": 17
+    },
+    "kitap": {
+      "tp": 17,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 17
+    },
+    "kiyma": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3726,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 16
+    },
+    "kiz": {
+      "tp": 17,
+      "fp": 2,
+      "fn": 0,
+      "tn": 3723,
+      "precision": 0.8947,
+      "recall": 1.0,
+      "f1": 0.9444,
+      "support": 17
+    },
+    "koku": {
+      "tp": 14,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3727,
+      "precision": 0.9333,
+      "recall": 1.0,
+      "f1": 0.9655,
+      "support": 14
+    },
+    "kolonya": {
+      "tp": 15,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3727,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 15
+    },
+    "komur": {
+      "tp": 17,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3724,
+      "precision": 0.9444,
+      "recall": 1.0,
+      "f1": 0.9714,
+      "support": 17
+    },
+    "kopek": {
+      "tp": 17,
+      "fp": 5,
+      "fn": 0,
+      "tn": 3720,
+      "precision": 0.7727,
+      "recall": 1.0,
+      "f1": 0.8718,
+      "support": 17
+    },
+    "kopru": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 0.9412,
+      "f1": 0.9697,
+      "support": 17
+    },
+    "kotu": {
+      "tp": 16,
+      "fp": 1,
+      "fn": 1,
+      "tn": 3724,
+      "precision": 0.9412,
+      "recall": 0.9412,
+      "f1": 0.9412,
+      "support": 17
+    },
+    "kucak": {
+      "tp": 16,
+      "fp": 4,
+      "fn": 1,
+      "tn": 3721,
+      "precision": 0.8,
+      "recall": 0.9412,
+      "f1": 0.8649,
+      "support": 17
+    },
+    "leke": {
+      "tp": 12,
+      "fp": 0,
+      "fn": 5,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 0.7059,
+      "f1": 0.8276,
+      "support": 17
+    },
+    "maas": {
+      "tp": 17,
+      "fp": 7,
+      "fn": 0,
+      "tn": 3718,
+      "precision": 0.7083,
+      "recall": 1.0,
+      "f1": 0.8293,
+      "support": 17
+    },
+    "makas": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3726,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 16
+    },
+    "masa": {
+      "tp": 11,
+      "fp": 5,
+      "fn": 6,
+      "tn": 3720,
+      "precision": 0.6875,
+      "recall": 0.6471,
+      "f1": 0.6667,
+      "support": 17
+    },
+    "masallah": {
+      "tp": 13,
+      "fp": 5,
+      "fn": 4,
+      "tn": 3720,
+      "precision": 0.7222,
+      "recall": 0.7647,
+      "f1": 0.7429,
+      "support": 17
+    },
+    "melek": {
+      "tp": 10,
+      "fp": 0,
+      "fn": 7,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 0.5882,
+      "f1": 0.7407,
+      "support": 17
+    },
+    "memnun_olmak": {
+      "tp": 17,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 17
+    },
+    "mendil": {
+      "tp": 14,
+      "fp": 3,
+      "fn": 0,
+      "tn": 3725,
+      "precision": 0.8235,
+      "recall": 1.0,
+      "f1": 0.9032,
+      "support": 14
+    },
+    "merdiven": {
+      "tp": 14,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3727,
+      "precision": 1.0,
+      "recall": 0.9333,
+      "f1": 0.9655,
+      "support": 15
+    },
+    "misafir": {
+      "tp": 17,
+      "fp": 6,
+      "fn": 0,
+      "tn": 3719,
+      "precision": 0.7391,
+      "recall": 1.0,
+      "f1": 0.85,
+      "support": 17
+    },
+    "mudur": {
+      "tp": 14,
+      "fp": 2,
+      "fn": 3,
+      "tn": 3723,
+      "precision": 0.875,
+      "recall": 0.8235,
+      "f1": 0.8485,
+      "support": 17
+    },
+    "musluk": {
+      "tp": 17,
+      "fp": 3,
+      "fn": 0,
+      "tn": 3722,
+      "precision": 0.85,
+      "recall": 1.0,
+      "f1": 0.9189,
+      "support": 17
+    },
+    "nasil": {
+      "tp": 14,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3726,
+      "precision": 1.0,
+      "recall": 0.875,
+      "f1": 0.9333,
+      "support": 16
+    },
+    "neden": {
+      "tp": 13,
+      "fp": 1,
+      "fn": 4,
+      "tn": 3724,
+      "precision": 0.9286,
+      "recall": 0.7647,
+      "f1": 0.8387,
+      "support": 17
+    },
+    "nerede": {
+      "tp": 17,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 17
+    },
+    "nine": {
+      "tp": 17,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 17
+    },
+    "ocak": {
+      "tp": 13,
+      "fp": 1,
+      "fn": 4,
+      "tn": 3724,
+      "precision": 0.9286,
+      "recall": 0.7647,
+      "f1": 0.8387,
+      "support": 17
+    },
+    "oda": {
+      "tp": 17,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 17
+    },
+    "odun": {
+      "tp": 14,
+      "fp": 6,
+      "fn": 3,
+      "tn": 3719,
+      "precision": 0.7,
+      "recall": 0.8235,
+      "f1": 0.7568,
+      "support": 17
+    },
+    "ogretmen": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 0.9412,
+      "f1": 0.9697,
+      "support": 17
+    },
+    "okul": {
+      "tp": 10,
+      "fp": 6,
+      "fn": 7,
+      "tn": 3719,
+      "precision": 0.625,
+      "recall": 0.5882,
+      "f1": 0.6061,
+      "support": 17
+    },
+    "olimpiyat": {
+      "tp": 17,
+      "fp": 5,
+      "fn": 0,
+      "tn": 3720,
+      "precision": 0.7727,
+      "recall": 1.0,
+      "f1": 0.8718,
+      "support": 17
+    },
+    "olmaz": {
+      "tp": 12,
+      "fp": 1,
+      "fn": 5,
+      "tn": 3724,
+      "precision": 0.9231,
+      "recall": 0.7059,
+      "f1": 0.8,
+      "support": 17
+    },
+    "olur": {
+      "tp": 11,
+      "fp": 1,
+      "fn": 6,
+      "tn": 3724,
+      "precision": 0.9167,
+      "recall": 0.6471,
+      "f1": 0.7586,
+      "support": 17
+    },
+    "onlar": {
+      "tp": 12,
+      "fp": 8,
+      "fn": 5,
+      "tn": 3717,
+      "precision": 0.6,
+      "recall": 0.7059,
+      "f1": 0.6486,
+      "support": 17
+    },
+    "orman": {
+      "tp": 15,
+      "fp": 2,
+      "fn": 2,
+      "tn": 3723,
+      "precision": 0.8824,
+      "recall": 0.8824,
+      "f1": 0.8824,
+      "support": 17
+    },
+    "oruc": {
+      "tp": 7,
+      "fp": 0,
+      "fn": 9,
+      "tn": 3726,
+      "precision": 1.0,
+      "recall": 0.4375,
+      "f1": 0.6087,
+      "support": 16
+    },
+    "ozur_dilemek": {
+      "tp": 17,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 17
+    },
+    "pamuk": {
+      "tp": 16,
+      "fp": 2,
+      "fn": 1,
+      "tn": 3723,
+      "precision": 0.8889,
+      "recall": 0.9412,
+      "f1": 0.9143,
+      "support": 17
+    },
+    "pantolon": {
+      "tp": 17,
+      "fp": 2,
+      "fn": 0,
+      "tn": 3723,
+      "precision": 0.8947,
+      "recall": 1.0,
+      "f1": 0.9444,
+      "support": 17
+    },
+    "para": {
+      "tp": 15,
+      "fp": 3,
+      "fn": 2,
+      "tn": 3722,
+      "precision": 0.8333,
+      "recall": 0.8824,
+      "f1": 0.8571,
+      "support": 17
+    },
+    "pastirma": {
+      "tp": 12,
+      "fp": 3,
+      "fn": 5,
+      "tn": 3722,
+      "precision": 0.8,
+      "recall": 0.7059,
+      "f1": 0.75,
+      "support": 17
+    },
+    "patates": {
+      "tp": 13,
+      "fp": 0,
+      "fn": 4,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 0.7647,
+      "f1": 0.8667,
+      "support": 17
+    },
+    "pazar": {
+      "tp": 17,
+      "fp": 2,
+      "fn": 0,
+      "tn": 3723,
+      "precision": 0.8947,
+      "recall": 1.0,
+      "f1": 0.9444,
+      "support": 17
+    },
+    "pazartesi": {
+      "tp": 17,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3724,
+      "precision": 0.9444,
+      "recall": 1.0,
+      "f1": 0.9714,
+      "support": 17
+    },
+    "pencere": {
+      "tp": 17,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3724,
+      "precision": 0.9444,
+      "recall": 1.0,
+      "f1": 0.9714,
+      "support": 17
+    },
+    "persembe": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 0.9412,
+      "f1": 0.9697,
+      "support": 17
+    },
+    "piknik": {
+      "tp": 13,
+      "fp": 5,
+      "fn": 4,
+      "tn": 3720,
+      "precision": 0.7222,
+      "recall": 0.7647,
+      "f1": 0.7429,
+      "support": 17
+    },
+    "polis": {
+      "tp": 16,
+      "fp": 5,
+      "fn": 1,
+      "tn": 3720,
+      "precision": 0.7619,
+      "recall": 0.9412,
+      "f1": 0.8421,
+      "support": 17
+    },
+    "psikoloji": {
+      "tp": 7,
+      "fp": 2,
+      "fn": 10,
+      "tn": 3723,
+      "precision": 0.7778,
+      "recall": 0.4118,
+      "f1": 0.5385,
+      "support": 17
+    },
+    "rica_etmek": {
+      "tp": 15,
+      "fp": 2,
+      "fn": 2,
+      "tn": 3723,
+      "precision": 0.8824,
+      "recall": 0.8824,
+      "f1": 0.8824,
+      "support": 17
+    },
+    "saat": {
+      "tp": 11,
+      "fp": 2,
+      "fn": 6,
+      "tn": 3723,
+      "precision": 0.8462,
+      "recall": 0.6471,
+      "f1": 0.7333,
+      "support": 17
+    },
+    "sabun": {
+      "tp": 8,
+      "fp": 8,
+      "fn": 9,
+      "tn": 3717,
+      "precision": 0.5,
+      "recall": 0.4706,
+      "f1": 0.4848,
+      "support": 17
+    },
+    "salca": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3726,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 16
+    },
+    "sali": {
+      "tp": 17,
+      "fp": 6,
+      "fn": 0,
+      "tn": 3719,
+      "precision": 0.7391,
+      "recall": 1.0,
+      "f1": 0.85,
+      "support": 17
+    },
+    "sampiyon": {
+      "tp": 17,
+      "fp": 6,
+      "fn": 0,
+      "tn": 3719,
+      "precision": 0.7391,
+      "recall": 1.0,
+      "f1": 0.85,
+      "support": 17
+    },
+    "sapka": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 0.9412,
+      "f1": 0.9697,
+      "support": 17
+    },
+    "savas": {
+      "tp": 12,
+      "fp": 7,
+      "fn": 5,
+      "tn": 3718,
+      "precision": 0.6316,
+      "recall": 0.7059,
+      "f1": 0.6667,
+      "support": 17
+    },
+    "seker": {
+      "tp": 7,
+      "fp": 0,
+      "fn": 4,
+      "tn": 3731,
+      "precision": 1.0,
+      "recall": 0.6364,
+      "f1": 0.7778,
+      "support": 11
+    },
+    "selam": {
+      "tp": 16,
+      "fp": 1,
+      "fn": 1,
+      "tn": 3724,
+      "precision": 0.9412,
+      "recall": 0.9412,
+      "f1": 0.9412,
+      "support": 17
+    },
+    "semsiye": {
+      "tp": 15,
+      "fp": 3,
+      "fn": 2,
+      "tn": 3722,
+      "precision": 0.8333,
+      "recall": 0.8824,
+      "f1": 0.8571,
+      "support": 17
+    },
+    "sen": {
+      "tp": 14,
+      "fp": 6,
+      "fn": 3,
+      "tn": 3719,
+      "precision": 0.7,
+      "recall": 0.8235,
+      "f1": 0.7568,
+      "support": 17
+    },
+    "senet": {
+      "tp": 14,
+      "fp": 1,
+      "fn": 1,
+      "tn": 3726,
+      "precision": 0.9333,
+      "recall": 0.9333,
+      "f1": 0.9333,
+      "support": 15
+    },
+    "serbest": {
+      "tp": 17,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 17
+    },
+    "ses": {
+      "tp": 17,
+      "fp": 3,
+      "fn": 0,
+      "tn": 3722,
+      "precision": 0.85,
+      "recall": 1.0,
+      "f1": 0.9189,
+      "support": 17
+    },
+    "sevmek": {
+      "tp": 17,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 17
+    },
+    "seytan": {
+      "tp": 17,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3724,
+      "precision": 0.9444,
+      "recall": 1.0,
+      "f1": 0.9714,
+      "support": 17
+    },
+    "sinir": {
+      "tp": 16,
+      "fp": 7,
+      "fn": 1,
+      "tn": 3718,
+      "precision": 0.6957,
+      "recall": 0.9412,
+      "f1": 0.8,
+      "support": 17
+    },
+    "siz": {
+      "tp": 10,
+      "fp": 1,
+      "fn": 6,
+      "tn": 3725,
+      "precision": 0.9091,
+      "recall": 0.625,
+      "f1": 0.7407,
+      "support": 16
+    },
+    "soylemek": {
+      "tp": 16,
+      "fp": 4,
+      "fn": 0,
+      "tn": 3722,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "support": 16
+    },
+    "soz": {
+      "tp": 16,
+      "fp": 1,
+      "fn": 1,
+      "tn": 3724,
+      "precision": 0.9412,
+      "recall": 0.9412,
+      "f1": 0.9412,
+      "support": 17
+    },
+    "sut": {
+      "tp": 17,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 17
+    },
+    "tamam": {
+      "tp": 15,
+      "fp": 2,
+      "fn": 1,
+      "tn": 3724,
+      "precision": 0.8824,
+      "recall": 0.9375,
+      "f1": 0.9091,
+      "support": 16
+    },
+    "tarak": {
+      "tp": 14,
+      "fp": 1,
+      "fn": 3,
+      "tn": 3724,
+      "precision": 0.9333,
+      "recall": 0.8235,
+      "f1": 0.875,
+      "support": 17
+    },
+    "tarih": {
+      "tp": 15,
+      "fp": 1,
+      "fn": 2,
+      "tn": 3724,
+      "precision": 0.9375,
+      "recall": 0.8824,
+      "f1": 0.9091,
+      "support": 17
+    },
+    "tatil": {
+      "tp": 17,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 17
+    },
+    "tatli": {
+      "tp": 16,
+      "fp": 1,
+      "fn": 1,
+      "tn": 3724,
+      "precision": 0.9412,
+      "recall": 0.9412,
+      "f1": 0.9412,
+      "support": 17
+    },
+    "tavan": {
+      "tp": 17,
+      "fp": 2,
+      "fn": 0,
+      "tn": 3723,
+      "precision": 0.8947,
+      "recall": 1.0,
+      "f1": 0.9444,
+      "support": 17
+    },
+    "tehlike": {
+      "tp": 15,
+      "fp": 2,
+      "fn": 2,
+      "tn": 3723,
+      "precision": 0.8824,
+      "recall": 0.8824,
+      "f1": 0.8824,
+      "support": 17
+    },
+    "telefon": {
+      "tp": 17,
+      "fp": 2,
+      "fn": 0,
+      "tn": 3723,
+      "precision": 0.8947,
+      "recall": 1.0,
+      "f1": 0.9444,
+      "support": 17
+    },
+    "terazi": {
+      "tp": 14,
+      "fp": 7,
+      "fn": 3,
+      "tn": 3718,
+      "precision": 0.6667,
+      "recall": 0.8235,
+      "f1": 0.7368,
+      "support": 17
+    },
+    "terzi": {
+      "tp": 8,
+      "fp": 3,
+      "fn": 7,
+      "tn": 3724,
+      "precision": 0.7273,
+      "recall": 0.5333,
+      "f1": 0.6154,
+      "support": 15
+    },
+    "tesekkur": {
+      "tp": 17,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3724,
+      "precision": 0.9444,
+      "recall": 1.0,
+      "f1": 0.9714,
+      "support": 17
+    },
+    "tornavida": {
+      "tp": 15,
+      "fp": 0,
+      "fn": 2,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 0.8824,
+      "f1": 0.9375,
+      "support": 17
+    },
+    "turkiye": {
+      "tp": 16,
+      "fp": 3,
+      "fn": 0,
+      "tn": 3723,
+      "precision": 0.8421,
+      "recall": 1.0,
+      "f1": 0.9143,
+      "support": 16
+    },
+    "turuncu": {
+      "tp": 16,
+      "fp": 1,
+      "fn": 1,
+      "tn": 3724,
+      "precision": 0.9412,
+      "recall": 0.9412,
+      "f1": 0.9412,
+      "support": 17
+    },
+    "tuvalet": {
+      "tp": 17,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 17
+    },
+    "un": {
+      "tp": 17,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 17
+    },
+    "uzak": {
+      "tp": 13,
+      "fp": 0,
+      "fn": 3,
+      "tn": 3726,
+      "precision": 1.0,
+      "recall": 0.8125,
+      "f1": 0.8966,
+      "support": 16
+    },
+    "uzgun": {
+      "tp": 17,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3724,
+      "precision": 0.9444,
+      "recall": 1.0,
+      "f1": 0.9714,
+      "support": 17
+    },
+    "var": {
+      "tp": 16,
+      "fp": 1,
+      "fn": 1,
+      "tn": 3724,
+      "precision": 0.9412,
+      "recall": 0.9412,
+      "f1": 0.9412,
+      "support": 17
+    },
+    "vergi": {
+      "tp": 7,
+      "fp": 1,
+      "fn": 10,
+      "tn": 3724,
+      "precision": 0.875,
+      "recall": 0.4118,
+      "f1": 0.56,
+      "support": 17
+    },
+    "yakin": {
+      "tp": 10,
+      "fp": 1,
+      "fn": 4,
+      "tn": 3727,
+      "precision": 0.9091,
+      "recall": 0.7143,
+      "f1": 0.8,
+      "support": 14
+    },
+    "yalniz": {
+      "tp": 12,
+      "fp": 0,
+      "fn": 5,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 0.7059,
+      "f1": 0.8276,
+      "support": 17
+    },
+    "yanlis": {
+      "tp": 17,
+      "fp": 13,
+      "fn": 0,
+      "tn": 3712,
+      "precision": 0.5667,
+      "recall": 1.0,
+      "f1": 0.7234,
+      "support": 17
+    },
+    "yapmak": {
+      "tp": 14,
+      "fp": 0,
+      "fn": 3,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 0.8235,
+      "f1": 0.9032,
+      "support": 17
+    },
+    "yarabandi": {
+      "tp": 14,
+      "fp": 0,
+      "fn": 3,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 0.8235,
+      "f1": 0.9032,
+      "support": 17
+    },
+    "yardim": {
+      "tp": 14,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3727,
+      "precision": 0.9333,
+      "recall": 1.0,
+      "f1": 0.9655,
+      "support": 14
+    },
+    "yarin": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 0.9412,
+      "f1": 0.9697,
+      "support": 17
+    },
+    "yasak": {
+      "tp": 15,
+      "fp": 3,
+      "fn": 2,
+      "tn": 3722,
+      "precision": 0.8333,
+      "recall": 0.8824,
+      "f1": 0.8571,
+      "support": 17
+    },
+    "yastik": {
+      "tp": 14,
+      "fp": 6,
+      "fn": 3,
+      "tn": 3719,
+      "precision": 0.7,
+      "recall": 0.8235,
+      "f1": 0.7568,
+      "support": 17
+    },
+    "yatak": {
+      "tp": 17,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 17
+    },
+    "yavas": {
+      "tp": 10,
+      "fp": 3,
+      "fn": 7,
+      "tn": 3722,
+      "precision": 0.7692,
+      "recall": 0.5882,
+      "f1": 0.6667,
+      "support": 17
+    },
+    "yemek": {
+      "tp": 12,
+      "fp": 1,
+      "fn": 5,
+      "tn": 3724,
+      "precision": 0.9231,
+      "recall": 0.7059,
+      "f1": 0.8,
+      "support": 17
+    },
+    "yemek_pisirmek": {
+      "tp": 17,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 17
+    },
+    "yildiz": {
+      "tp": 15,
+      "fp": 1,
+      "fn": 2,
+      "tn": 3724,
+      "precision": 0.9375,
+      "recall": 0.8824,
+      "f1": 0.9091,
+      "support": 17
+    },
+    "yok": {
+      "tp": 17,
+      "fp": 2,
+      "fn": 0,
+      "tn": 3723,
+      "precision": 0.8947,
+      "recall": 1.0,
+      "f1": 0.9444,
+      "support": 17
+    },
+    "yol": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 1,
+      "tn": 3725,
+      "precision": 1.0,
+      "recall": 0.9412,
+      "f1": 0.9697,
+      "support": 17
+    },
+    "yorgun": {
+      "tp": 16,
+      "fp": 1,
+      "fn": 1,
+      "tn": 3724,
+      "precision": 0.9412,
+      "recall": 0.9412,
+      "f1": 0.9412,
+      "support": 17
+    },
+    "yumurta": {
+      "tp": 17,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3724,
+      "precision": 0.9444,
+      "recall": 1.0,
+      "f1": 0.9714,
+      "support": 17
+    },
+    "zaman": {
+      "tp": 17,
+      "fp": 6,
+      "fn": 0,
+      "tn": 3719,
+      "precision": 0.7391,
+      "recall": 1.0,
+      "f1": 0.85,
+      "support": 17
+    },
+    "zor": {
+      "tp": 13,
+      "fp": 1,
+      "fn": 4,
+      "tn": 3724,
+      "precision": 0.9286,
+      "recall": 0.7647,
+      "f1": 0.8387,
+      "support": 17
+    }
+  }
+}
