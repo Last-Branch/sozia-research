@@ -41,7 +41,11 @@ from ..config import (
     TrainConfig,
 )
 from ..dataset.interpolation import EXPECTED_DIM, interpolate_missing_keypoints
-from ..extraction.landmarks import create_landmarkers, detect_landmarks, extract_keypoints
+from ..extraction.landmarks import (
+    create_landmarkers,
+    detect_landmarks,
+    extract_keypoints,
+)
 from ..models import build_model
 from .visualization import draw_results, draw_status_bar
 
@@ -77,6 +81,7 @@ class SignRecorder:
     last_hand_positions : np.ndarray | None
         Hand positions from previous frame (for velocity calculation).
     """
+
     frames: list = field(default_factory=list)
     is_recording: bool = False
     motion_history: deque = field(default_factory=lambda: deque(maxlen=15))
@@ -107,8 +112,8 @@ class SignRecorder:
         rstart = lstart + HAND_LANDMARKS * 3
 
         hand_len = HAND_LANDMARKS * 3
-        lh = keypoints[lstart:lstart + hand_len].reshape(-1, 3)[:, :2]
-        rh = keypoints[rstart:rstart + hand_len].reshape(-1, 3)[:, :2]
+        lh = keypoints[lstart : lstart + hand_len].reshape(-1, 3)[:, :2]
+        rh = keypoints[rstart : rstart + hand_len].reshape(-1, 3)[:, :2]
 
         positions = []
         if np.any(np.abs(lh) > 1e-6):
@@ -121,7 +126,9 @@ class SignRecorder:
 
         cur = np.array(positions)
 
-        if self.last_hand_positions is None or len(cur) != len(self.last_hand_positions):
+        if self.last_hand_positions is None or len(cur) != len(
+            self.last_hand_positions
+        ):
             self.last_hand_positions = cur
             return 0.0
 
@@ -305,14 +312,15 @@ def _load_run(run_dir: Path) -> dict:
 
     scaler = None
     if normalize:
-        dataset_folder = TrainConfig(dataset=dataset_name).dataset_info.processed_dir.parent.name
-        scaler_path = SCALERS_DIR / dataset_folder / f"scaler_{split_mode}.pkl"
+        scaler_path = SCALERS_DIR / TrainConfig(dataset=dataset_name).dataset_info.display_name / f"scaler_{split_mode}.pkl"
         if scaler_path.exists():
             with open(scaler_path, "rb") as f:
                 scaler = pickle.load(f)
             print(f"Scaler loaded : {scaler_path.name}")
         else:
-            print(f"WARNING: scaler not found at {scaler_path} — running without normalisation")
+            print(
+                f"WARNING: scaler not found at {scaler_path} — running without normalisation"
+            )
 
     model = build_model(
         arch=model_arch,
@@ -412,7 +420,7 @@ def run_inference(
     history: list[str] = []
     fcount = 0
     ts = 0
-    print(f"\n{'='*60}\nStarting inference loop...\n{'='*60}\n")
+    print(f"\n{'=' * 60}\nStarting inference loop...\n{'=' * 60}\n")
 
     with create_landmarkers(MP_MODEL_DIR) as (face_lm, hand_lm, hand_crop_lm, pose_lm):
         while cap.isOpened():
@@ -425,7 +433,9 @@ def run_inference(
             if mode != InferenceMode.VIDEO_FILE:
                 frame = cv2.flip(frame, 1)
             ts += 33
-            fr, hr, pr = detect_landmarks(frame, face_lm, hand_lm, hand_crop_lm, pose_lm, ts)
+            fr, hr, pr = detect_landmarks(
+                frame, face_lm, hand_lm, hand_crop_lm, pose_lm, ts
+            )
             if show_landmarks:
                 frame = draw_results(frame, fr, hr, pr)
             kp = extract_keypoints(fr, hr, pr)
@@ -440,10 +450,16 @@ def run_inference(
                 if rec.is_recording:
                     rec.frames.append(kp)
                     if len(rec.frames) >= max_len:
-                        arr, alen = preprocess_sequence(rec.frames, scaler, max_len, normalize, True, seq_handling)
-                        cur_preds, _ = predict_sign(model, arr, alen, DEVICE, actions, top_k)
+                        arr, alen = preprocess_sequence(
+                            rec.frames, scaler, max_len, normalize, True, seq_handling
+                        )
+                        cur_preds, _ = predict_sign(
+                            model, arr, alen, DEVICE, actions, top_k
+                        )
                         history.append(cur_preds[0][0])
-                        print(f"Prediction: {cur_preds[0][0]} ({cur_preds[0][1]*100:.1f}%)")
+                        print(
+                            f"Prediction: {cur_preds[0][0]} ({cur_preds[0][1] * 100:.1f}%)"
+                        )
                         rec.reset()
 
             elif mode == InferenceMode.MOTION:
@@ -467,7 +483,10 @@ def run_inference(
                         rec.low_motion_count = 0
 
                     do_pred = False
-                    if rec.low_motion_count >= motion_end_frames and len(rec.frames) >= min_sign_frames:
+                    if (
+                        rec.low_motion_count >= motion_end_frames
+                        and len(rec.frames) >= min_sign_frames
+                    ):
                         print(f"Sign ended (low motion for {motion_end_frames} frames)")
                         do_pred = True
                     elif len(rec.frames) >= max_len:
@@ -475,21 +494,34 @@ def run_inference(
                         do_pred = True
 
                     if do_pred:
-                        arr, alen = preprocess_sequence(rec.frames, scaler, max_len, normalize, True, seq_handling)
-                        cur_preds, _ = predict_sign(model, arr, alen, DEVICE, actions, top_k)
+                        arr, alen = preprocess_sequence(
+                            rec.frames, scaler, max_len, normalize, True, seq_handling
+                        )
+                        cur_preds, _ = predict_sign(
+                            model, arr, alen, DEVICE, actions, top_k
+                        )
                         history.append(cur_preds[0][0])
-                        print(f"Prediction ({len(rec.frames)} frames): {cur_preds[0][0]} ({cur_preds[0][1]*100:.1f}%)")
+                        print(
+                            f"Prediction ({len(rec.frames)} frames): {cur_preds[0][0]} ({cur_preds[0][1] * 100:.1f}%)"
+                        )
                         for j, (c, p) in enumerate(cur_preds[:3]):
-                            print(f"  {j+1}. {c}: {p*100:.1f}%")
+                            print(f"  {j + 1}. {c}: {p * 100:.1f}%")
                         rec.reset()
 
             elif mode == InferenceMode.CONTINUOUS:
                 rec.frames.append(kp)
                 if len(rec.frames) >= max_len:
                     rec.frames = rec.frames[-max_len:]
-                if fcount % continuous_every == 0 and len(rec.frames) >= min_sign_frames:
-                    arr, alen = preprocess_sequence(rec.frames, scaler, max_len, normalize, True, seq_handling)
-                    cur_preds, _ = predict_sign(model, arr, alen, DEVICE, actions, top_k)
+                if (
+                    fcount % continuous_every == 0
+                    and len(rec.frames) >= min_sign_frames
+                ):
+                    arr, alen = preprocess_sequence(
+                        rec.frames, scaler, max_len, normalize, True, seq_handling
+                    )
+                    cur_preds, _ = predict_sign(
+                        model, arr, alen, DEVICE, actions, top_k
+                    )
 
             elif mode == InferenceMode.VIDEO_FILE:
                 rec.frames.append(kp)
@@ -503,12 +535,20 @@ def run_inference(
             elif key == ord(" ") and mode == InferenceMode.TRIGGER:
                 if rec.is_recording:
                     if len(rec.frames) >= min_sign_frames:
-                        arr, alen = preprocess_sequence(rec.frames, scaler, max_len, normalize, True, seq_handling)
-                        cur_preds, _ = predict_sign(model, arr, alen, DEVICE, actions, top_k)
+                        arr, alen = preprocess_sequence(
+                            rec.frames, scaler, max_len, normalize, True, seq_handling
+                        )
+                        cur_preds, _ = predict_sign(
+                            model, arr, alen, DEVICE, actions, top_k
+                        )
                         history.append(cur_preds[0][0])
-                        print(f"Prediction ({len(rec.frames)} frames): {cur_preds[0][0]} ({cur_preds[0][1]*100:.1f}%)")
+                        print(
+                            f"Prediction ({len(rec.frames)} frames): {cur_preds[0][0]} ({cur_preds[0][1] * 100:.1f}%)"
+                        )
                     else:
-                        print(f"Too few frames ({len(rec.frames)}), need {min_sign_frames}")
+                        print(
+                            f"Too few frames ({len(rec.frames)}), need {min_sign_frames}"
+                        )
                     rec.reset()
                 else:
                     rec.is_recording = True
@@ -520,21 +560,23 @@ def run_inference(
         cv2.destroyAllWindows()
 
     if mode == InferenceMode.VIDEO_FILE and rec.frames and vp is not None:
-        print(f"\n{'='*60}\nVIDEO FILE RESULTS\n{'='*60}")
+        print(f"\n{'=' * 60}\nVIDEO FILE RESULTS\n{'=' * 60}")
         print(f"Video: {vp.name}\nExpected class: {vp.parent.name}")
         print(f"Frames extracted: {len(rec.frames)}")
-        arr, alen = preprocess_sequence(rec.frames, scaler, max_len, normalize, True, seq_handling)
+        arr, alen = preprocess_sequence(
+            rec.frames, scaler, max_len, normalize, True, seq_handling
+        )
         preds, _ = predict_sign(model, arr, alen, DEVICE, actions, top_k)
         exp = vp.parent.name
         print(f"\nTop-{top_k} Predictions:")
         for i, (c, p) in enumerate(preds):
             mk = " <-- MATCH!" if c == exp else ""
-            print(f"  {i+1}. {c}: {p*100:.1f}%{mk}")
+            print(f"  {i + 1}. {c}: {p * 100:.1f}%{mk}")
         print(f"\nFinal prediction: {preds[0][0]}")
         print(f"Ground truth: {exp}")
         print(f"Correct: {'YES' if preds[0][0] == exp else 'NO'}")
 
     if mode != InferenceMode.VIDEO_FILE and history:
-        print(f"\n{'='*60}\nSESSION SUMMARY\n{'='*60}")
+        print(f"\n{'=' * 60}\nSESSION SUMMARY\n{'=' * 60}")
         print(f"Total predictions: {len(history)}")
         print(f"Predictions: {' -> '.join(history[-10:])}")
