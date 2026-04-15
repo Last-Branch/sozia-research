@@ -31,7 +31,7 @@ for _bit in range(1, 17):
         setattr(torch, f"int{_bit}", torch.int8)
 os.environ["UNSLOTH_ENABLE_PATCHES"] = "0"
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
+PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 
 # Strategy mapping: model family → (EN strategy, TR strategy)
 _MODEL_STRATEGY_MAP = {
@@ -54,7 +54,7 @@ def _run_inference(
     from ..utils import get_chat_template, polish_turkish, turkish_lower
 
     instruction = PROMPT_STRATEGIES[strategy_key]
-    res_path = output_dir / f"result_{strategy_key.lower()}.json"
+    res_path = output_dir / "result.json"
 
     results: list[dict] = []
     processed_glosses: set[str] = set()
@@ -118,8 +118,6 @@ def main() -> None:
     args = parser.parse_args()
 
     model_slug = args.model_id.split("/")[-1].lower().replace("-", "_")
-    output_dir = PROJECT_ROOT / "experiments" / "baselines" / model_slug
-    output_dir.mkdir(parents=True, exist_ok=True)
 
     is_trendyol = "trendyol" in args.model_id.lower()
     if is_trendyol:
@@ -147,8 +145,11 @@ def main() -> None:
         family = "trendyol"
 
     en_strat, tr_strat = _MODEL_STRATEGY_MAP[family]
-    _run_inference(model, tokenizer, args.model_id, en_strat, output_dir, valid_samples, chrf)
-    _run_inference(model, tokenizer, args.model_id, tr_strat, output_dir, valid_samples, chrf)
+    for strat in (en_strat, tr_strat):
+        run_name = f"{model_slug}_base_{strat.lower()}"
+        output_dir = PROJECT_ROOT / "models" / "gloss_to_text" / run_name
+        output_dir.mkdir(parents=True, exist_ok=True)
+        _run_inference(model, tokenizer, args.model_id, strat, output_dir, valid_samples, chrf)
 
 
 if __name__ == "__main__":

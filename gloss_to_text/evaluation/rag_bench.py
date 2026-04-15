@@ -14,7 +14,6 @@ import time
 from pathlib import Path
 
 import torch
-from peft import PeftModel
 from sentence_transformers import SentenceTransformer, util
 from tqdm import tqdm
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
@@ -26,15 +25,11 @@ for _bit in range(1, 17):
     if not hasattr(torch, f"int{_bit}"):
         setattr(torch, f"int{_bit}", torch.int8)
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
+PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 
 _MODEL_ID = "google/gemma-2-9b-it"
-_ADAPTER_PATH = (
-    PROJECT_ROOT / "experiments" / "benchmarks" / "gemma_2_9b_it" / "p3_en" / "final_adapter"
-)
-_OUTPUT_DIR = (
-    PROJECT_ROOT / "experiments" / "benchmarks" / "gemma_2_9b_it" / "p3_en_rag"
-)
+_MODEL_DIR = PROJECT_ROOT / "models" / "gloss_to_text" / "gemma_2_9b_it_ft_p3_en"
+_OUTPUT_DIR = PROJECT_ROOT / "models" / "gloss_to_text" / "gemma_2_9b_it_ft_rag_p3_en"
 
 
 def _build_rag_prompt(instruction: str, gloss: str, context: str) -> str:
@@ -53,13 +48,12 @@ def main() -> None:
 
     _OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    tokenizer = AutoTokenizer.from_pretrained(_MODEL_ID)
+    tokenizer = AutoTokenizer.from_pretrained(_MODEL_DIR)
     bnb_config = BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_compute_dtype=torch.bfloat16)
-    base_model = AutoModelForCausalLM.from_pretrained(
-        _MODEL_ID, quantization_config=bnb_config, device_map="auto",
+    model = AutoModelForCausalLM.from_pretrained(
+        _MODEL_DIR, quantization_config=bnb_config, device_map="auto",
         torch_dtype=torch.bfloat16, attn_implementation="sdpa",
     )
-    model = PeftModel.from_pretrained(base_model, _ADAPTER_PATH)
     model.eval()
 
     embedder = SentenceTransformer("paraphrase-multilingual-MiniLM-L12-v2")

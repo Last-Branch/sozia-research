@@ -48,7 +48,7 @@ for _bit in range(1, 17):
         setattr(torch, f"int{_bit}", torch.int8)
 os.environ["UNSLOTH_ENABLE_PATCHES"] = "0"
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
+PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 
 
 def _train(
@@ -86,10 +86,11 @@ def _train(
         )
         return {"text": text}
 
+    tokenizer.model_max_length = 1024
+
     sft_kwargs: dict = dict(
         output_dir=output_dir,
         dataset_text_field="text",
-        max_seq_length=1024,
         per_device_train_batch_size=8,
         gradient_accumulation_steps=2,
         learning_rate=1e-4,
@@ -117,6 +118,31 @@ def _train(
     model.save_pretrained(adapter_path)
     tokenizer.save_pretrained(adapter_path)
     return model
+
+
+def _merge(model_id: str, adapter_path: Path, model_dir: Path) -> None:
+    base_model = AutoModelForCausalLM.from_pretrained(
+        model_id,
+        torch_dtype=torch.bfloat16,
+        device_map="auto",
+    )
+    model = PeftModel.from_pretrained(base_model, str(adapter_path))
+    model = model.merge_and_unload()
+    model.save_pretrained(model_dir)
+    print(f"[INFO] Merged model saved to: {model_dir}")
+    del model, base_model
+    torch.cuda.empty_cache()
+
+
+def _cleanup(model_dir: Path, adapter_path: Path) -> None:
+    import shutil
+    if adapter_path.exists():
+        shutil.rmtree(adapter_path)
+        print(f"[INFO] Removed adapter: {adapter_path}")
+    for ckpt in model_dir.glob("checkpoint-*"):
+        if ckpt.is_dir():
+            shutil.rmtree(ckpt)
+            print(f"[INFO] Removed checkpoint: {ckpt}")
 
 
 def _evaluate(
@@ -185,8 +211,8 @@ def _evaluate(
     with open(result_path, "w", encoding="utf-8") as f:
         json.dump(results, f, ensure_ascii=False, indent=4)
 
-    model_slug = result_path.parts[-3]
-    print(f"[SUCCESS] {model_slug} avg latency: {total_latency / len(dataset):.4f}s")
+    run_name = result_path.parent.name
+    print(f"[SUCCESS] {run_name} avg latency: {total_latency / len(dataset):.4f}s")
 
 
 def main() -> None:
@@ -203,47 +229,69 @@ def main() -> None:
     args = parser.parse_args()
 
     model_slug = args.model_id.split("/")[-1].lower().replace("-", "_")
-    output_dir = PROJECT_ROOT / "experiments" / "benchmarks" / model_slug / args.strategy.lower()
-    adapter_path = output_dir / "final_adapter"
-    result_path = output_dir / "result.json"
+    run_name = f"{model_slug}_ft_{args.strategy.lower()}"
+    model_dir = PROJECT_ROOT / "models" / "gloss_to_text" / run_name
+    adapter_path = model_dir / "final_adapter"
+    result_path = model_dir / "result.json"
 
     if result_path.exists():
         print(f"[SKIP] {result_path} already exists.")
         return
 
-    output_dir.mkdir(parents=True, exist_ok=True)
+    model_dir.mkdir(parents=True, exist_ok=True)
 
     is_trendyol = "trendyol" in args.model_id.lower()
-    if is_trendyol:
-        tokenizer = LlamaTokenizer.from_pretrained(args.model_id, legacy=False, use_fast=False)
-        tokenizer.add_special_tokens({"additional_special_tokens": ["<|im_start|>", "<|im_end|>"]})
-    else:
-        tokenizer = AutoTokenizer.from_pretrained(args.model_id)
-    tokenizer.pad_token = tokenizer.eos_token
 
+    # --- Training + Merge (skipped if merged model already exists) ---
+    if not (model_dir / "config.json").exists():
+        if is_trendyol:
+            tokenizer = LlamaTokenizer.from_pretrained(args.model_id, legacy=False, use_fast=False)
+            tokenizer.add_special_tokens({"additional_special_tokens": ["<|im_start|>", "<|im_end|>"]})
+        else:
+            tokenizer = AutoTokenizer.from_pretrained(args.model_id)
+        tokenizer.pad_token = tokenizer.eos_token
+
+        if not adapter_path.exists():
+            print("[INFO] No adapter found. Starting training.")
+            bnb_config = BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_compute_dtype=torch.bfloat16)
+            base_model = AutoModelForCausalLM.from_pretrained(
+                args.model_id, quantization_config=bnb_config, device_map="auto",
+                torch_dtype=torch.bfloat16, attn_implementation="sdpa",
+            )
+            if is_trendyol:
+                base_model.resize_token_embeddings(len(tokenizer))
+            _train(
+                base_model, tokenizer, args.model_id, args.strategy,
+                model_dir, adapter_path,
+                use_optim=not args.no_optim,
+                use_grad_checkpointing=not args.no_grad_checkpointing,
+            )
+            del base_model
+            torch.cuda.empty_cache()
+        else:
+            print(f"[INFO] Adapter found at {adapter_path}. Skipping training.")
+
+        print("[INFO] Merging adapter into base model...")
+        _merge(args.model_id, adapter_path, model_dir)
+        _cleanup(model_dir, adapter_path)
+    else:
+        print(f"[INFO] Merged model found at {model_dir}. Skipping training and merge.")
+        if is_trendyol:
+            tokenizer = LlamaTokenizer.from_pretrained(model_dir, legacy=False, use_fast=False)
+        else:
+            tokenizer = AutoTokenizer.from_pretrained(model_dir)
+        tokenizer.pad_token = tokenizer.eos_token
+
+    # --- Evaluation (loads merged model with 4-bit for efficiency) ---
     bnb_config = BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_compute_dtype=torch.bfloat16)
-    base_model = AutoModelForCausalLM.from_pretrained(
-        args.model_id, quantization_config=bnb_config, device_map="auto",
+    model = AutoModelForCausalLM.from_pretrained(
+        model_dir, quantization_config=bnb_config, device_map="auto",
         torch_dtype=torch.bfloat16, attn_implementation="sdpa",
     )
-    if is_trendyol:
-        base_model.resize_token_embeddings(len(tokenizer))
-
-    if adapter_path.exists():
-        print(f"[INFO] Adapter found at {adapter_path}. Skipping training.")
-        model = PeftModel.from_pretrained(base_model, adapter_path)
-    else:
-        print("[INFO] No adapter found. Starting training.")
-        model = _train(
-            base_model, tokenizer, args.model_id, args.strategy,
-            output_dir, adapter_path,
-            use_optim=not args.no_optim,
-            use_grad_checkpointing=not args.no_grad_checkpointing,
-        )
 
     _evaluate(model, tokenizer, args.model_id, args.strategy, result_path, args.use_autocast)
 
-    del model, base_model
+    del model
     torch.cuda.empty_cache()
 
 

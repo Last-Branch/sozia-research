@@ -11,6 +11,10 @@ checkpoints/
 wandb/
 mlruns/
 
+# Model weights — stored on HuggingFace Hub, not in git
+models/**/*.safetensors
+models/**/*.bin
+
 # Jupyter
 .ipynb_checkpoints/
 
