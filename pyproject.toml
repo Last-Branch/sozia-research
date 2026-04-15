@@ -46,7 +46,7 @@ tsl-recognition = "tsl_recognition.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["tsl_recognition*", "gloss_to_text*"]
+include = ["tsl_recognition*", "gloss_to_text*", "lip_reading*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
