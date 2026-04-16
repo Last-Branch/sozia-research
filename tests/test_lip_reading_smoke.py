@@ -53,7 +53,7 @@ def test_lip_train_config_defaults() -> None:
     assert cfg.epochs == 300
     assert cfg.lr_scheduler == "onecycle"
     assert cfg.dropout == pytest.approx(0.4)
-    assert cfg.augment_train is False
+    assert cfg.augment_train is True
 
 
 def test_lip_train_config_num_classes() -> None:
