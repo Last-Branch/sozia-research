@@ -20,7 +20,7 @@ from torch.utils.data import DataLoader, Dataset
 from tqdm.auto import tqdm
 
 from .augmentation import LipAugmentConfig, augment_spatial, augment_temporal
-from .config import DEVICE, FACE_SLICE, LIP_FEATURE_DIM, LIP_SCALERS_DIR, LipTrainConfig, MOUTH_FEATURE_DIM
+from .config import DEVICE, FACE_SLICE, LIP_FEATURE_DIM, LIP_SCALERS_DIR, LipTrainConfig
 
 
 def _worker_init_fn(worker_id: int) -> None:
@@ -286,15 +286,27 @@ def build_lip_loaders(cfg: LipTrainConfig) -> dict[str, Any]:
     seq_handling = cfg.sequence_handling
     feat_idx = cfg.feature_indices
     train_ds = LipReadingDataset(
-        train_files, cfg.max_sequence_length, scaler, seq_handling, feat_idx,
+        train_files,
+        cfg.max_sequence_length,
+        scaler,
+        seq_handling,
+        feat_idx,
         augment=cfg.augment_train,
     )
     val_ds = LipReadingDataset(
-        val_files, cfg.max_sequence_length, scaler, seq_handling, feat_idx,
+        val_files,
+        cfg.max_sequence_length,
+        scaler,
+        seq_handling,
+        feat_idx,
         augment=False,
     )
     test_ds = LipReadingDataset(
-        test_files, cfg.max_sequence_length, scaler, seq_handling, feat_idx,
+        test_files,
+        cfg.max_sequence_length,
+        scaler,
+        seq_handling,
+        feat_idx,
         augment=False,
     )
 
