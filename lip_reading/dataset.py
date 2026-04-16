@@ -19,7 +19,8 @@ from sklearn.preprocessing import StandardScaler
 from torch.utils.data import DataLoader, Dataset
 from tqdm.auto import tqdm
 
-from .config import DEVICE, FACE_SLICE, LIP_FEATURE_DIM, LIP_SCALERS_DIR, LipTrainConfig, MOUTH_FEATURE_DIM
+from .augmentation import LipAugmentConfig, augment_spatial, augment_temporal
+from .config import DEVICE, FACE_SLICE, LIP_FEATURE_DIM, LIP_SCALERS_DIR, LipTrainConfig
 
 
 def _worker_init_fn(worker_id: int) -> None:
@@ -44,6 +45,8 @@ class LipReadingDataset(Dataset):
         scaler: StandardScaler | None = None,
         sequence_handling: str = "truncate",
         feature_indices: tuple[int, ...] | None = None,
+        augment: bool = False,
+        augment_cfg: LipAugmentConfig | None = None,
     ) -> None:
         """
         Parameters
@@ -60,12 +63,18 @@ class LipReadingDataset(Dataset):
         feature_indices : tuple[int, ...] | None
             Optional index subset applied to the 249-dim face vector after
             normalization (e.g. mouth-only landmarks). ``None`` keeps all 249.
+        augment : bool
+            When ``True``, apply temporal and spatial augmentation (training only).
+        augment_cfg : LipAugmentConfig | None
+            Augmentation hyper-parameters; uses defaults if ``None``.
         """
         self.file_info = file_info_list
         self.max_seq_len = max_seq_len
         self.scaler = scaler
         self.sequence_handling = sequence_handling
         self.feature_indices = feature_indices
+        self.augment = augment
+        self.augment_cfg = augment_cfg or LipAugmentConfig()
         self._feature_dim = (
             len(feature_indices) if feature_indices is not None else LIP_FEATURE_DIM
         )
@@ -87,6 +96,12 @@ class LipReadingDataset(Dataset):
 
         # Load 507-dim keypoints and extract the 249-dim face slice
         keypoints = np.load(path).astype(np.float32)[:, FACE_SLICE]  # (T, 249)
+
+        # Phase 1: temporal augmentation in raw space (may change frame count)
+        if self.augment:
+            rng = np.random.default_rng(np.random.randint(0, 2**31))
+            keypoints = augment_temporal(keypoints, rng, self.augment_cfg)
+
         num_frames = keypoints.shape[0]
 
         if num_frames > self.max_seq_len:
@@ -107,9 +122,13 @@ class LipReadingDataset(Dataset):
         if self.feature_indices is not None:
             keypoints = keypoints[:, self.feature_indices]
 
-        if num_frames < self.max_seq_len:
+        # Phase 2: spatial augmentation in normalised space
+        if self.augment:
+            keypoints = augment_spatial(keypoints, rng, self.augment_cfg)
+
+        if actual_length < self.max_seq_len:
             padding = np.zeros(
-                (self.max_seq_len - num_frames, self._feature_dim), dtype=np.float32
+                (self.max_seq_len - actual_length, self._feature_dim), dtype=np.float32
             )
             keypoints = np.vstack([keypoints, padding])
 
@@ -267,13 +286,28 @@ def build_lip_loaders(cfg: LipTrainConfig) -> dict[str, Any]:
     seq_handling = cfg.sequence_handling
     feat_idx = cfg.feature_indices
     train_ds = LipReadingDataset(
-        train_files, cfg.max_sequence_length, scaler, seq_handling, feat_idx
+        train_files,
+        cfg.max_sequence_length,
+        scaler,
+        seq_handling,
+        feat_idx,
+        augment=cfg.augment_train,
     )
     val_ds = LipReadingDataset(
-        val_files, cfg.max_sequence_length, scaler, seq_handling, feat_idx
+        val_files,
+        cfg.max_sequence_length,
+        scaler,
+        seq_handling,
+        feat_idx,
+        augment=False,
     )
     test_ds = LipReadingDataset(
-        test_files, cfg.max_sequence_length, scaler, seq_handling, feat_idx
+        test_files,
+        cfg.max_sequence_length,
+        scaler,
+        seq_handling,
+        feat_idx,
+        augment=False,
     )
 
     nw = cfg.num_workers
@@ -305,6 +339,8 @@ def build_lip_loaders(cfg: LipTrainConfig) -> dict[str, Any]:
         worker_init_fn=_worker_init_fn,
     )
 
+    aug_status = "ON (temporal + spatial)" if cfg.augment_train else "OFF"
+    print(f"Training augmentation: {aug_status}")
     print(f"Sequence handling: {seq_handling}")
     fdim = cfg.feature_dim
     print(f"\nDataset ({split_mode} split):")
