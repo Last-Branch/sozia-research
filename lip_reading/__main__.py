@@ -3,10 +3,11 @@ CLI for the lip-reading pipeline.
 
 Usage::
 
-    python -m lip_reading train                   # full training on BosphorusSign22k
-    python -m lip_reading train --dataset autsl   # full training on AUTSL
-    python -m lip_reading train --test            # 10-class smoke test (BosphorusSign22k)
-    python -m lip_reading train --dataset autsl --test
+    python -m lip_reading train                              # full training on BosphorusSign22k
+    python -m lip_reading train --dataset autsl              # full training on AUTSL
+    python -m lip_reading train --mouth-only                 # mouth-only landmarks (120-dim)
+    python -m lip_reading train --dataset autsl --mouth-only
+    python -m lip_reading train --test                       # 10-class smoke test
 """
 
 from __future__ import annotations
@@ -27,6 +28,7 @@ def cmd_train(args: argparse.Namespace) -> None:
         cfg = LipTrainConfig.test(dataset=dataset)
     else:
         cfg = LipTrainConfig.full(dataset=dataset)
+    cfg.use_mouth_only = args.mouth_only
     train(cfg)
 
 
@@ -48,6 +50,11 @@ def main() -> None:
         choices=DATASET_CHOICES,
         default="bosphorus",
         help="Dataset to use (default: bosphorus)",
+    )
+    shared.add_argument(
+        "--mouth-only",
+        action="store_true",
+        help="Use only the 40 mouth/lip landmarks (120-dim) instead of full face (249-dim)",
     )
 
     sub = parser.add_subparsers(dest="command", required=True)

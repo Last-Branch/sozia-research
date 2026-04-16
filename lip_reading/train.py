@@ -299,16 +299,18 @@ def train(cfg: LipTrainConfig | None = None) -> dict:
     class_weights = data["class_weights"]
     actions = cfg.classes_to_process
 
+    feature_dim = data["feature_dim"]
+
     print(
         f"\nArchitecture: GRU (small) | "
-        f"input_size={LIP_FEATURE_DIM} | "
+        f"input_size={feature_dim} | "
         f"classes={cfg.num_classes}"
     )
     print(f"Dropout: {cfg.dropout}")
 
     model = build_model(
         arch="gru",
-        input_size=LIP_FEATURE_DIM,
+        input_size=feature_dim,
         num_classes=cfg.num_classes,
         model_size="small",
         dropout=cfg.dropout,

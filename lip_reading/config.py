@@ -64,6 +64,34 @@ FACE_SLICE = slice(132, 381)
 LIP_FEATURE_DIM = 249  # 83 landmarks × 3 (x, y, z)
 
 # ---------------------------------------------------------------------------
+# Mouth-only landmark subset (outer + inner lip contours, 40 landmarks × 3)
+# ---------------------------------------------------------------------------
+# MediaPipe FaceMesh IDs for outer and inner lip contours.
+_MOUTH_LANDMARK_IDS: frozenset[int] = frozenset(
+    {
+        # Outer lip contour (20)
+        0, 17, 37, 39, 40, 61, 84, 91, 146, 181,
+        185, 267, 269, 270, 291, 314, 321, 375, 405, 409,
+        # Inner lip contour (20)
+        13, 14, 78, 80, 81, 82, 87, 88, 95, 178,
+        191, 308, 310, 311, 312, 317, 318, 324, 402, 415,
+    }
+)
+
+# Positions of mouth landmarks within the sorted FACE_LANDMARK_INDICES tuple,
+# then expanded to the flat feature indices inside the 249-dim face vector.
+# Computed at import time — avoids magic numbers in downstream code.
+from tsl_recognition.config import FACE_LANDMARK_INDICES as _FACE_LM_IDX  # noqa: E402
+
+_MOUTH_POSITIONS: tuple[int, ...] = tuple(
+    i for i, lm_id in enumerate(_FACE_LM_IDX) if lm_id in _MOUTH_LANDMARK_IDS
+)
+MOUTH_FEATURE_INDICES: tuple[int, ...] = tuple(
+    fi for p in _MOUTH_POSITIONS for fi in (p * 3, p * 3 + 1, p * 3 + 2)
+)
+MOUTH_FEATURE_DIM: int = len(MOUTH_FEATURE_INDICES)  # 120
+
+# ---------------------------------------------------------------------------
 # Paths
 # ---------------------------------------------------------------------------
 LIP_MODELS_DIR = BASE_DIR / "models" / "lip_reading"
@@ -124,6 +152,9 @@ class LipTrainConfig:
     # Augmentation disabled until tuned for face-only features.
     augment_train: bool = False
     split_mode: str = "signer"
+    # Feature subset: when True, only the 40 mouth/lip landmarks (120-dim)
+    # are used instead of the full 83-landmark face set (249-dim).
+    use_mouth_only: bool = False
 
     # ------------------------------------------------------------------
     # Helpers
@@ -166,6 +197,16 @@ class LipTrainConfig:
             early_stopping_patience=10,
             min_epochs=30,
         )
+
+    @property
+    def feature_dim(self) -> int:
+        """Input feature dimension: 120 (mouth-only) or 249 (full face)."""
+        return MOUTH_FEATURE_DIM if self.use_mouth_only else LIP_FEATURE_DIM
+
+    @property
+    def feature_indices(self) -> tuple[int, ...] | None:
+        """Feature index subset to apply after face normalization, or None."""
+        return MOUTH_FEATURE_INDICES if self.use_mouth_only else None
 
     @property
     def num_classes(self) -> int:

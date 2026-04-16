@@ -19,7 +19,7 @@ from sklearn.preprocessing import StandardScaler
 from torch.utils.data import DataLoader, Dataset
 from tqdm.auto import tqdm
 
-from .config import DEVICE, FACE_SLICE, LIP_FEATURE_DIM, LIP_SCALERS_DIR, LipTrainConfig
+from .config import DEVICE, FACE_SLICE, LIP_FEATURE_DIM, LIP_SCALERS_DIR, LipTrainConfig, MOUTH_FEATURE_DIM
 
 
 def _worker_init_fn(worker_id: int) -> None:
@@ -43,6 +43,7 @@ class LipReadingDataset(Dataset):
         max_seq_len: int,
         scaler: StandardScaler | None = None,
         sequence_handling: str = "truncate",
+        feature_indices: tuple[int, ...] | None = None,
     ) -> None:
         """
         Parameters
@@ -56,11 +57,18 @@ class LipReadingDataset(Dataset):
         sequence_handling : str
             ``"truncate"`` (keep first N frames) or
             ``"uniform_sample"`` (evenly sample N frames from the full sequence).
+        feature_indices : tuple[int, ...] | None
+            Optional index subset applied to the 249-dim face vector after
+            normalization (e.g. mouth-only landmarks). ``None`` keeps all 249.
         """
         self.file_info = file_info_list
         self.max_seq_len = max_seq_len
         self.scaler = scaler
         self.sequence_handling = sequence_handling
+        self.feature_indices = feature_indices
+        self._feature_dim = (
+            len(feature_indices) if feature_indices is not None else LIP_FEATURE_DIM
+        )
 
     def __len__(self) -> int:
         return len(self.file_info)
@@ -96,9 +104,12 @@ class LipReadingDataset(Dataset):
         if self.scaler is not None:
             keypoints = (keypoints - self.scaler.mean_) / self.scaler.scale_
 
+        if self.feature_indices is not None:
+            keypoints = keypoints[:, self.feature_indices]
+
         if num_frames < self.max_seq_len:
             padding = np.zeros(
-                (self.max_seq_len - num_frames, LIP_FEATURE_DIM), dtype=np.float32
+                (self.max_seq_len - num_frames, self._feature_dim), dtype=np.float32
             )
             keypoints = np.vstack([keypoints, padding])
 
@@ -254,12 +265,15 @@ def build_lip_loaders(cfg: LipTrainConfig) -> dict[str, Any]:
     )
 
     seq_handling = cfg.sequence_handling
+    feat_idx = cfg.feature_indices
     train_ds = LipReadingDataset(
-        train_files, cfg.max_sequence_length, scaler, seq_handling
+        train_files, cfg.max_sequence_length, scaler, seq_handling, feat_idx
     )
-    val_ds = LipReadingDataset(val_files, cfg.max_sequence_length, scaler, seq_handling)
+    val_ds = LipReadingDataset(
+        val_files, cfg.max_sequence_length, scaler, seq_handling, feat_idx
+    )
     test_ds = LipReadingDataset(
-        test_files, cfg.max_sequence_length, scaler, seq_handling
+        test_files, cfg.max_sequence_length, scaler, seq_handling, feat_idx
     )
 
     nw = cfg.num_workers
@@ -292,12 +306,11 @@ def build_lip_loaders(cfg: LipTrainConfig) -> dict[str, Any]:
     )
 
     print(f"Sequence handling: {seq_handling}")
+    fdim = cfg.feature_dim
     print(f"\nDataset ({split_mode} split):")
-    print(
-        f"  train: ({len(train_files)}, {cfg.max_sequence_length}, {LIP_FEATURE_DIM})"
-    )
-    print(f"  val:   ({len(val_files)}, {cfg.max_sequence_length}, {LIP_FEATURE_DIM})")
-    print(f"  test:  ({len(test_files)}, {cfg.max_sequence_length}, {LIP_FEATURE_DIM})")
+    print(f"  train: ({len(train_files)}, {cfg.max_sequence_length}, {fdim})")
+    print(f"  val:   ({len(val_files)}, {cfg.max_sequence_length}, {fdim})")
+    print(f"  test:  ({len(test_files)}, {cfg.max_sequence_length}, {fdim})")
 
     return {
         "train_loader": train_loader,
@@ -308,7 +321,7 @@ def build_lip_loaders(cfg: LipTrainConfig) -> dict[str, Any]:
         "test_ds": test_ds,
         "scaler": scaler,
         "class_weights": class_weights,
-        "feature_dim": LIP_FEATURE_DIM,
+        "feature_dim": cfg.feature_dim,
         "label_map": label_map,
         "train_files": train_files,
         "val_files": val_files,
