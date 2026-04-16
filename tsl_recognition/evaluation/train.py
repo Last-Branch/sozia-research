@@ -122,7 +122,6 @@ def evaluate(model: nn.Module, loader: DataLoader, criterion: nn.Module) -> tupl
     with torch.no_grad():
         for xb, yb, lengths in loader:
             xb, yb = xb.to(DEVICE), yb.to(DEVICE)
-            lengths = lengths.to(DEVICE)
             logits = model(xb, lengths=lengths)
             total_loss += criterion(logits, yb).item()
             total_acc += batch_accuracy(logits, yb)
@@ -489,7 +488,6 @@ def train(cfg: TrainConfig | None = None) -> dict:
 
         for xb, yb, lengths in train_loader:
             xb, yb = xb.to(DEVICE), yb.to(DEVICE)
-            lengths = lengths.to(DEVICE)
             optimizer.zero_grad()
             logits = model(xb, lengths=lengths)
             loss = criterion(logits, yb)
@@ -582,7 +580,7 @@ def train(cfg: TrainConfig | None = None) -> dict:
         sample_x, sample_y, sample_len = test_ds[0]
         sample_logits = model(
             sample_x.unsqueeze(0).to(DEVICE),
-            lengths=sample_len.unsqueeze(0).to(DEVICE),
+            lengths=sample_len.unsqueeze(0),
         )
         pred = sample_logits.argmax(dim=1).cpu().item()
     print(f"Prediction: {actions[pred]}")
@@ -606,7 +604,7 @@ def train(cfg: TrainConfig | None = None) -> dict:
     all_logits_list, all_true = [], []
     with torch.no_grad():
         for xb, yb, lengths in test_loader:
-            logits = loaded_model(xb.to(DEVICE), lengths=lengths.to(DEVICE))
+            logits = loaded_model(xb.to(DEVICE), lengths=lengths)
             all_logits_list.append(logits.cpu())
             all_true.extend(yb.numpy().tolist())
 
