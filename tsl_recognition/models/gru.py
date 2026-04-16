@@ -65,5 +65,5 @@ class ActionGRU(SignClassifier):
 
         if lengths is not None:
             batch_idx = torch.arange(x.size(0), device=x.device)
-            return gru_out[batch_idx, lengths - 1, :]
+            return gru_out[batch_idx, lengths.to(x.device) - 1, :]
         return gru_out[:, -1, :]
