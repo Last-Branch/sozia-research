@@ -149,8 +149,7 @@ class LipTrainConfig:
     use_class_weights: bool = True
     normalize_features: bool = True
     num_workers: int = 4
-    # Augmentation disabled until tuned for face-only features.
-    augment_train: bool = False
+    augment_train: bool = True
     split_mode: str = "signer"
     # Feature subset: when True, only the 40 mouth/lip landmarks (120-dim)
     # are used instead of the full 83-landmark face set (249-dim).
