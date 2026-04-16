@@ -145,7 +145,7 @@ def _save_config(run_dir: Path, cfg: LipTrainConfig, total_params: int) -> None:
         {
             "model_arch": "gru",
             "model_size": "small",
-            "feature_dim": LIP_FEATURE_DIM,
+            "feature_dim": cfg.feature_dim,
             "total_params": total_params,
             "device": str(DEVICE),
         }
