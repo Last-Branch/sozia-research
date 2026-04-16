@@ -31,6 +31,7 @@ from pathlib import Path
 from torch.utils.data import DataLoader
 
 import matplotlib
+
 matplotlib.use("Agg")  # headless backend — no display required
 import matplotlib.pyplot as plt
 
@@ -71,7 +72,9 @@ def batch_accuracy(logits: torch.Tensor, targets: torch.Tensor) -> float:
 
 
 def batch_top_k_accuracy(
-    logits: torch.Tensor, targets: torch.Tensor, k: int = 5,
+    logits: torch.Tensor,
+    targets: torch.Tensor,
+    k: int = 5,
 ) -> float:
     """Calculate top-k classification accuracy for a batch.
 
@@ -98,7 +101,9 @@ def batch_top_k_accuracy(
     return correct.float().mean().item()
 
 
-def evaluate(model: nn.Module, loader: DataLoader, criterion: nn.Module) -> tuple[float, float, float]:
+def evaluate(
+    model: nn.Module, loader: DataLoader, criterion: nn.Module
+) -> tuple[float, float, float]:
     """Evaluate model on a dataset (validation or test set).
 
     Parameters
@@ -130,7 +135,9 @@ def evaluate(model: nn.Module, loader: DataLoader, criterion: nn.Module) -> tupl
     return total_loss / n_batches, total_acc / n_batches, total_acc5 / n_batches
 
 
-def _build_scheduler(cfg: TrainConfig, optimizer: torch.optim.Optimizer, train_loader: DataLoader) -> lrs.LRScheduler | None:
+def _build_scheduler(
+    cfg: TrainConfig, optimizer: torch.optim.Optimizer, train_loader: DataLoader
+) -> lrs.LRScheduler | None:
     """Create the configured LR scheduler (or None).
 
     Notes
@@ -171,7 +178,12 @@ def _build_scheduler(cfg: TrainConfig, optimizer: torch.optim.Optimizer, train_l
             anneal_strategy="cos",
         )
 
-    if name in {"cosine", "cosine_warm_restarts", "cosinewarmrestarts", "cosineannealingwarmrestarts"}:
+    if name in {
+        "cosine",
+        "cosine_warm_restarts",
+        "cosinewarmrestarts",
+        "cosineannealingwarmrestarts",
+    }:
         cosine = lrs.CosineAnnealingWarmRestarts(
             optimizer,
             T_0=int(cfg.cosine_t0),
@@ -219,13 +231,15 @@ def _save_config(
 ) -> None:
     """Serialize training configuration + run metadata to config.json."""
     meta = asdict(cfg)
-    meta.update({
-        "model_arch": cfg.model_arch,
-        "model_size": cfg.model_size,
-        "feature_dim": feature_dim,
-        "total_params": total_params,
-        "device": str(DEVICE),
-    })
+    meta.update(
+        {
+            "model_arch": cfg.model_arch,
+            "model_size": cfg.model_size,
+            "feature_dim": feature_dim,
+            "total_params": total_params,
+            "device": str(DEVICE),
+        }
+    )
     (run_dir / "config.json").write_text(json.dumps(meta, indent=2))
 
 
@@ -254,7 +268,10 @@ def _save_scores(
         )
         support = int(tp + fn)
         per_class[label] = {
-            "tp": int(tp), "fp": int(fp), "fn": int(fn), "tn": int(tn),
+            "tp": int(tp),
+            "fp": int(fp),
+            "fn": int(fn),
+            "tn": int(tn),
             "precision": round(precision, 4),
             "recall": round(recall, 4),
             "f1": round(f1, 4),
@@ -319,7 +336,9 @@ def _save_plots(run_dir: Path, log_rows: list[dict]) -> None:
     plt.close(fig)
 
     train_acc5 = [r["train_acc5"] for r in log_rows if r.get("train_acc5") is not None]
-    train_acc5_epochs = [r["epoch"] for r in log_rows if r.get("train_acc5") is not None]
+    train_acc5_epochs = [
+        r["epoch"] for r in log_rows if r.get("train_acc5") is not None
+    ]
     val_acc5 = [r["val_acc5"] for r in log_rows if r.get("val_acc5") is not None]
     val_acc5_epochs = [r["epoch"] for r in log_rows if r.get("val_acc5") is not None]
 
@@ -425,7 +444,9 @@ def train(cfg: TrainConfig | None = None) -> dict:
     scaler = data["scaler"]
     actions = cfg.actions
 
-    print(f"\nArchitecture: {cfg.model_arch} ({model_size}) for {cfg.num_classes} classes")
+    print(
+        f"\nArchitecture: {cfg.model_arch} ({model_size}) for {cfg.num_classes} classes"
+    )
     print(f"Dropout: {cfg.dropout}")
 
     model = build_model(
@@ -466,7 +487,9 @@ def train(cfg: TrainConfig | None = None) -> dict:
     else:
         print("Gradient clipping: OFF")
     if cfg.early_stopping_patience > 0:
-        print(f"Early stopping: patience={cfg.early_stopping_patience} epochs (min_epochs={cfg.min_epochs})")
+        print(
+            f"Early stopping: patience={cfg.early_stopping_patience} epochs (min_epochs={cfg.min_epochs})"
+        )
     else:
         print("Early stopping: OFF")
     print(f"Validation every {cfg.val_every} epoch(s)")
@@ -531,19 +554,23 @@ def train(cfg: TrainConfig | None = None) -> dict:
                 f"lr {current_lr:.1e}{best_marker}"
             )
 
-        if scheduler is not None and not isinstance(scheduler, (lrs.OneCycleLR, lrs.ReduceLROnPlateau)):
+        if scheduler is not None and not isinstance(
+            scheduler, (lrs.OneCycleLR, lrs.ReduceLROnPlateau)
+        ):
             scheduler.step()
 
-        log_rows.append({
-            "epoch": epoch,
-            "train_loss": round(train_loss, 6),
-            "train_acc": round(train_acc, 6),
-            "train_acc5": round(train_acc5, 6),
-            "val_loss": round(val_loss, 6) if val_loss is not None else None,
-            "val_acc": round(val_acc, 6) if val_acc is not None else None,
-            "val_acc5": round(val_acc5, 6) if val_acc5 is not None else None,
-            "lr": current_lr,
-        })
+        log_rows.append(
+            {
+                "epoch": epoch,
+                "train_loss": round(train_loss, 6),
+                "train_acc": round(train_acc, 6),
+                "train_acc5": round(train_acc5, 6),
+                "val_loss": round(val_loss, 6) if val_loss is not None else None,
+                "val_acc": round(val_acc, 6) if val_acc is not None else None,
+                "val_acc5": round(val_acc5, 6) if val_acc5 is not None else None,
+                "lr": current_lr,
+            }
+        )
 
         if epoch % CHECKPOINT_EVERY == 0:
             ckpt_path = run_dir / "checkpoints" / f"epoch_{epoch:03d}.pt"
@@ -563,7 +590,9 @@ def train(cfg: TrainConfig | None = None) -> dict:
             break
 
     print("-" * 60)
-    print(f"Best validation accuracy: {best_val_acc:.4f} top-1, {best_val_acc5:.4f} top-5 (epoch {best_val_epoch})")
+    print(
+        f"Best validation accuracy: {best_val_acc:.4f} top-1, {best_val_acc5:.4f} top-5 (epoch {best_val_epoch})"
+    )
 
     final_model_path = run_dir / "final_model.pt"
     torch.save(model.state_dict(), final_model_path)
@@ -586,9 +615,9 @@ def train(cfg: TrainConfig | None = None) -> dict:
     print(f"Prediction: {actions[pred]}")
     print(f"Ground truth: {actions[sample_y.item()]}")
 
-    print(f"\n{'='*60}")
+    print(f"\n{'=' * 60}")
     print("FINAL EVALUATION ON HELD-OUT TEST SET")
-    print(f"{'='*60}")
+    print(f"{'=' * 60}")
     loaded_model = build_model(
         arch=cfg.model_arch,
         input_size=feature_dim,

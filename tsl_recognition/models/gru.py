@@ -22,8 +22,8 @@ class ActionGRU(SignClassifier):
     """
 
     SIZES = {
-        "small":  {"gru_hidden": 256,  "gru_layers": 4, "fc": [512, 256]},
-        "large":  {"gru_hidden": 512,  "gru_layers": 5, "fc": [1024, 512]},
+        "small": {"gru_hidden": 256, "gru_layers": 4, "fc": [512, 256]},
+        "large": {"gru_hidden": 512, "gru_layers": 5, "fc": [1024, 512]},
         "xlarge": {"gru_hidden": 1024, "gru_layers": 6, "fc": [2048, 1024]},
     }
 
@@ -47,16 +47,24 @@ class ActionGRU(SignClassifier):
         )
 
         self.head = self._build_head(
-            cfg["gru_hidden"], cfg["fc"], num_classes, dropout,
+            cfg["gru_hidden"],
+            cfg["fc"],
+            num_classes,
+            dropout,
         )
 
     def _encode(
-        self, x: torch.Tensor, lengths: torch.Tensor | None = None,
+        self,
+        x: torch.Tensor,
+        lengths: torch.Tensor | None = None,
     ) -> torch.Tensor:
         """Encode via GRU, returning the hidden state at the last real frame."""
         if lengths is not None:
             packed = nn.utils.rnn.pack_padded_sequence(
-                x, lengths.cpu().clamp(min=1), batch_first=True, enforce_sorted=False,
+                x,
+                lengths.cpu().clamp(min=1),
+                batch_first=True,
+                enforce_sorted=False,
             )
             packed_out, _ = self.gru(packed)
             gru_out, _ = nn.utils.rnn.pad_packed_sequence(packed_out, batch_first=True)
