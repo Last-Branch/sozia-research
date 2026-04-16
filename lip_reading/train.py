@@ -363,7 +363,6 @@ def train(cfg: LipTrainConfig | None = None) -> dict:
 
         for xb, yb, lengths in train_loader:
             xb, yb = xb.to(DEVICE), yb.to(DEVICE)
-            lengths = lengths.to(DEVICE)
             optimizer.zero_grad()
             logits = model(xb, lengths=lengths)
             loss = criterion(logits, yb)
